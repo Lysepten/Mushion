@@ -22,29 +22,6 @@
 </head>
 
 <body>
-<!-- 	<header class="mainHD"> -->
-<!-- 		<div class="h-20 flex mx-auto items-center text-3xl"> -->
-<!-- 			<div class="flex-grow"></div> -->
-<!-- 			<ul class="flex"> -->
-<!-- 				<li><a class="hover:underline" href="/">HOME</a></li> -->
-<!-- 				<li><a class="hover:underline" href="../article/list">LIST</a> -->
-<!-- 					<ul> -->
-<!-- 						<li><a class="hover:underline" href="../article/list?boardId=1&page=1">NOTICE</a></li> -->
-<!-- 						<li><a class="hover:underline" href="../article/list?boardId=2&page=1">FREE</a></li> -->
-<!-- 						<li><a class="hover:underline" href="../article/list?boardId=3&page=1">QnA</a></li> -->
-<!-- 					</ul></li> -->
-<%-- 				<c:if test="${!rq.isLogined() }"> --%>
-<!-- 					<li><a class="hover:underline" href="../member/login">LOGIN</a></li> -->
-<!-- 					<li><a class="hover:underline" href="../member/join">JOIN</a></li> -->
-<%-- 				</c:if> --%>
-<%-- 				<c:if test="${rq.isLogined() }"> --%>
-<!-- 					<li><a class="hover:underline" href="../article/write">WRITE</a></li> -->
-<!-- 					<li><a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline" -->
-<!-- 							href="../member/doLogout">LOGOUT</a></li> -->
-<%-- 				</c:if> --%>
-<!-- 			</ul> -->
-<!-- 		</div> -->
-<!-- 	</header> -->
 	<h1 style="font-size: 2rem;">${pageTitle }</h1>
 
 

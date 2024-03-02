@@ -135,13 +135,12 @@
             ></path>
           </svg>
 			<!-- 자물쇠 이모티콘 도형 (임시) -->
+ 		<div class="ms-login-id">
+ 		<input class="ms-login-id-text" value="아이디" type="text" />
+          </div>
+		
 
-          <p class="ms-login-id-text">
-            아이디
-          </p>
-          <div
-            class="ms-login-id"
-          ></div>
+         
           
           <!-- 유저모양 이모티콘 도형 (임시) -->
           <svg

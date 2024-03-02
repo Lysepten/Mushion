@@ -117,10 +117,28 @@ white-space: nowrap;
 
 /* more */
 .ms-more {
-	position: absolute;
+position: absolute;
 width: 92px;
 height: 29px;
 left: 1133px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+/* login page move */
+.ms-login {
+position: absolute;
+width: 92px;
+height: 29px;
+left: 1600px;
 top: 55px;
 color: #c8c8c8;
 
@@ -678,3 +696,39 @@ line-height: 19px;
 color: #A9ACBB;
 white-space: nowrap;
 }
+
+/* 로그인 페이지 뒤로가기 */
+.ms-login-back-btn {
+position: absolute;
+width: 89px;
+left: 63%;
+top: 87.44%;
+bottom: 10.03%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+/* 로그인 페이지 홈으로 */
+.ms-login-home-btn {
+position: absolute;
+width: 89px;
+left: 63%;
+top: 93%;
+bottom: 10.03%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+

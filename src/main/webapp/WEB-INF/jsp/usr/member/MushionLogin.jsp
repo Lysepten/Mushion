@@ -211,6 +211,8 @@
           <p class="ms-login-google-btn-text">
             구글로 로그인
           </p>
+          <a class="ms-login-back-btn" href="/usr/home/Mushion">이전 페이지로 이동</a>
+          <a class="ms-login-home-btn" href="/usr/home/main">홈으로</a>
     </div>
   </div>
 </div>

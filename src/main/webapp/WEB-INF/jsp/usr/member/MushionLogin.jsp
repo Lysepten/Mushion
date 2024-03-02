@@ -94,7 +94,7 @@
             내 계정으로 로그인
           </p>
           <p class="ms-login-pw-text">
-            *********
+            비밀번호
           </p>
           <div
             class="ms-login-pw"
@@ -137,7 +137,7 @@
 			<!-- 자물쇠 이모티콘 도형 (임시) -->
 
           <p class="ms-login-id-text">
-            testuser@gmail.com
+            아이디
           </p>
           <div
             class="ms-login-id"
@@ -180,13 +180,13 @@
 		  <!-- 유저모양 이모티콘 도형 (임시) -->
 		  
           <div
-            class="ms-login-facebook-btn"
+            class="ms-login-Naver-btn"
           ></div>
           <img
-            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbgyf9j%2FbtsFmj0qMSd%2FPqQhGbFxZjyiqKORkHNLtK%2Fimg.png"
-            class="ms-login-facebook-btn-img"
+            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAsWJ7%2FbtsFoF97hDR%2FyJIQfxgLKwls4Sv7dFfPp0%2Fimg.png"
+            class="ms-login-Naver-btn-img"
           />
-          <p class="ms-login-facebook-btn-text">Facebook</p>
+          <p class="ms-login-Naver-btn-text">네이버로 로그인</p>
         
 		  <!-- 구글 로그인 도형 -->
           <svg
@@ -209,7 +209,7 @@
           />
           <!--         구글 로그인 도형 -->
           <p class="ms-login-google-btn-text">
-            Google
+            구글로 로그인
           </p>
     </div>
   </div>

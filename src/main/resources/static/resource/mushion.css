@@ -5,11 +5,11 @@
   font-style: normal;
 }
 
-.msfont {
-	font-family: "Barlow", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
+/* .msfont { */
+/* 	font-family: "Barlow", sans-serif; */
+/*   font-weight: 700; */
+/*   font-style: normal; */
+/* } */
 
 .interfont {
 font-family: 'Inter';
@@ -20,19 +20,7 @@ font-weight: 900;
 .maintxsize {
 	font-size: 22px;
 }
-/* body */
-.msbody {
-	position: relative;
-width: 1903px;
-height: 1440px;
 
-background: #071015;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-/* login body */
-.loginbody {
-	background-color: black;
-}
 /* header */
 .msheader {
 width: 1903px;
@@ -147,6 +135,222 @@ line-height: 29px;
 white-space: nowrap;
 }
 
+/* body */
+/* body contents */
+.msbody {
+	position: relative;
+width: 1903px;
+height: 1440px;
+
+background: #071015;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* login body */
+.loginbody {
+	background-color: black;
+}
+
+/* Mushion. */
+.ms-body-main-mushion-text {
+position: absolute;
+width: 448px;
+height: 83px;
+left: 161px;
+top: 165px;
+
+font-family: "Barlow", sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 118px;
+line-height: 100%;
+
+color: #e9ebf0;
+}
+
+/* 추천 음악 듣기... */
+.ms-body-recommendMusic {
+position: absolute;
+width: 116px;
+height: 24px;
+left: 499px;
+top: 414px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+
+opacity: 0.75;
+white-space: nowrap;
+}
+
+/* Fashion & Music */
+
+.fashion-music-font {
+position: absolute;
+width: 420px;
+height: 48px;
+left: 759px;
+top: 1214px;
+
+font-family: "Kite One", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 58px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Fashion */
+.fashion-font {
+position: absolute;
+width: 420px;
+height: 48px;
+left: 1327px;
+top: 1214px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Music */
+.music-font {
+position: absolute;
+width: 420px;
+height: 48px;
+left: 173px;
+top: 1214px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 메인페이지 소개글 */
+.body-mushion-text2 {
+position: absolute;
+width: 893px;
+height: 56px;
+left: 167px;
+top: 305px;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 28px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+opacity: 0.75;
+}
+
+/* Explore */
+.explore-btn {
+box-sizing: border-box;
+
+position: absolute;
+width: 217px;
+height: 64px;
+left: 167px;
+top: 393px;
+
+border: 2px solid #028BAF;
+border-radius: 12px;
+opacity: 0.75;
+}
+
+.explore-btn-text {
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+
+color:#028BAF;
+}
+
+/* Select category */
+.Select-category {
+position: absolute;
+width: 245px;
+height: 39px;
+left: 1500px;
+top: 320px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+text-shadow: 0px 100px 80px rgba(0, 0, 0, 0.36), 0px 50.0488px 40.0391px rgba(0, 0, 0, 0.27372), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.234572), 0px 19.3198px 15.4559px rgba(0, 0, 0, 0.205522), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.18), 0px 7.88218px 6.30574px rgba(0, 0, 0, 0.154478), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.125428), 0px 1.99324px 1.59459px rgba(0, 0, 0, 0.0862802);
+}
+
+/* main page img1 */
+.main-img1 {
+position: absolute;
+width: 151.66px;
+height: 450px;
+left: 308px;
+top: 732px;
+
+background: url(qfqref.png);
+}
+
+
+
+/* main page img2 */
+.main-img2 {
+position: absolute;
+width: 138.64px;
+height: 450px;
+left: 1461px;
+top: 732px;
+
+background: url(qwefvqwerfvqv3232.png);
+}
+
+
+
+/* main page img3 */
+.main-img3 {
+position: absolute;
+width: 402.5px;
+height: 450px;
+left: 759px;
+top: 732px;
+
+background: url(qwef134f134f143.png);
+}
+
+
 
 /* Group 1 */
 
@@ -156,22 +360,6 @@ height: 29px;
 left: 820px;
 top: 55px;
 
-
-/* Mushion. */
-
-position: absolute;
-width: 448px;
-height: 83px;
-left: 161px;
-top: 309px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-font-size: 118px;
-line-height: 100%;
-/* or 118px */
-/* leading-trim and text-edge are draft CSS properties.
 
 Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
 */
@@ -187,27 +375,6 @@ border: 1px solid #000000;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 
-/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. */
-
-position: absolute;
-width: 893px;
-height: 56px;
-left: 167px;
-top: 418px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 23px;
-line-height: 28px;
-display: flex;
-align-items: center;
-
-color: #FFFFFF;
-
-opacity: 0.75;
-
-
 /* Group 35 */
 
 position: absolute;
@@ -218,34 +385,6 @@ top: 494px;
 
 opacity: 0.75;
 
-
-/* Rectangle 3 */
-
-box-sizing: border-box;
-
-position: absolute;
-width: 217px;
-height: 64px;
-left: 167px;
-top: 494px;
-
-border: 2px solid #028BAF;
-border-radius: 12px;
-
-
-/* Explore */
-
-position: absolute;
-width: 99px;
-height: 34px;
-left: 226px;
-top: 509px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 28px;
-line-height: 34px;
 /* identical to box height */
 
 color: #028BAF;
@@ -290,23 +429,7 @@ border-radius: 3px;
 transform: rotate(90deg);
 
 
-/* Live Demo... */
 
-position: absolute;
-width: 116px;
-height: 24px;
-left: 499px;
-top: 514px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-
-color: #FFFFFF;
-
-opacity: 0.75;
 
 
 /* search-interface-symbol 2 */
@@ -410,117 +533,3 @@ width: 1574px;
 height: 48px;
 left: 173px;
 top: 1214px;
-
-
-
-/* Fashion & Music */
-
-position: absolute;
-width: 420px;
-height: 48px;
-left: 759px;
-top: 1214px;
-
-font-family: 'Kite One';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 58px;
-text-align: center;
-
-color: rgba(0, 0, 0, 0.8);
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* Fashion */
-
-position: absolute;
-width: 420px;
-height: 48px;
-left: 1327px;
-top: 1214px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
-
-color: rgba(0, 0, 0, 0.8);
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* Music */
-
-position: absolute;
-width: 420px;
-height: 48px;
-left: 173px;
-top: 1214px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
-
-color: rgba(0, 0, 0, 0.8);
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* Select category */
-
-position: absolute;
-width: 245px;
-height: 39px;
-left: calc(50% - 245px/2 + 687.5px);
-top: 429px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 39px;
-/* identical to box height */
-
-color: #FFFFFF;
-
-text-shadow: 0px 100px 80px rgba(0, 0, 0, 0.36), 0px 50.0488px 40.0391px rgba(0, 0, 0, 0.27372), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.234572), 0px 19.3198px 15.4559px rgba(0, 0, 0, 0.205522), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.18), 0px 7.88218px 6.30574px rgba(0, 0, 0, 0.154478), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.125428), 0px 1.99324px 1.59459px rgba(0, 0, 0, 0.0862802);
-
-
-/* qfqref 1 */
-
-position: absolute;
-width: 151.66px;
-height: 450px;
-left: 308px;
-top: 732px;
-
-background: url(qfqref.png);
-
-
-/* qwefvqwerfvqv3232 1 */
-
-position: absolute;
-width: 138.64px;
-height: 450px;
-left: 1461px;
-top: 732px;
-
-background: url(qwefvqwerfvqv3232.png);
-
-
-/* qwef134f134f143 1 */
-
-position: absolute;
-width: 402.5px;
-height: 450px;
-left: 759px;
-top: 732px;
-
-background: url(qwef134f134f143.png);

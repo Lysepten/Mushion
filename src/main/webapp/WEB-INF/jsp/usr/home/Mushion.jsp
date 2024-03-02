@@ -16,9 +16,7 @@
 
 <body class="section">
 <div
-  class="msbody"
-  style="box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.25);"
->
+  class="msbody">
   <svg
     width="1657"
     height="458"
@@ -95,21 +93,17 @@
       </linearGradient>
     </defs>
   </svg>
-  
-  <p class=" msfont absolute left-[161px] top-[150px] text-[118px] font-bold text-left text-[#e9ebf0]">
-    Mushion.
-  </p>
-  <p
-    class="w-[893px] absolute left-[167px] top-[300px] opacity-75 text-[22px] font-medium text-left text-white"
-  >
+
+  <p class="ms-body-main-mushion-text">Mushion.</p>
+  <p class="body-mushion-text2">
     패션과 음악을 즐기는 사람들이 함께 모이는 활기찬 커뮤니티 허브에 오신 것을 환영합니다!
     <br />
     생동감 넘치는 스타일과 매력적인 멜로디를 탐험해 보세요.
   </p>
 
     <button
-      class="w-[217px] h-16 absolute left-[166px] top-[393px] rounded-xl border-2 border-[#028baf]"
-    ><p class="text-[28px] text-[#028baf]">Explore</p>
+      class="explore-btn"
+    ><p class="explore-btn-text">Explore</p>
     </button>
 <a href="">
     <svg
@@ -139,63 +133,46 @@
     </svg>
     </a>
     
-    <p class="absolute left-[499px] top-[414px] opacity-75 text-xl text-left text-white">
+    <p class="ms-body-recommendMusic">
       추천 음악 듣기..
     </p>
 
-    <a href=""
-      style="width: 420px; height: 48px; position: absolute; left: 759px; top: 1215px; font-size: 40px; text-align: center; color: rgba(0,0,0,0.8);"
+    <a href="" class="fashion-music-font"
     >
-      <span
-        style="width: 420px; height: 48px; font-size: 40px; text-align: center; color: rgba(0,0,0,0.8);"
-        >Fashion</span
-      ><span
-        style="width: 420px; height: 48px; font-size: 40px; font-weight: 700; text-align: center; color: rgba(0,0,0,0.8);"
-      >
-      </span
-      ><span
-        style="width: 420px; height: 48px; font-size: 40px; text-align: center; color: rgba(0,0,0,0.8);"
-        >&#x26; Music</span
-      >
+      <span>Fashion</span>
+      <span>&#x26; Music</span>
     </a>
     <a href="">
-    <p
-      style="width: 420px; height: 48px; position: absolute; left: 1327px; top: 1215px; font-size: 40px; font-weight: 700; text-align: center; color: rgba(0,0,0,0.8);"
-    >
+    <p class="fashion-font">
       Fashion
     </p>
     </a>
     <a href="">
-    <p
-      style="width: 420px; height: 48px; position: absolute; left: 173px; top: 1215px; font-size: 40px; font-weight: 700; text-align: center; color: rgba(0,0,0,0.8);"
-    >
+    <p class="music-font">
       Music
     </p>
 </a>
   
-  
-  
-  
-  <p class="absolute left-[1525px] top-[320px] text-[32px] font-semibold text-left text-white">
+  <p class="Select-category">
     Select category
   </p>
   <a href="">
   <img
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJNw9U%2FbtsFm4uGOBY%2F3fhelcTffJ02r1AM8kLiDK%2Fimg.png"
-    class="w-[151.66px] h-[450px] absolute left-[307px] top-[731px] object-cover"
+    class="main-img1"
   />
   </a>
   <a href="">
   <img
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRFpwE%2FbtsFmg9YU4r%2Foe0li1KKGOe7yUC6JsVbXk%2Fimg.png"
-    class="w-[138.64px] h-[450px] absolute left-[1460px] top-[731px] object-cover"
+    class="main-img2"
   />
   </a>
   
   <a href="">
   <img
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLwPd2%2FbtsFlO6U3aK%2FZRjRDCwWgYLLICkaOUXH3K%2Fimg.png"
-    class="w-[402.5px] h-[450px] absolute left-[758px] top-[731px] object-cover"
+    class="main-img3"
   />
   </a>
 </div>

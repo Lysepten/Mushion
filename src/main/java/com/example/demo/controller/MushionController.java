@@ -22,5 +22,11 @@ public class MushionController {
 
 		return "/usr/member/MushionLogin";
 	}
+	
+	@RequestMapping("/usr/member/MushionJoin")
+	public String MushionJoin() {
+
+		return "/usr/member/MushionJoin";
+	}
 
 }

@@ -1,0 +1,526 @@
+/* 폰트 */
+.section {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.msfont {
+	font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.interfont {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+}
+
+.maintxsize {
+	font-size: 22px;
+}
+/* body */
+.msbody {
+	position: relative;
+width: 1903px;
+height: 1440px;
+
+background: #071015;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* login body */
+.loginbody {
+	background-color: black;
+}
+/* header */
+.msheader {
+width: 1903px;
+height: 140px;
+left: 0px;
+top: 0px;
+background: #0D1E27;
+}
+
+/* Mushion. logo */
+.test1 {
+position: absolute;
+width: 132px;
+height: 34px;
+left: 212px;
+top: 53px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 28px;
+line-height: 34px;
+
+color: white;
+}
+
+/* Mushion. logo img*/
+
+.ms-logo-img {
+position: absolute;
+width: 48px;
+height: 48px;
+left: 151px;
+top: 46px;
+
+background: url(DALL·E 2024-02-23 13.32.32 - Design a logo for 'mushion', a community site about fashion and music, incorporating a wind chime transformed into a necklace shape.jpg);
+border-radius: 50px;
+}
+
+
+/* Home */
+.ms-home {
+position: absolute;
+width: 68px;
+height: 29px;
+left: 685px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+
+/* News */
+.ms-news {
+	position: absolute;
+width: 59px;
+height: 29px;
+left: 1009px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+/* head-fashion-music */
+.ms-fm {
+	position: absolute;
+width: 105.7px;
+height: 29px;
+left: 800px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+
+/* more */
+.ms-more {
+	position: absolute;
+width: 92px;
+height: 29px;
+left: 1133px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+
+/* Group 1 */
+
+position: absolute;
+width: 122.08px;
+height: 29px;
+left: 820px;
+top: 55px;
+
+
+/* Mushion. */
+
+position: absolute;
+width: 448px;
+height: 83px;
+left: 161px;
+top: 309px;
+
+font-family: 'Barlow';
+font-style: normal;
+font-weight: 700;
+font-size: 118px;
+line-height: 100%;
+/* or 118px */
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+display: flex;
+align-items: center;
+letter-spacing: -0.02em;
+
+color: #E9EBF0;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. */
+
+position: absolute;
+width: 893px;
+height: 56px;
+left: 167px;
+top: 418px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 23px;
+line-height: 28px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+opacity: 0.75;
+
+
+/* Group 35 */
+
+position: absolute;
+width: 217px;
+height: 64px;
+left: 167px;
+top: 494px;
+
+opacity: 0.75;
+
+
+/* Rectangle 3 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 217px;
+height: 64px;
+left: 167px;
+top: 494px;
+
+border: 2px solid #028BAF;
+border-radius: 12px;
+
+
+/* Explore */
+
+position: absolute;
+width: 99px;
+height: 34px;
+left: 226px;
+top: 509px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+/* identical to box height */
+
+color: #028BAF;
+
+
+
+/* Group 36 */
+
+position: absolute;
+width: 196px;
+height: 64px;
+left: 419px;
+top: 494px;
+
+
+
+/* Ellipse 1 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 419px;
+top: 494px;
+
+opacity: 0.75;
+border: 2px solid #FFFFFF;
+
+
+/* Polygon 2 */
+
+position: absolute;
+width: 34px;
+height: 34px;
+left: 468px;
+top: 509px;
+
+background: #FFFFFF;
+opacity: 0.75;
+border-radius: 3px;
+transform: rotate(90deg);
+
+
+/* Live Demo... */
+
+position: absolute;
+width: 116px;
+height: 24px;
+left: 499px;
+top: 514px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+
+opacity: 0.75;
+
+
+/* search-interface-symbol 2 */
+
+position: absolute;
+width: 26px;
+height: 26px;
+left: 1567px;
+top: 57px;
+
+background: url(search-interface-symbol.png);
+opacity: 0.75;
+
+
+/* Group 35 */
+
+position: absolute;
+width: 540px;
+height: 29px;
+left: calc(50% - 540px/2 - 5px);
+top: 55px;
+
+opacity: 0.75;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+/* Polygon 1 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 12.08px;
+height: 7px;
+left: 942.08px;
+top: 72px;
+
+background: #FFFFFF;
+border: 1px solid #FFFFFF;
+transform: rotate(180deg);
+
+
+/* bag 4 */
+
+position: absolute;
+width: 26px;
+height: 26px;
+left: 1652px;
+top: 57px;
+
+background: url(bag.png);
+opacity: 0.75;
+
+
+/* Group 36 */
+
+position: absolute;
+width: 31px;
+height: 13px;
+left: 1737px;
+top: 63px;
+
+opacity: 0.75;
+
+
+/* Line 1 */
+
+position: absolute;
+width: 31px;
+height: 0px;
+left: 1737px;
+top: 63px;
+
+border: 4px solid #FFFFFF;
+
+
+/* Line 2 */
+
+position: absolute;
+width: 23px;
+height: 0px;
+left: 1745px;
+top: 76px;
+
+border: 4px solid #FFFFFF;
+
+
+/* Group 40 */
+
+position: absolute;
+width: 1574px;
+height: 48px;
+left: 173px;
+top: 1214px;
+
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+
+/* Group 12 */
+
+position: absolute;
+width: 1574px;
+height: 48px;
+left: 173px;
+top: 1214px;
+
+
+
+/* Fashion & Music */
+
+position: absolute;
+width: 420px;
+height: 48px;
+left: 759px;
+top: 1214px;
+
+font-family: 'Kite One';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 58px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Fashion */
+
+position: absolute;
+width: 420px;
+height: 48px;
+left: 1327px;
+top: 1214px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Music */
+
+position: absolute;
+width: 420px;
+height: 48px;
+left: 173px;
+top: 1214px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Select category */
+
+position: absolute;
+width: 245px;
+height: 39px;
+left: calc(50% - 245px/2 + 687.5px);
+top: 429px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+text-shadow: 0px 100px 80px rgba(0, 0, 0, 0.36), 0px 50.0488px 40.0391px rgba(0, 0, 0, 0.27372), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.234572), 0px 19.3198px 15.4559px rgba(0, 0, 0, 0.205522), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.18), 0px 7.88218px 6.30574px rgba(0, 0, 0, 0.154478), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.125428), 0px 1.99324px 1.59459px rgba(0, 0, 0, 0.0862802);
+
+
+/* qfqref 1 */
+
+position: absolute;
+width: 151.66px;
+height: 450px;
+left: 308px;
+top: 732px;
+
+background: url(qfqref.png);
+
+
+/* qwefvqwerfvqv3232 1 */
+
+position: absolute;
+width: 138.64px;
+height: 450px;
+left: 1461px;
+top: 732px;
+
+background: url(qwefvqwerfvqv3232.png);
+
+
+/* qwef134f134f143 1 */
+
+position: absolute;
+width: 402.5px;
+height: 450px;
+left: 759px;
+top: 732px;
+
+background: url(qwef134f134f143.png);

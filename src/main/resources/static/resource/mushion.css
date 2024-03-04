@@ -1,3 +1,12 @@
+/* 눈누 프리텐다드 폰트 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 클리어 픽스(사용 전) */
 .clearfix:before, .clearfix:after {
     display: block;
     content: '';
@@ -8,7 +17,7 @@
     clear:both;
 }
 
-/* 폰트 */
+/* 폰트2 */
 .section {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -30,6 +39,7 @@ font-weight: 900;
 .maintxsize {
 	font-size: 22px;
 }
+
 																			/* 헤더 */
 /* header */
 .msheader {
@@ -758,15 +768,17 @@ white-space: nowrap;
 }
 
 																				/* 회원가입 페이지 */
+.ms-join-img {
+	display: inline-block;
+}
 
 /* join-body */
 .ms-join-body {
 position: relative;
+height: 100%;
+background: #0D1E27;
 /* width: 1903px; */
 /* width: 80%; */
-height: 100%;
-
-background: #0D1E27;
 }
 
 /* join-body2 */
@@ -776,23 +788,24 @@ width: 80%;
 height: 100%;
 margin-left: auto;
 margin-right: auto;
-/* left: 217px; */
 background-color: #071015;
+/* left: 217px; */
 }
 
 
 /* 세로 메뉴 바 */
 .ms-join-body3 {
-/* position: absolute; */
 display: flex;
+justify-content: center;
 width: 50%;
 height: 100%;
-/* margin-left: auto; */
-/* margin-right: auto; */
+float: right;
+padding-top: 3%;
+/* position: absolute; */
+margin-left: auto;
+margin-right: auto;
 /* left: 100%; */
 /* right: 50%; */
-float: right;
-
 }
 
 
@@ -804,14 +817,90 @@ justify-content: space-between;
 align-items: flex-start;
 padding: 0px;
 gap: 10px;
-
-/* position: absolute; */
 width: 449px;
+border-radius: 35px;
+/* position: absolute; */
 /* height: 92px; */
 /* left: 898px; */
 /* top: 582px; */
+}
+
+
+
+/* content 틀 */
+ms-join-content-box {
+width: 449px;
+height: 875.9px;
+}
+
+/* 우리와 함께해요 👋 */
+.content-welcome-box-text {
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 2rem;
+line-height: 62px;
+color: #FFFFFF;
+}
+
+
+
+
+/* 커뮤니티에 오신 것을 환영합니다. 가입하고 함께 해요! */
+.content-welcome-box-text2 {
+display: block;
+font-family: 'Pretendard-Regular';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 30px;
+
+color: #94A3B8;
+padding-bottom: 3%;
+}
+
+/* id box */
+.ms-join-content-id-box {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+padding: 2% 0% 2% 0%;
+gap: 10px;
 
 border-radius: 35px;
+}
+/* id text */
+.ms-join-content-id-text {
+font-family: 'Pretendard-Regular';
+	font-weight: 400;
+	font-size: 15px;
+	color: #E4E4E7;
+}
+
+/* Frame 2 */
+.ms-join-content-inputbox {
+/* box-sizing: border-box; */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 17px 22px;
+/* gap: 13px; */
+
+margin: 0 auto;
+width: 100%;
+height: 60px;
+
+border: 1px solid #28A7FF;
+border-radius: 35px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
 }
 
 
@@ -839,31 +928,6 @@ color: #E4E4E7;
 /* Inside auto layout */
 flex: none;
 order: 0;
-flex-grow: 0;
-
-
-/* Frame 2 */
-
-box-sizing: border-box;
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 17px 22px;
-gap: 13px;
-
-margin: 0 auto;
-width: 449px;
-height: 60px;
-
-border: 1px solid #28A7FF;
-border-radius: 35px;
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
 flex-grow: 0;
 
 
@@ -912,15 +976,6 @@ order: 1;
 flex-grow: 0;
 
 
-/* content */
-
-position: absolute;
-width: 449px;
-height: 875.9px;
-left: 898px;
-top: 105px;
-
-
 
 /* Title */
 
@@ -929,48 +984,6 @@ width: 449px;
 height: 139.25px;
 left: 898px;
 top: 105px;
-
-
-
-/* 우리와 함께해요 👋 */
-
-position: absolute;
-width: 395px;
-height: 71px;
-left: 898px;
-top: 105px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 34px;
-line-height: 62px;
-/* or 182% */
-letter-spacing: -2px;
-
-/* base/white */
-color: #FFFFFF;
-
-
-
-/* 커뮤니티에 오신 것을 환영합니다. 가입하고 함께 해요! */
-
-position: absolute;
-width: 449px;
-height: 68.61px;
-left: 898px;
-top: 175.63px;
-
-/* Regular/18px */
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 30px;
-/* or 167% */
-
-/* blue-gray/400 */
-color: #94A3B8;
 
 
 
@@ -1331,21 +1344,6 @@ flex-grow: 0;
 
 /* Input/Text Style 5 */
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-padding: 0px;
-gap: 10px;
-
-position: absolute;
-width: 449px;
-height: 92px;
-left: 898px;
-top: 273px;
-
-border-radius: 35px;
 
 
 /* Input Label */

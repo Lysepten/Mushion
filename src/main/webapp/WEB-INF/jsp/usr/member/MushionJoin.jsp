@@ -48,36 +48,23 @@
   <div class="ms-join-body2">
       <img
       src="unsplash_or0uertvyd0-1.png"
-      class=""
+      class="ms-join-img"
     />
     <div class="ms-join-body3">
-    
-      <div class="w-[449px] h-[875.9px]">
-        <div class="w-[449px] h-[139.25px]">
-          <p
-            class="w-[395px] h-[71px] left-[898px] top-[105px] text-[34px] text-left text-white"
-          >
-            <span class="w-[395px] h-[71px] text-[34px] text-left text-white">우리와 함께해요</span
-            ><span class="w-[395px] h-[71px] text-[34px] font-semibold text-left text-white">
-              👋</span
+      <div class="content-main-box">
+        <div class="content-welcome-box">
+            <span class="content-welcome-box-text">우리와 함께해요</span
+            ><span class="content-welcome-box-text">👋</span
             >
-          </p>
-          <p
-            class="w-[449px] h-[68.61px] left-[898px] top-[175.63px] text-lg text-left text-slate-400"
-          >
-            <span class="w-[449px] h-[68.61px] text-lg text-left text-slate-400"
-              >커뮤니티에 오신 것을 환영합니다. </span
-            ><br /><span class="w-[449px] h-[68.61px] text-lg text-left text-slate-400"
-              >가입하고 함께 해요!</span
-            >
-          </p>
+            <span class="content-welcome-box-text2"
+              >커뮤니티에 오신 것을 환영합니다.<br />가입하고 함께 해요! </span>
         </div>
                   <div
-            class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[273px] rounded-[35px]"
+            class="ms-join-content-id-box"
           >
-            <p class="flex-grow-0 flex-shrink-0 text-sm text-left text-zinc-200">아이디</p>
+            <p class="ms-join-content-id-text">아이디</p>
             <div
-              class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
+              class="ms-join-content-inputbox"
             >
               <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
                 아이디를 입력해주세요
@@ -120,7 +107,7 @@
           </p>
         </div>
       </div>
-        <div class="w-[449px] h-[707.9px]">
+<!--         <div class="w-[449px] h-[707.9px]"> -->
           <div
             class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[788px] rounded-[35px]"
           >
@@ -160,7 +147,7 @@
               </p>
             </div>
           </div>
-        </div> 	
+<!--         </div> 	 -->
       </div>
     </div>
   </div>

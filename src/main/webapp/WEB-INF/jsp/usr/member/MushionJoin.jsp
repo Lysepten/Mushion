@@ -60,82 +60,78 @@
               >커뮤니티에 오신 것을 환영합니다.<br />가입하고 함께 해요! </span>
         </div>
                   <div
-            class="ms-join-content-id-box"
+            class="ms-join-content-box"
           >
-            <p class="ms-join-content-id-text">아이디</p>
+            <p class="ms-join-content-text">아이디</p>
             <div
               class="ms-join-content-inputbox"
             >
-              <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
+              <p class="ms-join-content-inputtext">
                 아이디를 입력해주세요
               </p>
             </div>
           </div>
                 <div
-      class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[380px] rounded-[35px]"
+      class="ms-join-content-box"
     >
-      <p class="flex-grow-0 flex-shrink-0 text-sm text-left text-zinc-200">비밀번호</p>
+      <p class="ms-join-content-text">비밀번호</p>
       <div
-        class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
+        class="ms-join-content-inputbox"
       >
-        <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
+        <p class="ms-join-content-inputtext">
           비밀번호를 입력해주세요!
         </p>
       </div>
     </div>
               <div
-            class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[482px] rounded-[35px]"
+            class="ms-join-content-box"
           >
-            <p class="flex-grow-0 flex-shrink-0 text-sm text-left text-zinc-200">이름</p>
+            <p class="ms-join-content-text">이름</p>
             <div
-              class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
+              class="ms-join-content-inputbox"
             >
-              <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
+              <p class="ms-join-content-inputtext">
                 이름을 입력해주세요
               </p>
             </div>
           </div>
         <div
-        class="ms-join-nickname-body"
+        class="ms-join-content-box"
       >
-        <p class="flex-grow-0 flex-shrink-0 text-sm text-left text-zinc-200">닉네임</p>
+        <p class="ms-join-content-text">닉네임</p>
         <div
-          class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
+          class="ms-join-content-inputbox"
         >
-          <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
+          <p class="ms-join-content-inputtext">
             닉네임을 입력해주세요
           </p>
         </div>
       </div>
-<!--         <div class="w-[449px] h-[707.9px]"> -->
           <div
-            class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[788px] rounded-[35px]"
+            class="ms-join-content-box"
           >
-            <p class="flex-grow-0 flex-shrink-0 text-sm text-left text-zinc-200">이메일</p>
+            <p class="ms-join-content-text">이메일</p>
             <div
-              class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
+              class="ms-join-content-inputbox"
             >
-              <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
+              <p class="ms-join-content-inputtext">
                 이메일을 입력해주세요
               </p>
             </div>
           </div>
           <div
-            class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[685px] rounded-[35px]"
+            class="ms-join-content-box"
           >
-            <p class="flex-grow-0 flex-shrink-0 text-sm text-left text-zinc-200">전화번호</p>
+            <p class="ms-join-content-text">전화번호</p>
             <div
-              class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
+              class="ms-join-content-inputbox"
             >
-              <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
+              <p class="ms-join-content-inputtext">
                 전화번호를 입력해주세요
               </p>
             </div>
           </div>
 
-          <div
-            class="flex flex-col justify-between items-start w-[449px] h-[92px] left-[898px] top-[465.95px] rounded-[35px]"
-          ></div>
           <div
             class="flex flex-col justify-center items-center w-[201px] h-[62.9px] left-[898px] top-[918px] gap-2.5 p-4 rounded-[50px] bg-[#28a7ff]"
           >
@@ -147,7 +143,6 @@
               </p>
             </div>
           </div>
-<!--         </div> 	 -->
       </div>
     </div>
   </div>

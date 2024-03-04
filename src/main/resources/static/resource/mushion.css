@@ -802,35 +802,34 @@ height: 100%;
 float: right;
 padding-top: 3%;
 /* position: absolute; */
-margin-left: auto;
-margin-right: auto;
 /* left: 100%; */
 /* right: 50%; */
 }
+.content-main-box {
+	width: 70%;
+	padding-left: 5%;
+	padding-right: 5%
+	
+}
+.content-welcome-box {
+	width: 100%;
+}
 
-
-/* nickname */
-.ms-join-nickname-body {
+.ms-join-width-box {
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: flex-start;
 padding: 0px;
 gap: 10px;
+
+position: absolute;
 width: 449px;
+height: 92px;
+left: 898px;
+top: 465.95px;
+
 border-radius: 35px;
-/* position: absolute; */
-/* height: 92px; */
-/* left: 898px; */
-/* top: 582px; */
-}
-
-
-
-/* content 틀 */
-ms-join-content-box {
-width: 449px;
-height: 875.9px;
 }
 
 /* 우리와 함께해요 👋 */
@@ -859,49 +858,48 @@ color: #94A3B8;
 padding-bottom: 3%;
 }
 
-/* id box */
-.ms-join-content-id-box {
+/* content box */
+.ms-join-content-box {
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: flex-start;
-padding: 2% 0% 2% 0%;
-gap: 10px;
+padding: 0% 0% 2% 0%;
+gap: 5px;
 
 border-radius: 35px;
 }
-/* id text */
-.ms-join-content-id-text {
+/* content text */
+.ms-join-content-text {
 font-family: 'Pretendard-Regular';
-	font-weight: 400;
-	font-size: 15px;
-	color: #E4E4E7;
+font-weight: 400;
+font-size: 15px;
+color: #E4E4E7;
 }
 
-/* Frame 2 */
+/* content input box */
 .ms-join-content-inputbox {
-/* box-sizing: border-box; */
-
-/* Auto layout */
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 17px 22px;
-/* gap: 13px; */
 
-margin: 0 auto;
 width: 100%;
-height: 60px;
+height: 100%;
 
 border: 1px solid #28A7FF;
-border-radius: 35px;
+border-radius: 15px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
 }
+/* content input text */
+.ms-join-content-inputtext {
+font-family: 'Pretendard-Regular';
+font-weight: 400;
+font-size: 16px;
+color: #94A3B8;
+}
+
+
 
 
 
@@ -1443,22 +1441,6 @@ flex-grow: 0;
 
 
 /* Input/Text Style 4 */
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-padding: 0px;
-gap: 10px;
-
-position: absolute;
-width: 449px;
-height: 92px;
-left: 898px;
-top: 465.95px;
-
-border-radius: 35px;
 
 
 /* Input Label */

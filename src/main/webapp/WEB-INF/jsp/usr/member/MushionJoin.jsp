@@ -80,7 +80,7 @@
         class="ms-join-content-inputbox"
       >
         <p class="ms-join-content-inputtext">
-          비밀번호를 입력해주세요!
+          비밀번호를 입력해주세요
         </p>
       </div>
     </div>

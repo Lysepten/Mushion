@@ -138,6 +138,8 @@
                 계정 만들기
               </p>
           </div>
+          <div><a class="ms-join-back-btn" href="/usr/home/Mushion">이전 페이지로 이동</a>
+          <a class="ms-join-home-btn" href="/usr/home/main">홈으로</a></div>
           </div>
       </div>
     </div>

@@ -46,10 +46,11 @@
 
 <div class="ms-join-body">
   <div class="ms-join-body2">
+  		<div class="ms-join-imgbox">
       <img
-      src="unsplash_or0uertvyd0-1.png"
+      src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcuD0Jt%2FbtsFkUUqiCH%2F2AAHbFgq6UScpEPJUe7Yw0%2Fimg.png"
       class="ms-join-img"
-    />
+    /></div>
     <div class="ms-join-body3">
       <div class="content-main-box">
         <div class="content-welcome-box">
@@ -130,18 +131,13 @@
                 전화번호를 입력해주세요
               </p>
             </div>
-          </div>
-
-          <div
-            class="flex flex-col justify-center items-center w-[201px] h-[62.9px] left-[898px] top-[918px] gap-2.5 p-4 rounded-[50px] bg-[#28a7ff]"
-          >
             <div
-              class="flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-[9px]"
-            >
-              <p class="flex-grow-0 flex-shrink-0 text-base font-semibold text-center text-white">
+            class="ms-join-create-button"
+          >
+              <p class="ms-join-create-text">
                 계정 만들기
               </p>
-            </div>
+          </div>
           </div>
       </div>
     </div>

@@ -168,7 +168,7 @@
         class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[60px] relative gap-[13px] px-[22px] py-[17px] rounded-[35px] border border-[#28a7ff]"
       >
         <p class="flex-grow-0 flex-shrink-0 w-[227px] text-base text-left text-slate-400">
-          비밀번호를 입력해주세요
+          비밀번호를 입력해주세요!
         </p>
       </div>
     </div>

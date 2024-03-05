@@ -48,17 +48,12 @@ function toggleTheme() {
 
 
 <main>
-    <div class="relative flex flex-col h-[100vh] items-center justify-center bg-white dark:bg-black transition-bg">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="jumbo absolute -inset-[10px] opacity-50"></div>
+    <div class="ms-home-charm-body bg-white dark:bg-black transition-bg">
+        <div class="ms-home-charm-body2">
+            <div class="jumbo ms-home-charm-body2"></div>
         </div>
-        <h1 class="relative flex items-center text-5xl font-bold text-gray-800 dark:text-white dark:opacity-80 transition-colors">
-            <a href="../home/Mushion" class="msfont">Mushion</a>
-            <a href="../home/Mushion">
-            <span class="ml-1 rounded-xl bg-current p-2 text-[0.7em] leading-none">
-                <span class="text-white dark:text-black">UI</span>
-            </span>
-            </a>
+        <h1 class="ms-home-charm-body3 dark:text-white dark:opacity-80">
+            <a href="../home/Mushion" class="msfont">Mushion.</a>
         </h1>
     </div>
 </main>

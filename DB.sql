@@ -430,3 +430,48 @@ SELECT IFNULL(SUM(RP.point),0)
 			WHERE RP.relTypeCode = 'article'
 			AND RP.relId = 1
 			AND RP.memberId = 2;
+			
+DROP DATABASE IF EXISTS Mushion;
+
+CREATE DATABASE Mushion;
+
+USE Mushion;
+
+CREATE TABLE FashionStyle (
+    id INT AUTO_INCREMENT,
+    styleName VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+INSERT INTO FashionStyle (styleName)
+VALUES ('Goth'), ('Grunge'), ('Retro'), ('Resort'), ('Minimal'), 
+       ('Biker'), ('Bohemian'), ('Vintage'), ('Street'), ('Sporty'), 
+       ('Casual'), ('Classic'), ('Punk'), ('Hippie');
+       
+       
+CREATE TABLE musicType (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    typeName VARCHAR(50)
+);
+
+DROP TABLE musicType;
+
+INSERT INTO musicType (typeName) VALUES
+('Dance'),
+('Reggae'),
+('Rock'),
+('Metal'),
+('Blues'),
+('Rhythm and Blues'),
+('Jazz'),
+('Electronic'),
+('Country'),
+('Classical'),
+('Pop'),
+('Punk'),
+('Folk'),
+('Hip-hop');
+
+SELECT * FROM FashionStyle;
+
+SELECT * FROM musicType;

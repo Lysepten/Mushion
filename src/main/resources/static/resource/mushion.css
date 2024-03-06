@@ -943,10 +943,12 @@ background: #28A7FF;
 border-radius: 50px;
 }
 
+/* join create text */
 .ms-join-create-text {
 color: white;
 font-family: 'Pretendard-Regular';
 }
+/* join back button */
 .ms-join-back-btn {
 position: absolute;
 width: 89px;
@@ -963,6 +965,7 @@ line-height: 28px;
 color: #A9ACBB;
 white-space: nowrap;
 }
+/* join home button */
 .ms-join-home-btn {
 position: absolute;
 width: 89px;

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UsrAPITestController {
@@ -29,5 +30,11 @@ public class UsrAPITestController {
 
 		return "/usr/home/APITest4";
 	}
+	
+	@RequestMapping("/usr/home/keyword")
+	@ResponseBody
+	public String keyword(String keyword) {
 
+		return keyword;
+	}
 }

@@ -9,6 +9,7 @@ import com.example.demo.repository.ArticleRepository;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Article;
 import com.example.demo.vo.ResultData;
+import com.example.demo.vo.topdb;
 
 @Service
 public class ArticleService {
@@ -117,6 +118,12 @@ public class ArticleService {
 		return articleRepository.getForPrintArticles(boardId, limitFrom, limitTake, searchKeywordTypeCode,
 				searchKeyword);
 	}
+	
+	public List<topdb> getForMushionSuggestList() {
+
+		return articleRepository.getForMushionSuggestList();
+	}
+	
 
 	public ResultData increaseGoodReactionPoint(int relId) {
 		int affectedRow = articleRepository.increaseGoodReactionPoint(relId);
@@ -165,5 +172,7 @@ public class ArticleService {
 	public int getBadRP(int relId) {
 		return articleRepository.getBadRP(relId);
 	}
+
+
 
 }

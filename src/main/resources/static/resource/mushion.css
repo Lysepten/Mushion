@@ -17,6 +17,14 @@
     clear:both;
 }
 
+/* 노멀라이징 테스트 */
+.section-body {
+	background-color: black;
+}
+
+html {
+	background-color: black;
+}
 /* 폰트2 */
 .section {
   font-family: "Roboto", sans-serif;

@@ -1,15 +1,20 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.vo.Member;
-
-import jakarta.servlet.http.HttpServletRequest;
+import com.example.demo.service.ArticleService;
+import com.example.demo.vo.topdb;
 
 @Controller
 public class MushionController {
+	
+	@Autowired
+	private ArticleService articleService;
 
 	@RequestMapping("/usr/home/Mushion")
 	public String Mushion() {
@@ -28,5 +33,16 @@ public class MushionController {
 
 		return "/usr/member/MushionJoin";
 	}
-
+	
+	@RequestMapping("/usr/article/MushionSuggestList")
+	public String suggest(Model model) {
+		
+		List<topdb> topdbs = articleService.getForMushionSuggestList();
+		
+		model.addAttribute("topdbs", topdbs);
+		
+		return "/usr/article/MushionSuggestList";
+	}
+	
+	
 }

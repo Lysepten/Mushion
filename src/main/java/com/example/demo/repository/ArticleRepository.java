@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.Article;
+import com.example.demo.vo.topdb;
 
 @Mapper
 public interface ArticleRepository {
@@ -45,6 +46,7 @@ public interface ArticleRepository {
 			</script>
 				""")
 	public Article getForPrintArticle(int id);
+	
 
 	@Delete("DELETE FROM article WHERE id = #{id}")
 	public void deleteArticle(int id);
@@ -203,4 +205,11 @@ public interface ArticleRepository {
 			""")
 	public int getBadRP(int relId);
 
+
+	@Select("""
+			SELECT *
+			FROM topdb
+			""")
+	public List<topdb> getForMushionSuggestList();
+	
 }

@@ -62,9 +62,6 @@ public class UsrArticleController {
 			return rq.historyBackOnView("없는 게시판이야");
 		}
 
-		// 한페이지에 글 10개씩이야
-		// 글 20개 -> 2 page
-		// 글 24개 -> 3 page
 		int itemsInAPage = 10;
 
 		int pagesCount = (int) Math.ceil(articlesCount / (double) itemsInAPage);

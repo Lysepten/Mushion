@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%-- <c:set var="pageTitle" value="MAIN"></c:set> --%>
 <%-- <%@ include file="../common/head.jspf"%> --%>
-<head>
+
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
@@ -19,14 +19,9 @@
 
 <!-- 제이쿼리 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
 
 <body>
 	<h1 style="font-size: 2rem;">${pageTitle }</h1>
-
-
-
-
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script>
@@ -44,9 +39,6 @@ function toggleTheme() {
 }
 </script>
 <body class="dark">
-
-
-
 <main>
     <div class="ms-home-charm-body bg-white dark:bg-black transition-bg">
         <div class="ms-home-charm-body2">

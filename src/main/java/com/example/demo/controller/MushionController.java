@@ -44,5 +44,4 @@ public class MushionController {
 		return "/usr/article/MushionSuggestList";
 	}
 	
-	
 }

@@ -63,7 +63,7 @@
  <a href="../home/main" class="ms-home">홈</a>
  <a href="" class="ms-news">뉴스</a>
  <a href="" class="ms-more">더보기</a>
- <a href="" class="ms-fm">패션 & 뮤직</a>
+ <a href="/usr/article/MushionSuggestList" class="ms-fm">패션 & 뮤직</a>
  
  <a href="/usr/member/MushionLogin" class="ms-login">로그인</a>
  <a href="/usr/member/MushionJoin" class="ms-join">회원가입</a>

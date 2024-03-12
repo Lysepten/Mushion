@@ -206,42 +206,6 @@ relId = 1,
 ALTER TABLE article ADD COLUMN goodReactionPoint INT(10) UNSIGNED NOT NULL DEFAULT 0;
 ALTER TABLE article ADD COLUMN badReactionPoint INT(10) UNSIGNED NOT NULL DEFAULT 0;
 
-CREATE TABLE `reply`(
-    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    regDate DATETIME NOT NULL,
-    updateDate DATETIME NOT NULL,
-    memberId INT(10) UNSIGNED NOT NULL,
-    relTypeCode CHAR(50) NOT NULL,
-    relId INT(10) NOT NULL,
-    content TEXT NOT NULL
-);
-
-INSERT INTO `reply`
-SET regDate = NOW(),
-updateDate = NOW(),
-relTypeCode = 'article',
-relId = 1,
-memberId = 1,
-content = 'good~!';
-
-INSERT INTO `reply`
-SET regDate = NOW(),
-updateDate = NOW(),
-relTypeCode = 'article',
-relId = 1,
-memberId = 2,
-content = 'hi';
-
-INSERT INTO `reply`
-SET regDate = NOW(),
-updateDate = NOW(),
-relTypeCode = 'article',
-relId = 1,
-memberId = 3,
-content = 'bad';
-			
-
-
 # update join -> 기존 게시물의 good,bad RP 값을 RP 테이블에서 가져온 데이터로 채운다
 UPDATE article AS A
 INNER JOIN (
@@ -255,34 +219,133 @@ ON A.id = RP_SUM.relId
 SET A.goodReactionPoint = RP_SUM.goodReactionPoint,
 A.badReactionPoint = RP_SUM.badReactionPoint;
 
+# reply 테이블 생성
+CREATE TABLE reply (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    memberId INT(10) UNSIGNED NOT NULL,
+    relTypeCode CHAR(50) NOT NULL COMMENT '관련 데이터 타입 코드',
+    relId INT(10) NOT NULL COMMENT '관련 데이터 번호',
+    `body`TEXT NOT NULL
+);
+
+# 2번 회원이 1번 글에 댓글 작성
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'article',
+relId = 1,
+`body` = '댓글 1';
+
+# 2번 회원이 1번 글에 댓글 작성
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'article',
+relId = 1,
+`body` = '댓글 2';
+
+# 3번 회원이 1번 글에 댓글 작성
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 3,
+relTypeCode = 'article',
+relId = 1,
+`body` = '댓글 3';
+
+# 3번 회원이 1번 글에 댓글 작성
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'article',
+relId = 2,
+`body` = '댓글 4';
+
+# reply 테이블에 좋아요 관련 컬럼 추가
+ALTER TABLE reply ADD COLUMN goodReactionPoint INT(10) UNSIGNED NOT NULL DEFAULT 0;
+ALTER TABLE reply ADD COLUMN badReactionPoint INT(10) UNSIGNED NOT NULL DEFAULT 0;
+
+# reactionPoint 테스트 데이터 생성
+# 1번 회원이 1번 댓글에 싫어요
+INSERT INTO reactionPoint
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 1,
+relTypeCode = 'reply',
+relId = 1,
+`point` = -1;
+
+# 1번 회원이 2번 댓글에 좋아요
+INSERT INTO reactionPoint
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 1,
+relTypeCode = 'reply',
+relId = 2,
+`point` = 1;
+
+# 2번 회원이 1번 댓글에 싫어요
+INSERT INTO reactionPoint
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'reply',
+relId = 1,
+`point` = -1;
+
+# 2번 회원이 2번 댓글에 싫어요
+INSERT INTO reactionPoint
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'reply',
+relId = 2,
+`point` = -1;
+
+# 3번 회원이 1번 댓글에 좋아요
+INSERT INTO reactionPoint
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 3,
+relTypeCode = 'reply',
+relId = 1,
+`point` = 1;
+
+# update join -> 기존 게시물의 good,bad RP 값을 RP 테이블에서 가져온 데이터로 채운다
+UPDATE reply AS R
+INNER JOIN (
+    SELECT RP.relTypeCode,RP.relId,
+    SUM(IF(RP.point > 0, RP.point, 0)) AS goodReactionPoint,
+    SUM(IF(RP.point < 0, RP.point * -1, 0)) AS badReactionPoint
+    FROM reactionPoint AS RP
+    GROUP BY RP.relTypeCode, RP.relId
+) AS RP_SUM
+ON R.id = RP_SUM.relId
+SET R.goodReactionPoint = RP_SUM.goodReactionPoint,
+R.badReactionPoint = RP_SUM.badReactionPoint;
 
 ###############################################
 
 SELECT * FROM article;
 
-SELECT * FROM reactionPoint;
-
 SELECT * FROM `member`;
 
 SELECT * FROM `board`;
 
-SELECT * FROM reply;
+SELECT * FROM reactionPoint;
+
+SELECT * FROM `reply`;
 
 
 
-SELECT R.*, M.nickname
-FROM `reply` AS R
-INNER JOIN `member` AS M
-ON R.memberId = M.id
-WHERE relTypeCode = 'article'
-AND relId = 1;
-
-SELECT * FROM reply
-WHERE relTypeCode = 'article'
-AND relId = 1
-ORDER BY id DESC
-LIMIT 1; 	
-
+SELECT goodReactionPoint
+FROM article 
+WHERE id = 1
 
 INSERT INTO article
 (
@@ -290,6 +353,13 @@ INSERT INTO article
 )
 SELECT NOW(),NOW(), FLOOR(RAND() * 2) + 2, FLOOR(RAND() * 3) + 1, CONCAT('제목_',RAND()), CONCAT('내용_',RAND())
 FROM article;
+
+SELECT IFNULL(SUM(RP.point),0)
+FROM reactionPoint AS RP
+WHERE RP.relTypeCode = 'article'
+AND RP.relId = 3
+AND RP.memberId = 1;
+
 
 UPDATE article 
 SET title = '제목5'
@@ -388,7 +458,6 @@ ON A.id = RP.relId AND RP.relTypeCode = 'article'
 GROUP BY A.id
 ORDER BY A.id DESC;
 
-
 SELECT *, COUNT(*)
 FROM reactionPoint AS RP
 GROUP BY RP.relTypeCode,RP.relId
@@ -404,38 +473,7 @@ SUM(IF(RP.point < 0,RP.point * -1,0)) AS badReactionPoint
 FROM reactionPoint AS RP
 GROUP BY RP.relTypeCode,RP.relId
 
-SELECT IFNULL(SUM(RP.point),0)
-			FROM reactionPoint AS RP
-			WHERE RP.relTypeCode = 'article'
-			AND RP.relId = 1
-			AND RP.memberId = 1
-			
-INSERT INTO reactionPoint
-			SET regDate = NOW(),
-			updateDate = NOW(),
-			relTypeCode = 'article',
-			relId = 1,
-			memberId = 1,
-			`point` = -1
-			
-SELECT * FROM reactionPoint
-
-DELETE FROM reactionPoint
-WHERE memberId = 2
-AND relTypeCode = 'article'
-AND relId = 1;
-
-SELECT IFNULL(SUM(RP.point),0)
-			FROM reactionPoint AS RP
-			WHERE RP.relTypeCode = 'article'
-			AND RP.relId = 1
-			AND RP.memberId = 2;
-			
-DROP DATABASE IF EXISTS Mushion;
-
-CREATE DATABASE Mushion;
-
-USE Mushion;
+# ================================================================= 
 
 CREATE TABLE FashionStyle (
     id INT AUTO_INCREMENT,
@@ -443,35 +481,72 @@ CREATE TABLE FashionStyle (
     PRIMARY KEY (id)
 );
 
-INSERT INTO FashionStyle (styleName)
-VALUES ('Goth'), ('Grunge'), ('Retro'), ('Resort'), ('Minimal'), 
-       ('Biker'), ('Bohemian'), ('Vintage'), ('Street'), ('Sporty'), 
-       ('Casual'), ('Classic'), ('Punk'), ('Hippie');
-       
-       
+INSERT INTO FashionStyle (styleName) VALUES
+('Biker'),
+('Bohemian'),
+('Casual'),
+('Classic'),
+('Goth'),
+('Grunge'),
+('Hippie'),
+('Minimal'),
+('Punk'),
+('Resort'),
+('Retro'),
+('Sporty'),
+('Street'),
+('Vintage');
+
 CREATE TABLE musicType (
     id INT AUTO_INCREMENT PRIMARY KEY,
     typeName VARCHAR(50)
 );
 
-DROP TABLE musicType;
-
 INSERT INTO musicType (typeName) VALUES
-('Dance'),
-('Reggae'),
-('Rock'),
-('Metal'),
 ('Blues'),
-('Rhythm and Blues'),
-('Jazz'),
-('Electronic'),
-('Country'),
 ('Classical'),
+('Country'),
+('Dance'),
+('Electronic'),
+('Folk'),
+('Hip-hop'),
+('Jazz'),
+('Metal'),
 ('Pop'),
 ('Punk'),
-('Folk'),
-('Hip-hop');
+('Reggae'),
+('Rhythm and Blues'),
+('Rock');
 
 SELECT * FROM FashionStyle;
 
 SELECT * FROM musicType;
+
+SELECT F.styleName, M.typeName, (SELECT typeName FROM musicType WHERE id = 9) AS typeName
+FROM FashionStyle AS F
+JOIN musicType AS M
+WHERE F.id = 1 AND M.id = 14
+
+SELECT F.styleName, M.typeName, E.typeName
+FROM FashionStyle AS F
+JOIN musicType AS M
+JOIN musicType AS E
+WHERE F.id = 1 AND M.id = 14 AND E.id = 9;
+
+# =======================================================================================
+
+CREATE TABLE fashionMusic (
+	id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	
+);
+
+DROP TABLE topdb;
+
+CREATE TABLE topdb (
+	id INT PRIMARY KEY NOT NULL,
+	genre VARCHAR(50),
+	artist VARCHAR(50),
+	track VARCHAR(50)
+);
+
+SELECT * FROM topdb;

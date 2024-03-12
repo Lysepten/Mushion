@@ -222,10 +222,10 @@ body {
 }
 .ms-home-charm-body2 {
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	bottom: 10px;
-	left: 10px;
+/* 	top: 10px; */
+/* 	right: 10px; */
+/* 	bottom: 10px; */
+/* 	left: 10px; */
 	opacity: 0.7;
 }
 .ms-home-charm-body3 {

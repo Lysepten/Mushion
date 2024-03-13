@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.service.ArticleService;
 import com.example.demo.vo.topdb;
 
+import lombok.RequiredArgsConstructor;
 @Controller
 public class MushionController {
 	
@@ -44,4 +46,19 @@ public class MushionController {
 		return "/usr/article/MushionSuggestList";
 	}
 	
+	@RequestMapping("/usr/home/KakaoLoginAPI")
+	public String KakaoLoginAPI() {
+
+		
+		return "/usr/home/KakaoLoginAPI";
+	}
+	
+	@RequestMapping("/usr/home/KakaoLogin")
+	public String KakaoLoginAPI(@RequestParam String code, Model model) {
+		System.err.println("code name : " + code);
+		
+		model.addAttribute("code", code);
+		
+		return "/usr/home/KakaoLogin";
+	}
 }

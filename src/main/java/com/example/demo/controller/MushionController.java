@@ -71,7 +71,7 @@ public class MushionController {
 	
 	@RequestMapping("/usr/home/SpotifyRedirect")
 	public String SpotifyRedirect(@RequestParam String code, Model model) {
-		System.err.println("code name : " + code);
+//		System.err.println("code name : " + code);
 		
 		model.addAttribute("code", code);
 		

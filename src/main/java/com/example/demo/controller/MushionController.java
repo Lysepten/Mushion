@@ -61,4 +61,20 @@ public class MushionController {
 		
 		return "/usr/home/KakaoLogin";
 	}
+	
+	@RequestMapping("/usr/home/SpotifyAPI")
+	public String SpotifyAPI() {
+
+		
+		return "/usr/home/SpotifyAPI";
+	}
+	
+	@RequestMapping("/usr/home/SpotifyRedirect")
+	public String SpotifyRedirect(@RequestParam String code, Model model) {
+		System.err.println("code name : " + code);
+		
+		model.addAttribute("code", code);
+		
+		return "/usr/home/SpotifyRedirect";
+	}
 }

@@ -12,9 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html>
-
 <script>
 // 필요한 변수들을 설정합니다.
 var getdeviceId = null;
@@ -51,125 +48,112 @@ $.ajax({
     // 액세스 토큰을 사용하여 API 호출 등 필요한 작업을 수행합니다.
     // ...
     console.log(accessToken);
-    console.log(expiresIn);
-    console.log(refreshToken);
-    console.log("토큰 타입 : "+ tokenType);
+//     console.log(expiresIn);
+//     console.log(refreshToken);
+//     console.log("토큰 타입 : "+ tokenType);
     
     testToken = accessToken;
-    console.log("테스트 토큰 실험중 "+ testToken + "잘 나오나");
+//     console.log("테스트 토큰 실험중 "+ testToken + "잘 나오나");
 	
     const script = document.createElement("script");
     script.src = "https://sdk.scdn.co/spotify-player.js";
     script.async = true;
 
     document.body.appendChild(script);
+    
+
+    window.onSpotifyWebPlaybackSDKReady = () => {
+        const player = new Spotify.Player({
+            name: 'Web Playback SDK Quick Start Player',
+            getOAuthToken: cb => { cb(accessToken); },
+            volume: 0.5
+        });
+
+        // Ready
+        player.addListener('ready', ({ device_id }) => {
+            console.log('Ready with Device ID 1', device_id);
+            getdeviceId = device_id;
+            console.log("디바이스 ID : "+ getdeviceId);
+            
+            BearerAuthorizationCode = 'Bearer '+ accessToken;
+            console.log("BearerAuthorizationCode : " + BearerAuthorizationCode)
+            
+            // Web Transfer Playback
+				$.ajax({
+ 				 url: 'https://api.spotify.com/v1/me/player',
+ 				type: 'PUT',
+ 			 headers: {
+ 				   'Authorization': BearerAuthorizationCode,
+  			  'Content-Type': 'application/json'
+ 				 },
+				  data: JSON.stringify({
+ 			   device_ids: [device_id],
+ 				   play: false
+ 				 }),
+ 			 success: function(response) {
+ 				   console.log(response);
+ 			 },
+ 			 error: function(error) {
+ 			   console.error('Error:', error);
+			  }
+				});
+
+         // Web Transfer Playback end
+           
+         
+        });
+
+        // Not Ready
+        player.addListener('not_ready', ({ device_id }) => {
+            console.log('Device ID has gone offline', device_id);
+        });
+        
+        player.addListener('not_ready', ({ device_id }) => {
+        	  console.log('Device ID is not ready for playback', device_id);
+        	});
+
+        player.addListener('initialization_error', ({ message }) => {
+            console.error(message);
+        });
+
+        player.addListener('authentication_error', ({ message }) => {
+            console.error(message);
+        });
+
+        player.addListener('account_error', ({ message }) => {
+            console.error(message);
+        });
+		
+        document.getElementById('togglePlay').onclick = function() {
+          player.togglePlay();
+          
+          // playbackState
+          player.getCurrentState().then(state => {
+        	  if (!state) {
+        	    console.error('User is not playing music through the Web Playback SDK');
+        	    return;
+        	  }
+
+        	  var current_track = state.track_window.current_track;
+        	  var next_track = state.track_window.next_tracks[0];
+
+        	  console.log('Currently Playing', current_track);
+        	  console.log('Playing Next', next_track);
+        	});
+          // playbackState end
+          
+        };
+        
+        player.connect();
+    }
+
+    
   },
   error: function(error) {
     // 요청이 실패한 경우 에러 처리를 수행합니다.
     console.error('액세스 토큰 요청 실패:', error);
   }
 });
-
-
-
-
-window.onSpotifyWebPlaybackSDKReady = () => {
-	const token = 'BQDNDeZ_Rpwvf4t1EGDQiMRPns6scdXlbnzUCABE3TsKrpfqa3KwZSJdA9WDhh0FKI_yDWsAqK-fTaYDwzrYEykMCiCNwheBya6HUZIyNqimqiMWD-0mkOm-aAt4W77OYsBXRkyKuWUoWCv89Rf88WHKPPpsiDLds_j7i58NQ6P1ti1k56yEaT3yVtmIulEm_0uD6XDm1sdyRXqM56QL31BXMK5biRf7';
-    const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
-        getOAuthToken: cb => { cb(token); },
-        volume: 0.5
-    });
-
-    // Ready
-    player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID 1', device_id);
-        getdeviceId = device_id;
-        console.log(getdeviceId + 2);
-    });
-
-    // Not Ready
-    player.addListener('not_ready', ({ device_id }) => {
-        console.log('Device ID has gone offline', device_id);
-    });
-
-    player.addListener('initialization_error', ({ message }) => {
-        console.error(message);
-    });
-
-    player.addListener('authentication_error', ({ message }) => {
-        console.error(message);
-    });
-
-    player.addListener('account_error', ({ message }) => {
-        console.error(message);
-    });
-
-    document.getElementById('togglePlay').onclick = function() {
-      player.togglePlay();
-    };
-    
-    // 재생할 때
-    document.getElementById('play-pause-button').addEventListener('click', () => {
-      player.togglePlay().then(() => {
-        console.log('재생/일시정지');
-      });
-    });
-
-    // 이전 곡
-    document.getElementById('previous-button').addEventListener('click', () => {
-      player.previousTrack().then(() => {
-        console.log('이전 곡');
-      });
-    });
-
-    // 다음 곡
-    document.getElementById('next-button').addEventListener('click', () => {
-      player.nextTrack().then(() => {
-        console.log('다음 곡');
-      });
-    });
-    
-    
-
-    player.connect();
-}
-
-console.log(getdeviceId + 3)
-
-var url = 'https://api.spotify.com/v1/me/player/play?device_id=' + getdeviceId;
-var data = {
-  "context_uri": "spotify:album:5ht7ItJgpBH7W6vJ5BqpPr",
-  "offset": {
-    "position": 5
-  },
-  "position_ms": 0
-};
-
-$.ajax({
-  url: url,
-  type: 'PUT',
-  headers: {
-    'Authorization': 'Bearer ' + testToken,
-    'Content-Type': 'application/json'
-  },
-  data: JSON.stringify(data),
-  success: function(response) {
-    console.log(response);
-    // 성공적으로 재생 명령을 보낸 후의 처리를 여기서 수행할 수 있습니다.
-  },
-  error: function(xhr, status, error) {
-    console.error(error);
-    // 오류가 발생한 경우에 대한 처리를 여기서 수행할 수 있습니다.
-  }
-});
-
-</script>
-<head>
-
-
-<script>
-
 
 </script>
 
@@ -186,7 +170,3 @@ $.ajax({
   <div id="current-track-info"></div>
 </div>
 
-
-</head>
-<body></body>
-</html>

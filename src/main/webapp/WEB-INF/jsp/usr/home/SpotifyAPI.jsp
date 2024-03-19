@@ -13,14 +13,12 @@
 <!DOCTYPE html>
 <html class="html-body">
 <head>
-
 </head>
 <body>
-    
-<a id="" href="https://accounts.spotify.com/authorize?client_id=1440fd0b1217439f81573cf6470a1a51&response_type=code&redirect_uri=http://localhost:8081/usr/home/SpotifyRedirect&scope=user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming">
-<img src="https://i0.wp.com/corkchildrensclinic.com/wp-content/uploads/2021/11/spotify-button-1.png?fit=852%2C231&ssl=1" alt="" />
-</a>
 
+<a id="" href="https://accounts.spotify.com/authorize?client_id=1440fd0b1217439f81573cf6470a1a51&response_type=code&redirect_uri=http://localhost:8081/usr/home/SpotifyRedirect&scope=user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming">
+<img class="sf-img" src="https://i0.wp.com/corkchildrensclinic.com/wp-content/uploads/2021/11/spotify-button-1.png?fit=852%2C231&ssl=1" alt="" />
+</a>
 
 </body>
 </html>

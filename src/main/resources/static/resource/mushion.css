@@ -1002,6 +1002,7 @@ color: #A9ACBB;
 white-space: nowrap;
 }
 
+/* 스포티파이 페이지 */
 #player {
   background-color: #f2f2f2;
   padding: 10px;
@@ -1028,3 +1029,17 @@ button {
 	display: inline-block;
 	background-color: white;
 }
+
+.sf-img {
+	width: 400px;
+}
+
+/* 임시 테스트 */
+.args-form {
+	width: 80px;
+    height: 130px;
+    background-color: gray;
+    margin: 0 auto;
+}
+
+

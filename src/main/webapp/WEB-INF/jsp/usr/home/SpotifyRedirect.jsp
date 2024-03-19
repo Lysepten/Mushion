@@ -230,4 +230,6 @@ $.ajax({
 	<button id="next-button">다음 곡</button>
 	<div id="current-track-info"></div>
 </div>
+
+
 </html>

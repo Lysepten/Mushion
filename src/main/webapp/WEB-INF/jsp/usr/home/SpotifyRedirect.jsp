@@ -142,6 +142,14 @@ $.ajax({
         	  var SpotifySongName = document.getElementById('spotifySongName');
         	  SpotifySongName.textContent = current_track.name;
         	  
+        	  var SpotifyArtistGenres = document.getElementById('spotifyArtistGenres');
+        	  
+        	  var ArtistUri = current_track.artists[0].uri.split(":");
+        	  
+        	  console.log(ArtistUri[0]);
+        	  
+        	  SpotifyArtistGenres.textContent = current_track.artists[0].uri;
+        	  
 
         	});
           // playbackState end
@@ -225,11 +233,19 @@ $.ajax({
 <img id="spotifyimg" class="spotifyimg1" src="" alt="" />
 	<div id="spotifySongName"></div>
 	<div id="spotifyArtist"></div>
+	<div id="spotifyArtistGenres"></div>
 	<button id="previous-button">이전 곡</button>
 	<button id="togglePlay">재생</button>
 	<button id="next-button">다음 곡</button>
 	<div id="current-track-info"></div>
 </div>
+
+<form class="args-form" action="/usr/home/VarArgsTest">
+<div><input name="args" type="checkbox" value="Jazz"/>재즈</div>
+<div><input name="args" type="checkbox" value="Hiphop"/>힙합</div>
+<div><input name="args" type="checkbox" value="Rock"/>락</div>
+<input value="보내기!" class="btn" type="submit" />
+</form>
 
 
 </html>

@@ -1036,10 +1036,10 @@ button {
 
 /* 임시 테스트 */
 .args-form {
-	width: 80px;
-    height: 130px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 300px;
     background-color: gray;
     margin: 0 auto;
 }
-
-

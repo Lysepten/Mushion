@@ -16,58 +16,5 @@
 
 <html class="html-body">
 
-<label>
-  <input type="checkbox" id="mainCheckbox"> Main Checkbox
-</label>
-
-<div id="dynamicCheckboxContainer" class="hidden">
-  <label>
-    <input type="checkbox" id="dynamicCheckbox"> Dynamic Checkbox
-  </label>
-</div>
-
-<script>
-  const mainCheckbox = document.getElementById('mainCheckbox');
-  const dynamicCheckboxContainer = document.getElementById('dynamicCheckboxContainer');
-
-  mainCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-      dynamicCheckboxContainer.classList.remove('hidden');
-    } else {
-      dynamicCheckboxContainer.classList.add('hidden');
-    }
-  });
-</script>
-
-<div id="checkboxContainer"></div>
-<button onclick="toggleDynamicCheckbox()">체크박스 생성/해제</button>
-
-<script>
-function toggleDynamicCheckbox() {
-	  var checkboxContainer = document.getElementById("checkboxContainer");
-
-	  // checkboxContainer에 체크박스가 있는지 확인
-	  var dynamicCheckbox = checkboxContainer.querySelector("input[type='checkbox']");
-
-	  if (dynamicCheckbox) {
-	    // 체크박스가 이미 존재하는 경우 제거
-	    checkboxContainer.removeChild(dynamicCheckbox);
-	  } else {
-	    // 체크박스가 존재하지 않는 경우 생성
-	    dynamicCheckbox = document.createElement("input");
-	    dynamicCheckbox.type = "checkbox";
-	    dynamicCheckbox.checked = "checked";
-	    
-	    checkboxContainer.appendChild(dynamicCheckbox);
-	  }
-	}
-</script>
-
-<form class="args-form" action="/usr/home/VarArgsTest">
-<div><input name="args" type="checkbox" value="Jazz"/>재즈</div>
-<div><input name="args" type="checkbox" value="Hiphop"/>힙합</div>
-<div><input name="args" type="checkbox" value="Rock"/>락</div>
-<input value="보내기!" class="btn" type="submit" />
-</form>
 
 </body>

@@ -106,7 +106,6 @@ public class MushionController {
 				}
 			}
 		}
-
 		return "재즈 포인트 : " + Jazz + "<br />힙합 포인트 : " + Hiphop + "<br />락 포인트 : " + Rock;
 	}
 }

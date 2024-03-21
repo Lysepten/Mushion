@@ -143,13 +143,12 @@ $.ajax({
         	  var SpotifySongName = document.getElementById('spotifySongName');
         	  SpotifySongName.textContent = current_track.name;
         	  
-        	  var SpotifyArtistGenres = document.getElementById('spotifyArtistGenres');
+//         	  var SpotifyArtistGenres = document.getElementById('spotifyArtistGenres');
         	  
         	  ArtistUri = current_track.artists[0].uri.split(":");
-
-        	  SpotifyArtistGenres.textContent = current_track.artists[0].uri;
+			
+//         	  SpotifyArtistGenres.textContent = current_track.artists[0].uri;
         	  
-
         	});
           // playbackState end
           
@@ -219,9 +218,9 @@ $.ajax({
         });
         
         document.getElementById('ArtistGenresExtraction').onclick = function() {
-        	console.log("버튼테스트중~")
-        	console.log(ArtistUri[2]);
-        	console.log("코드 잘 나오나 : " + BearerAuthorizationCode);
+//         	console.log("버튼테스트중~")
+//         	console.log(ArtistUri[2]);
+//         	console.log("코드 잘 나오나 : " + BearerAuthorizationCode);
         	
         	$.ajax({
         		  url: 'https://api.spotify.com/v1/artists/'+ArtistUri[2],
@@ -231,6 +230,18 @@ $.ajax({
         		  },
         		  success: function(response) {
         		    console.log(response);
+        		    
+//         		    setAttribute('checked',true);
+        		    
+        		    var SpotifyArtistGenres = document.getElementById('spotifyArtistGenre');
+        		    
+        		    var Genre = document.getElementById('Genre');
+        		    
+        		    SpotifyArtistGenres.textContent = response.genres;
+        		    
+        		    Genre.value = response.genres;
+        		    
+        		    console.log("아티스트 장르 : " + response.genres)
         		  },
         		  error: function(xhr, status, error) {
         		    console.error('Request failed with status:', xhr.status);
@@ -257,20 +268,24 @@ $.ajax({
 <img id="spotifyimg" class="spotifyimg1" src="" alt="" />
 	<div id="spotifySongName"></div>
 	<div id="spotifyArtist"></div>
-	<div id="spotifyArtistGenres"></div>
 	<button id="previous-button">이전 곡</button>
 	<button id="togglePlay">재생</button>
 	<button id="next-button">다음 곡</button>
-	<button onclick="" id="ArtistGenresExtraction">장르 추출</button>
+	<button onclick="" id="ArtistGenresExtraction">마음에 들어요</button>
 	<div id="current-track-info"></div>
 </div>
 
+
+
 <form class="args-form" action="/usr/home/VarArgsTest">
-<div><input name="args" type="checkbox" value="Jazz"/>재즈</div>
-<div><input name="args" type="checkbox" value="Hiphop"/>힙합</div>
-<div><input name="args" type="checkbox" value="Rock"/>락</div>
+<!-- <div><input name="args" type="checkbox" value="Jazz"/>재즈</div> -->
+<!-- <div><input name="args" type="checkbox" value="Hiphop"/>힙합</div> -->
+<!-- <div><input name="args" type="checkbox" value="Rock"/>락</div> -->
+<!-- <div><input name="args" type="checkbox" value="Pop"/>팝</div> -->
+ <label id="spotifyArtistGenre">
+    <input type="text" id="Genre" name="args" value="">
+  </label>
 <input value="보내기!" class="btn" type="submit" />
 </form>
-
 
 </html>

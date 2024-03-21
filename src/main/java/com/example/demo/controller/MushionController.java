@@ -89,6 +89,7 @@ public class MushionController {
 		int Jazz = 0;
 		int	Hiphop = 0;
 		int Rock = 0;
+		int Pop = 0;
 		
 		if(args == null) {
 			return "값을 입력해주세요";
@@ -104,8 +105,11 @@ public class MushionController {
 				if(args[i].equals("Rock")) {
 					Rock++;
 				}
+				if(args[i].equals("korean city pop")) {
+					Pop++;
+				}
 			}
 		}
-		return "재즈 포인트 : " + Jazz + "<br />힙합 포인트 : " + Hiphop + "<br />락 포인트 : " + Rock;
+		return "재즈 포인트 : " + Jazz + "<br />힙합 포인트 : " + Hiphop + "<br />락 포인트 : " + Rock + "<br />팝 포인트 : " + Pop;
 	}
 }

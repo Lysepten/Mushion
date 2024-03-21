@@ -19,6 +19,7 @@ var clientId = '1440fd0b1217439f81573cf6470a1a51'; // 스포티파이 애플리�
 var clientSecret = '62e108fbf0fa47c88f7957ba663187a4'; // 스포티파이 애플리케이션의 클라이언트 시크릿
 var redirectUri = 'http://localhost:8081/usr/home/SpotifyRedirect'; // 스포티파이 토큰을 받을 리다이렉트 URI
 var authorizationCode = `${code }`; // 스포티파이로부터 받은 인가 코드
+var ArtistUri = null;
 
 // Ajax 요청을 보낼 URL을 설정합니다.
 var url = 'https://accounts.spotify.com/api/token';
@@ -144,10 +145,8 @@ $.ajax({
         	  
         	  var SpotifyArtistGenres = document.getElementById('spotifyArtistGenres');
         	  
-        	  var ArtistUri = current_track.artists[0].uri.split(":");
-        	  
-        	  console.log(ArtistUri[0]);
-        	  
+        	  ArtistUri = current_track.artists[0].uri.split(":");
+
         	  SpotifyArtistGenres.textContent = current_track.artists[0].uri;
         	  
 
@@ -181,6 +180,8 @@ $.ajax({
         	  
         	  var SpotifySongName = document.getElementById('spotifySongName');
         	  SpotifySongName.textContent = previous_track.name;
+        	  
+        	  ArtistUri = previous_track.artists[0].uri.split(":");
 
           	});
           });
@@ -209,11 +210,34 @@ $.ajax({
         	  
         	  var SpotifySongName = document.getElementById('spotifySongName');
         	  SpotifySongName.textContent = next_track.name;
+        	  
+        	  ArtistUri = next_track.artists[0].uri.split(":");
           	  
 
           	});
           });
         });
+        
+        document.getElementById('ArtistGenresExtraction').onclick = function() {
+        	console.log("버튼테스트중~")
+        	console.log(ArtistUri[2]);
+        	console.log("코드 잘 나오나 : " + BearerAuthorizationCode);
+        	
+        	$.ajax({
+        		  url: 'https://api.spotify.com/v1/artists/'+ArtistUri[2],
+        		  type: 'GET',
+        		  headers: {
+        		    'Authorization': BearerAuthorizationCode
+        		  },
+        		  success: function(response) {
+        		    console.log(response);
+        		  },
+        		  error: function(xhr, status, error) {
+        		    console.error('Request failed with status:', xhr.status);
+        		  }
+        		});
+
+        };
         
         player.connect();
     }
@@ -237,6 +261,7 @@ $.ajax({
 	<button id="previous-button">이전 곡</button>
 	<button id="togglePlay">재생</button>
 	<button id="next-button">다음 곡</button>
+	<button onclick="" id="ArtistGenresExtraction">장르 추출</button>
 	<div id="current-track-info"></div>
 </div>
 

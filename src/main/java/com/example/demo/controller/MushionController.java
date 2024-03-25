@@ -1,13 +1,14 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.ArticleService;
 import com.example.demo.vo.topdb;
@@ -85,6 +86,8 @@ public class MushionController {
 	@RequestMapping("/usr/home/VarArgsTest")
 	public String VarArgsTest(Model model, String... args) {
 		
+		Map<String, Integer> recommend = new HashMap<>();
+		
 		int Jazz = 0;
 		int	Hiphop = 0;
 		int Rock = 0;
@@ -111,25 +114,23 @@ public class MushionController {
 		}
 		
 		int max = 0;
+		String maxGenre = "";
 		
-		if(Jazz > max) {
-			max = Jazz;
-		}
-		if(Hiphop > max) {
-			max = Hiphop;
-		}
-		if(Rock > max) {
-			max = Rock;
-		}
-		if(Pop > max) {
-			max = Pop;
-		}
+		recommend.put("Jazz", Jazz);
+		recommend.put("Hiphop", Hiphop);
+		recommend.put("Rock", Rock);
+		recommend.put("Pop", Pop);
 		
-//		if(max >= )
+		for (Map.Entry<String, Integer> entry : recommend.entrySet()) {
+            if (entry.getValue() > max) {
+            	max = entry.getValue();
+            	maxGenre = entry.getKey();
+            }
+        }
 		
 		
-		
-		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop);
+//		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop);
+		System.err.println(maxGenre);
 		
 		return "/usr/home/SpotifyRecommend";
 	}

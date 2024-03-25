@@ -127,10 +127,10 @@ public class MushionController {
             	maxGenre = entry.getKey();
             }
         }
-		
-		
-//		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop);
+
 		System.err.println(maxGenre);
+		
+		model.addAttribute("maxGenre", maxGenre);
 		
 		return "/usr/home/SpotifyRecommend";
 	}

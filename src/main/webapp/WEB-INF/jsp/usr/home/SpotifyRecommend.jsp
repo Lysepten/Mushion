@@ -16,5 +16,6 @@
 
 <html class="html-body">
 
-테스트중~
+<div>추천 받고 싶은 장르는~! : ${maxGenre } 입니다.</div>
+
 </body>

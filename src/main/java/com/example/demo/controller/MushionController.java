@@ -83,8 +83,7 @@ public class MushionController {
 	}
 
 	@RequestMapping("/usr/home/VarArgsTest")
-	@ResponseBody
-	public String VarArgsTest(String... args) {
+	public String VarArgsTest(Model model, String... args) {
 		
 		int Jazz = 0;
 		int	Hiphop = 0;
@@ -105,11 +104,33 @@ public class MushionController {
 				if(args[i].equals("Rock")) {
 					Rock++;
 				}
-				if(args[i].equals("korean city pop")) {
+				if(args[i].contains("pop")) {
 					Pop++;
 				}
 			}
 		}
-		return "재즈 포인트 : " + Jazz + "<br />힙합 포인트 : " + Hiphop + "<br />락 포인트 : " + Rock + "<br />팝 포인트 : " + Pop;
+		
+		int max = 0;
+		
+		if(Jazz > max) {
+			max = Jazz;
+		}
+		if(Hiphop > max) {
+			max = Hiphop;
+		}
+		if(Rock > max) {
+			max = Rock;
+		}
+		if(Pop > max) {
+			max = Pop;
+		}
+		
+//		if(max >= )
+		
+		
+		
+		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop);
+		
+		return "/usr/home/SpotifyRecommend";
 	}
 }

@@ -233,11 +233,11 @@ $.ajax({
         		    
 //         		    setAttribute('checked',true);
         		    
-        		    var SpotifyArtistGenres = document.getElementById('spotifyArtistGenre');
+//         		    var SpotifyArtistGenres = document.getElementById('spotifyArtistGenre');
         		    
         		    var Genre = document.getElementById('Genre');
         		    
-        		    SpotifyArtistGenres.textContent = response.genres;
+//         		    SpotifyArtistGenres.textContent = response.genres;
         		    
         		    Genre.value = response.genres;
         		    
@@ -275,15 +275,13 @@ $.ajax({
 	<div id="current-track-info"></div>
 </div>
 
-
-
 <form class="args-form" action="/usr/home/VarArgsTest">
 <!-- <div><input name="args" type="checkbox" value="Jazz"/>재즈</div> -->
 <!-- <div><input name="args" type="checkbox" value="Hiphop"/>힙합</div> -->
 <!-- <div><input name="args" type="checkbox" value="Rock"/>락</div> -->
 <!-- <div><input name="args" type="checkbox" value="Pop"/>팝</div> -->
  <label id="spotifyArtistGenre">
-    <input type="text" id="Genre" name="args" value="">
+    <input type="hidden" id="Genre" name="args" value="">
   </label>
 <input value="보내기!" class="btn" type="submit" />
 </form>

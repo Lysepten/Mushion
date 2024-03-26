@@ -92,23 +92,66 @@ public class MushionController {
 		int	Hiphop = 0;
 		int Rock = 0;
 		int Pop = 0;
+		int Blues = 0;
+		int Classical = 0;
+		int Country = 0;
+		int Dance = 0;
+		int Electronic = 0;
+		int Folk = 0;
+		int Metal = 0;
+		int Punk = 0;
+		int Reggae = 0;
+		int RhythmAndBlues = 0;
+		
+		
+		
 		
 		if(args == null) {
 			return "값을 입력해주세요";
 		}
 		if(args != null) {
 			for(int i = 0; i < args.length; i++) {
-				if(args[i].equals("Jazz")) {
+				if(args[i].contains("Jazz")) {
 					Jazz++;
 				}
-				if(args[i].equals("Hiphop")) {
+				if(args[i].contains("Hiphop")) {
 					Hiphop++;
 				}
-				if(args[i].equals("Rock")) {
+				if(args[i].contains("Rock")) {
 					Rock++;
 				}
 				if(args[i].contains("pop")) {
 					Pop++;
+				}
+				if(args[i].contains("Blues")) {
+					Blues++;
+				}
+				if(args[i].contains("Classical")) {
+					Classical++;
+				}
+				if(args[i].contains("Country")) {
+					Country++;
+				}
+				if(args[i].contains("Dance")) {
+					Dance++;
+				}
+				if(args[i].contains("Electronic")) {
+					Electronic++;
+				}
+				if(args[i].contains("Folk")) {
+					Folk++;
+				}
+				if(args[i].contains("Metal")) {
+					Metal++;
+				}
+				if(args[i].contains("Punk")) {
+					Punk++;
+				}
+				if(args[i].contains("Reggae")) {
+					Reggae++;
+				}
+				if(args[i].contains("RhythmAndBlues") || args[i].contains("R&B")) {
+					RhythmAndBlues++;
 				}
 			}
 		}
@@ -120,6 +163,17 @@ public class MushionController {
 		recommend.put("Hiphop", Hiphop);
 		recommend.put("Rock", Rock);
 		recommend.put("Pop", Pop);
+		recommend.put("Blues", Blues);
+		recommend.put("Classical", Classical);
+		recommend.put("Country", Country);
+		recommend.put("Dance", Dance);
+		recommend.put("Electronic", Electronic);
+		recommend.put("Folk", Folk);
+		recommend.put("Metal", Metal);
+		recommend.put("Punk", Punk);
+		recommend.put("Reggae", Reggae);
+		recommend.put("RhythmAndBlues", RhythmAndBlues);
+
 		
 		for (Map.Entry<String, Integer> entry : recommend.entrySet()) {
             if (entry.getValue() > max) {
@@ -127,8 +181,12 @@ public class MushionController {
             	maxGenre = entry.getKey();
             }
         }
-
-		System.err.println(maxGenre);
+		
+		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop +
+				"\n Blues : " + Blues + "\n Classical : " + Classical + "\n Country : " + Country + "\n Dance : " + Dance + "\n Electronic : " + Electronic + "\n Folk : " + Folk +
+				"\n Metal : " + Metal + "\n Punk : " + Punk + "\n Reggae : " + Reggae + "\n RhythmAndBlues : " + RhythmAndBlues);
+		
+//		System.err.println(maxGenre);
 		
 		model.addAttribute("maxGenre", maxGenre);
 		

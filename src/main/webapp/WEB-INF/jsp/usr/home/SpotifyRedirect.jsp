@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- 제이쿼리 불러오기 -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!-- mushion head -->
 <%@ include file="../common/mushionHead.jspf"%>
 <link rel="stylesheet" href="/resource/common.css" />
@@ -260,7 +260,26 @@ $.ajax({
     console.error('액세스 토큰 요청 실패:', error);
   }
 });
+</script>
 
+<script>
+function GenreCheck() {
+// 	alert('전송 막기 성공!');
+ var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
+ console.log("가져온 장르는~ : " + hiddenInputValue);
+ 
+ if(hiddenInputValue == "" || hiddenInputValue == " ") {
+	 const form = document.querySelector('form');
+	 
+	 form.addEventListener('submit',event=> {
+	     event.preventDefault();
+	 });
+
+	   alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
+
+ }
+
+}
 </script>
 
 <html class="html-body">
@@ -271,19 +290,16 @@ $.ajax({
 	<button id="previous-button">이전 곡</button>
 	<button id="togglePlay">재생</button>
 	<button id="next-button">다음 곡</button>
-	<button onclick="" id="ArtistGenresExtraction">마음에 들어요</button>
+	<button onclick="GenreCheck()" id="ArtistGenresExtraction">마음에 들어요</button>
 	<div id="current-track-info"></div>
 </div>
 
-<form class="args-form" action="/usr/home/VarArgsTest">
-<!-- <div><input name="args" type="checkbox" value="Jazz"/>재즈</div> -->
-<!-- <div><input name="args" type="checkbox" value="Hiphop"/>힙합</div> -->
-<!-- <div><input name="args" type="checkbox" value="Rock"/>락</div> -->
-<!-- <div><input name="args" type="checkbox" value="Pop"/>팝</div> -->
+<form class="args-form" action="/usr/home/VarArgsTest" onsubmit="">
  <label id="spotifyArtistGenre">
     <input type="hidden" id="Genre" name="args" value="">
   </label>
-<input value="보내기!" class="btn" type="submit" />
+<input onclick="GenreCheck()" value="보내기!" class="btn" type="submit" />
 </form>
+<button onclick="">버튼</button>
 
 </html>

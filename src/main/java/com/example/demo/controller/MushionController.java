@@ -178,6 +178,10 @@ public class MushionController {
             }
         }
 		
+		if(max == 0) {
+			maxGenre = "";
+		}
+		
 		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop +
 				"\n Blues : " + Blues + "\n Classical : " + Classical + "\n Country : " + Country + "\n Dance : " + Dance + "\n Electronic : " + Electronic + "\n Folk : " + Folk +
 				"\n Metal : " + Metal + "\n Punk : " + Punk + "\n Reggae : " + Reggae + "\n RhythmAndBlues : " + RhythmAndBlues);

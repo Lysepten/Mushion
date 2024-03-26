@@ -276,8 +276,6 @@ function GenreCheck() {
 // 	     alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 	 });
 
-	   
-
  }
 
 }
@@ -291,7 +289,7 @@ function GenreCheck() {
 	<button id="previous-button">이전 곡</button>
 	<button id="togglePlay">재생</button>
 	<button id="next-button">다음 곡</button>
-	<button onclick="GenreCheck()" id="ArtistGenresExtraction">마음에 들어요</button>
+	<button onclick="" id="ArtistGenresExtraction">마음에 들어요</button>
 	<div id="current-track-info"></div>
 </div>
 

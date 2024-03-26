@@ -16,6 +16,6 @@
 
 <html class="html-body">
 
-<div>추천 받고 싶은 장르는~! : ${maxGenre } 입니다.</div>
+<div>선택한 아티스트와 어울리는 스타일은~! : ${maxGenre } 입니다.</div>
 
 </body>

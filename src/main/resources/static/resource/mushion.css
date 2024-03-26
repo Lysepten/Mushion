@@ -1039,7 +1039,8 @@ button {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 300px;
+	width: 80px;
     background-color: gray;
     margin: 0 auto;
+    border-radius: 10px;
 }

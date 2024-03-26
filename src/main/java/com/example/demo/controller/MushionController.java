@@ -103,54 +103,51 @@ public class MushionController {
 		int Reggae = 0;
 		int RhythmAndBlues = 0;
 		
-		
-		
-		
 		if(args == null) {
 			return "값을 입력해주세요";
 		}
 		if(args != null) {
 			for(int i = 0; i < args.length; i++) {
-				if(args[i].contains("Jazz")) {
+				if(args[i].contains("Jazz") || args[i].contains("jazz")) {
 					Jazz++;
 				}
-				if(args[i].contains("Hiphop")) {
+				if(args[i].contains("Hip hop") || args[i].contains("hip hop")) {
 					Hiphop++;
 				}
-				if(args[i].contains("Rock")) {
+				if(args[i].contains("Rock") || args[i].contains("rock")) {
 					Rock++;
 				}
-				if(args[i].contains("pop")) {
+				if(args[i].contains("Pop") || args[i].contains("pop")) {
 					Pop++;
 				}
-				if(args[i].contains("Blues")) {
+				if(args[i].contains("Blues") || args[i].contains("blues")) {
 					Blues++;
 				}
-				if(args[i].contains("Classical")) {
+				if(args[i].contains("Classical") || args[i].contains("classical")) {
 					Classical++;
 				}
-				if(args[i].contains("Country")) {
+				if(args[i].contains("Country") || args[i].contains("country")) {
 					Country++;
 				}
-				if(args[i].contains("Dance")) {
+				if(args[i].contains("Dance") || args[i].contains("dance")) {
 					Dance++;
 				}
-				if(args[i].contains("Electronic")) {
+				if(args[i].contains("Electronic") || args[i].contains("electronic")) {
 					Electronic++;
 				}
-				if(args[i].contains("Folk")) {
+				if(args[i].contains("Folk") || args[i].contains("folk")) {
 					Folk++;
 				}
-				if(args[i].contains("Metal")) {
+				if(args[i].contains("Metal") || args[i].contains("metal")) {
 					Metal++;
 				}
-				if(args[i].contains("Punk")) {
+				if(args[i].contains("Punk") || args[i].contains("punk")) {
 					Punk++;
 				}
-				if(args[i].contains("Reggae")) {
+				if(args[i].contains("Reggae") || args[i].contains("reggae")) {
 					Reggae++;
 				}
-				if(args[i].contains("RhythmAndBlues") || args[i].contains("R&B")) {
+				if(args[i].contains("RhythmAndBlues") || args[i].contains("r&b")) {
 					RhythmAndBlues++;
 				}
 			}
@@ -174,7 +171,6 @@ public class MushionController {
 		recommend.put("Reggae", Reggae);
 		recommend.put("RhythmAndBlues", RhythmAndBlues);
 
-		
 		for (Map.Entry<String, Integer> entry : recommend.entrySet()) {
             if (entry.getValue() > max) {
             	max = entry.getValue();
@@ -185,11 +181,53 @@ public class MushionController {
 		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop +
 				"\n Blues : " + Blues + "\n Classical : " + Classical + "\n Country : " + Country + "\n Dance : " + Dance + "\n Electronic : " + Electronic + "\n Folk : " + Folk +
 				"\n Metal : " + Metal + "\n Punk : " + Punk + "\n Reggae : " + Reggae + "\n RhythmAndBlues : " + RhythmAndBlues);
+			
 		
-//		System.err.println(maxGenre);
-		
+		if(maxGenre.equals("Jazz")) {
+			maxGenre = "Classic";
+		}
+		if(maxGenre.equals("Hiphop")) {
+			maxGenre = "Street";
+		}
+		if(maxGenre.equals("Rock")) {
+			maxGenre = "Grunge";
+		}
+		if(maxGenre.equals("Pop")) {
+			maxGenre = "Minimal";
+		}
+		if(maxGenre.equals("Blues")) {
+			maxGenre = "Casual";
+		}
+		if(maxGenre.equals("Classical")) {
+			maxGenre = "Classic";
+		}
+		if(maxGenre.equals("Country")) {
+			maxGenre = "Hippie";
+		}
+		if(maxGenre.equals("Dance")) {
+			maxGenre = "Sporty";
+		}
+		if(maxGenre.equals("Electronic")) {
+			maxGenre = "Street";
+		}
+		if(maxGenre.equals("Folk")) {
+			maxGenre = "Bohemian";
+		}
+		if(maxGenre.equals("Metal")) {
+			maxGenre = "Biker";
+		}
+		if(maxGenre.equals("Punk")) {
+			maxGenre = "Punk";
+		}
+		if(maxGenre.equals("Reggae")) {
+			maxGenre = "Resort";
+		}
+		if(maxGenre.equals("RhythmAndBlues")) {
+			maxGenre = "Vintage";
+		}
+
 		model.addAttribute("maxGenre", maxGenre);
-		
+
 		return "/usr/home/SpotifyRecommend";
 	}
 }

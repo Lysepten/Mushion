@@ -269,13 +269,14 @@ function GenreCheck() {
  console.log("가져온 장르는~ : " + hiddenInputValue);
  
  if(hiddenInputValue == "" || hiddenInputValue == " ") {
+	 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 	 const form = document.querySelector('form');
-	 
 	 form.addEventListener('submit',event=> {
 	     event.preventDefault();
+// 	     alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 	 });
 
-	   alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
+	   
 
  }
 
@@ -300,6 +301,4 @@ function GenreCheck() {
   </label>
 <input onclick="GenreCheck()" value="보내기!" class="btn" type="submit" />
 </form>
-<button onclick="">버튼</button>
-
 </html>

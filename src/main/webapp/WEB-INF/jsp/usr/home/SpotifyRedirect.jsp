@@ -293,10 +293,10 @@ function GenreCheck() {
 	<div id="current-track-info"></div>
 </div>
 
-<form class="args-form" action="/usr/home/VarArgsTest" onsubmit="">
+<form class="args-form" action="/usr/home/VarArgsTest" onsubmit="GenreCheck()">
  <label id="spotifyArtistGenre">
     <input type="hidden" id="Genre" name="args" value="">
   </label>
-<input onclick="GenreCheck()" value="보내기!" class="btn" type="submit" />
+<input onclick="" value="보내기!" class="btn" type="submit" />
 </form>
 </html>

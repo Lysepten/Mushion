@@ -48,23 +48,23 @@ public class MushionController {
 	
 	@RequestMapping("/usr/home/KakaoLoginAPI")
 	public String KakaoLoginAPI() {
-
+		
 		
 		return "/usr/home/KakaoLoginAPI";
 	}
-
+	
 	@RequestMapping("/usr/home/KakaoLogin")
 	public String KakaoLoginAPI(@RequestParam String code, Model model) {
 		System.err.println("code name : " + code);
-
+		
 		model.addAttribute("code", code);
-
+		
 		return "/usr/home/KakaoLogin";
 	}
-
+	
 	@RequestMapping("/usr/home/SpotifyAPI")
 	public String SpotifyAPI() {
-
+		
 		
 		return "/usr/home/SpotifyAPI";
 	}
@@ -82,7 +82,7 @@ public class MushionController {
 		
 		return "/usr/home/ArgsTestPage";
 	}
-
+	
 	@RequestMapping("/usr/home/VarArgsTest")
 	public String VarArgsTest(Model model, String... args) {
 		
@@ -170,7 +170,7 @@ public class MushionController {
 		recommend.put("Punk", Punk);
 		recommend.put("Reggae", Reggae);
 		recommend.put("RhythmAndBlues", RhythmAndBlues);
-
+		
 		for (Map.Entry<String, Integer> entry : recommend.entrySet()) {
             if (entry.getValue() > max) {
             	max = entry.getValue();
@@ -185,7 +185,8 @@ public class MushionController {
 		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop +
 				"\n Blues : " + Blues + "\n Classical : " + Classical + "\n Country : " + Country + "\n Dance : " + Dance + "\n Electronic : " + Electronic + "\n Folk : " + Folk +
 				"\n Metal : " + Metal + "\n Punk : " + Punk + "\n Reggae : " + Reggae + "\n RhythmAndBlues : " + RhythmAndBlues);
-			
+		
+		String artistGenre = maxGenre;
 		
 		if(maxGenre.equals("Jazz")) {
 			maxGenre = "Classic";
@@ -229,9 +230,10 @@ public class MushionController {
 		if(maxGenre.equals("RhythmAndBlues")) {
 			maxGenre = "Vintage";
 		}
-
+		
 		model.addAttribute("maxGenre", maxGenre);
-
+		model.addAttribute("artistGenre", artistGenre);
+		
 		return "/usr/home/SpotifyRecommend";
 	}
 }

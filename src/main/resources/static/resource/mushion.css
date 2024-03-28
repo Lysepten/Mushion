@@ -1044,3 +1044,16 @@ button {
     margin: 0 auto;
     border-radius: 10px;
 }
+
+.genreRecommend {
+	
+/* 	display: flex; */
+/* 	justify-content: space-around; */
+/* 	align-items: center; */
+/* 	white-space: nowrap; */
+}
+
+.image {
+	display: inline;
+	height: 500px;
+}

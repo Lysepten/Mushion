@@ -11,9 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.service.ArticleService;
+import com.example.demo.util.Ut;
+import com.example.demo.vo.Rq;
 import com.example.demo.vo.topdb;
+
+import jakarta.servlet.http.HttpServletRequest;
 @Controller
 public class MushionController {
+	
+	@Autowired
+	private Rq rq;
 	
 	@Autowired
 	private ArticleService articleService;
@@ -84,7 +91,9 @@ public class MushionController {
 	}
 	
 	@RequestMapping("/usr/home/VarArgsTest")
-	public String VarArgsTest(Model model, String... args) {
+	public String VarArgsTest(HttpServletRequest req, Model model, String... args) {
+		
+		Rq rq = (Rq) req.getAttribute("rq");
 		
 		Map<String, Integer> recommend = new HashMap<>();
 		
@@ -180,6 +189,7 @@ public class MushionController {
 		
 		if(max == 0) {
 			maxGenre = "";
+			return Ut.jsReplace("F-1", "지원하지 않는 장르입니다.", "/usr/home/SpotifyAPI");
 		}
 		
 		System.err.println("재즈 포인트 : " + Jazz + "\n 힙합 포인트 : " + Hiphop + "\n 락 포인트 : " + Rock + "\n 팝 포인트 : " + Pop +
@@ -213,7 +223,7 @@ public class MushionController {
 			maxGenre = "Sporty";
 		}
 		if(maxGenre.equals("Electronic")) {
-			maxGenre = "Street";
+			maxGenre = "Sporty";
 		}
 		if(maxGenre.equals("Folk")) {
 			maxGenre = "Bohemian";

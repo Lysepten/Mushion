@@ -268,12 +268,11 @@ function GenreCheck() {
  var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
  console.log("가져온 장르는~ : " + hiddenInputValue);
  
- if(hiddenInputValue == "" || hiddenInputValue == " ") {
+ if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null) {
 	 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 	 const form = document.querySelector('form');
 	 form.addEventListener('submit',event=> {
 	     event.preventDefault();
-// 	     alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 	 });
 
  }

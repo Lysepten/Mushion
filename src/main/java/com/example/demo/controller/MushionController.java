@@ -120,7 +120,7 @@ public class MushionController {
 				if(args[i].contains("Jazz") || args[i].contains("jazz")) {
 					Jazz++;
 				}
-				if(args[i].contains("Hip hop") || args[i].contains("hip hop")) {
+				if(args[i].contains("Hip hop") || args[i].contains("hip hop") || args[i].contains("rap")) {
 					Hiphop++;
 				}
 				if(args[i].contains("Rock") || args[i].contains("rock")) {

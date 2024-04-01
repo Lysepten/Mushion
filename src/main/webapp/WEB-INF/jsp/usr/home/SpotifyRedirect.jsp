@@ -264,20 +264,28 @@ $.ajax({
 
 <script>
 function GenreCheck() {
-// 	alert('전송 막기 성공!');
- var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
- console.log("가져온 장르는~ : " + hiddenInputValue);
- 
+var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
+//     console.log("가져온 장르는~ : " + hiddenInputValue);
+//     event.preventDefault();
+    
+//     document.querySelector(".args-form").addEventListener("submit", function (e) {
+//     	  if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null){
+//     		e.preventDefault();
+//     		alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
+//     	    e.preventDefault();
+//     	  }  
+//     	})
+    
  if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null) {
 	 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
-	 const form = document.querySelector('form');
-	 form.addEventListener('submit',event=> {
-	     event.preventDefault();
-	 });
+	 return false;
+// 	 event.preventDefault();
+	
 
  }
 
 }
+// document.querySelector('.args-form').addEventListener('submit', GenreCheck);
 </script>
 
 <html class="html-body">
@@ -292,7 +300,7 @@ function GenreCheck() {
 	<div id="current-track-info"></div>
 </div>
 
-<form class="args-form" action="/usr/home/VarArgsTest" onsubmit="GenreCheck()">
+<form class="args-form" action="/usr/home/VarArgsTest" onsubmit="return GenreCheck();">
  <label id="spotifyArtistGenre">
     <input type="hidden" id="Genre" name="args" value="">
   </label>

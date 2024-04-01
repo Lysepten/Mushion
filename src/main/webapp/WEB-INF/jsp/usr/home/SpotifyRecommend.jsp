@@ -81,7 +81,8 @@
 
 <c:if test="${maxGenre == 'Resort'}">
 		<div>선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-		<img class="image"  src="https://cdn.imweb.me/thumbnail/20220831/601b733c0051b.jpg" height="500" alt="" />
+		<img class="image"  src="http://www.kstarfashion.com/news/photo/201805/131665_67365_5429.jpg" height="500" alt="" />
+		<img class="image"  src="https://i.pinimg.com/564x/6c/02/0e/6c020eada3db7b49f7d21a01ec644b4c.jpg" height="500" alt="" />
 	</c:if>
 
 <c:if test="${maxGenre == 'Vintage'}">

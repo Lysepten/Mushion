@@ -1021,10 +1021,6 @@ button {
   font-weight: bold;
 }
 
-#spotifySongName {
-	font-size: 34px;
-}
-
 .sf-player {
 	display: inline-block;
 	background-color: white;
@@ -1036,13 +1032,13 @@ button {
 
 /* 임시 테스트 */
 .args-form {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 80px;
-    background-color: gray;
-    margin: 0 auto;
-    border-radius: 10px;
+/* 	display: flex; */
+/* 	justify-content: space-around; */
+/* 	align-items: center; */
+/* 	width: 80px; */
+/*     background-color: gray; */
+/*     margin: 0 auto; */
+/*     border-radius: 10px; */
 }
 
 .genreRecommend {
@@ -1056,4 +1052,8 @@ button {
 .image {
 	display: inline;
 	height: 500px;
+}
+
+.genreRedirect {
+	cursor : pointer;
 }

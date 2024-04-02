@@ -84,10 +84,10 @@ public class MushionController {
 		return "/usr/home/SpotifyRedirect";
 	}
 	
-	@RequestMapping("/usr/home/ArgsTestPage")
-	public String ArgsTest() {
+	@RequestMapping("/usr/spotify/SpotifyPlayer")
+	public String SpotifyPlayerTest() {
 		
-		return "/usr/home/ArgsTestPage";
+		return "/usr/spotify/SpotifyPlayer";
 	}
 	
 	@RequestMapping("/usr/home/VarArgsTest")

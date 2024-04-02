@@ -6,6 +6,7 @@
 <%@ include file="../common/mushionHead.jspf"%>
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
+<link rel="stylesheet" href="/resource/player.css" />
 
 <!-- 폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,46 +265,58 @@ $.ajax({
 
 <script>
 function GenreCheck() {
-var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
-//     console.log("가져온 장르는~ : " + hiddenInputValue);
-//     event.preventDefault();
-    
-//     document.querySelector(".args-form").addEventListener("submit", function (e) {
-//     	  if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null){
-//     		e.preventDefault();
-//     		alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
-//     	    e.preventDefault();
-//     	  }  
-//     	})
-    
- if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null) {
-	 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
-	 return false;
-// 	 event.preventDefault();
+	var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
+
+	console.log(hiddenInputValue);
 	
+	 if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null) {
+		 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
+		 return false;
+		
+	 }
 
- }
+	}
 
-}
-// document.querySelector('.args-form').addEventListener('submit', GenreCheck);
 </script>
 
-<html class="html-body">
-<div id="sf-player">
-<img id="spotifyimg" class="spotifyimg1" src="" alt="" />
-	<div id="spotifySongName"></div>
-	<div id="spotifyArtist"></div>
-	<button id="previous-button">이전 곡</button>
-	<button id="togglePlay">재생</button>
-	<button id="next-button">다음 곡</button>
-	<button onclick="" id="ArtistGenresExtraction">마음에 들어요</button>
-	<div id="current-track-info"></div>
-</div>
-
-<form class="args-form" action="/usr/home/VarArgsTest" onsubmit="return GenreCheck();">
+<!DOCTYPE html>
+<html class="html-body" lang="en" >
+<div class="container">
+  <div class="iphone neu">
+    <div class="title">
+      <div><i class="fas fa-chevron-left"></i></div>
+      <div>NOW PLAYING</div>
+      <div><i class="fas fa-ellipsis-v"></i></div>
+    </div>
+    <div class="album-cover">
+      <div class="album-overlay"></div>
+<!--       <img src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt=""> -->
+      <img id="spotifyimg" class="spotifyimg1" src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt="" />
+      <h2 id="spotifySongName" class="song-title">
+      </h2>
+      <h3 id="spotifyArtist" class="artist-title">
+      </h3>
+    </div>
+    <div class="buttons">
+          <button id="ArtistGenresExtraction" class="btn lg red neu"><i class="fas fa-heart"></i></button>
+          <button id="previous-button" class="btn lg neu"><i class="fas fa-backward"></i></button>
+          <button id="togglePlay" class="btn lg neu"><i class="fas fa-play"></i></button>
+          <button id="next-button" class="btn lg neu"><i class="fas fa-forward"></i></button>
+      </div>
+    <div class="track neu">
+      <div></div>
+    </div>
+    <div class="lyrics">
+      <i class="fas fa-angle-up"></i>
+      
+      <form class="args-form" action="/usr/home/VarArgsTest" onsubmit="return GenreCheck();">
  <label id="spotifyArtistGenre">
     <input type="hidden" id="Genre" name="args" value="">
   </label>
-<input onclick="" value="보내기!" class="btn" type="submit" />
+<input onclick="" value="스타일 추천받기" class="genreRedirect" type="submit" />
 </form>
+
+    </div>
+  </div>
+</div>
 </html>

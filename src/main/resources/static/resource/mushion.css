@@ -1057,3 +1057,7 @@ button {
 .genreRedirect {
 	cursor : pointer;
 }
+
+.spotify-now-playing {
+	color: black;
+}

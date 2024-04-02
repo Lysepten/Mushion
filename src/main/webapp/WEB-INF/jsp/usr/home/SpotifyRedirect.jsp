@@ -272,7 +272,7 @@ function GenreCheck() {
 	 if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null) {
 		 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 		 return false;
-		
+
 	 }
 
 	}
@@ -285,12 +285,12 @@ function GenreCheck() {
   <div class="iphone neu">
     <div class="title">
       <div><i class="fas fa-chevron-left"></i></div>
-      <div>NOW PLAYING</div>
+      <div class="spotify-now-playing">SPOTIFY PLAYING</div>
       <div><i class="fas fa-ellipsis-v"></i></div>
     </div>
     <div class="album-cover">
       <div class="album-overlay"></div>
-<!--       <img src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt=""> -->
+<!-- <img src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt=""> -->
       <img id="spotifyimg" class="spotifyimg1" src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt="" />
       <h2 id="spotifySongName" class="song-title">
       </h2>
@@ -308,7 +308,7 @@ function GenreCheck() {
     </div>
     <div class="lyrics">
       <i class="fas fa-angle-up"></i>
-      
+
       <form class="args-form" action="/usr/home/VarArgsTest" onsubmit="return GenreCheck();">
  <label id="spotifyArtistGenre">
     <input type="hidden" id="Genre" name="args" value="">

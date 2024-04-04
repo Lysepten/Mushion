@@ -1,261 +1,52 @@
-body{
-  background:#000;
+.recommend-body {
+  display: flex;
+  
+/*   justify-content: center; */
+/*   align-items: center; */
+/*   height: 100vh; */
+/*   background: #111; */
 }
 
-.moxybaul{
-  width: 800px;
-  height: 550px;
-  background:url(https://i.ytimg.com/vi/DIPxnt5vnhU/maxresdefault.jpg);
-/*   background:url(https://mblogthumb-phinf.pstatic.net/MjAxOTA4MjVfMjgg/MDAxNTY2NjYzNTA3MjEy.vWFFLv1u7SzDBes1sRdbFhn5uB8WnnbG95hAiWHkzV0g.r9fWqRf8vSfbDP_NlOGE_YA38GAcT50ZJLkTymx3a7Ag.JPEG.cdhh108/889F9465-4BD3-4523-8D8B-409CD0D70453.jpg?type=w800); */
-  margin:auto;
-  border:20px solid #080808;
-  outline:1px solid #111;
+.image {
+/* 	padding: 50px; */
+display: block;
+/*   margin: 0 1em; */
+margin-left :auto;
+margin-right : auto;
+/*   width: 400px; */
+/*   height: 300px; */
   overflow: hidden;
-  transition: all ease-in-out 1s;
+  transition: transform 0.5s ease;
 }
 
-.nameboxm{
-  display: flex;
-  color: #ccc;
-/*   text-transform:lowercase; */
-  text-align: center;
-  width: 400px;
-  height: 550px;
-  margin: auto;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-@font-face {
-    font-family: 'Pretendard-Regular';
-    
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+.image:hover {
+  transform: scale(1.05);
 }
 
-.nmox1{
-/*   font-family: chill; */
-/* text-transform: lowercase; */
-font-family: 'Pretendard-Regular';
-font-weight: 400;
-    font-style: normal;
-  font-size: 100px;
-  position: relative;
-  left:-0px;
-  transition: all ease-in-out 0.9s;
-  transition-delay: 0.8s;
+.image--inverted:hover {
+  transform: scale(0.96);
 }
 
-.nmox2{
-/*   font-family: chill; */
-/* text-transform: lowercase; */
-font-family: 'Pretendard-Regular';
-font-weight: 400;
-    font-style: normal;
-  font-size: 100px;
-  position: relative;
-  right: -0px;
-  transition: all ease-in-out 0.8s;
-  transition-delay: 0.8s;
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
 }
 
-.moxybaul:hover .nmox1{
-  left: -450px;
-  transition: all ease-in-out 0.8s;
+.image--inverted {
+  transition: transform 0.5s ease;
 }
 
-.moxybaul:hover .nmox2{
-  right: -450px;
-  transition: all ease-in-out 0.8s;
+.image:hover img {
+  transform: scale(1.15);
 }
 
-.moxybaul:hover{
-/*   background:url(https://i.namu.wiki/i/rps5qbINW6kpk4uOPonQQWEbZfzgLa1BMP028iqIoxllP_f8p2c8mG6Sbf6AR4cKl_LA6izL05aROxpt1jxdOQ.webp); */
-  background:url(https://mblogthumb-phinf.pstatic.net/MjAxOTA4MjVfMjgg/MDAxNTY2NjYzNTA3MjEy.vWFFLv1u7SzDBes1sRdbFhn5uB8WnnbG95hAiWHkzV0g.r9fWqRf8vSfbDP_NlOGE_YA38GAcT50ZJLkTymx3a7Ag.JPEG.cdhh108/889F9465-4BD3-4523-8D8B-409CD0D70453.jpg?type=w800);
-  transition: all ease-in-out 1s;
-}
-
-.box-dmox{
-  width: 800px;
-  height: 550px;
-  position: relative;
-  top: -550px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: rajdhani;
-/*   text-transform: uppercase; */
-  font-size: 10px;
-  letter-spacing:1px;
-}
-
-.datosmox{
-  width: 240px;
-  height: 380px;
-  background:rgba(0,0,0,0.6);
-  color: #ccc;
-  padding:40px;
-  line-height: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  top: -520px;
-  transition: all ease-in-out 0.8s;
-}
-
-.dmox{
-  width: 240px;
-  border-bottom:1px solid #5c4763;
-  display: flex;
-  align-items: center;
-  margin-top:10px;
-  padding-bottom:1px;
-  justify-content: space-between;
-}
-
-.datosmox m{
-  font-weight: 700;
-}
-
-.datosmox n{
-  text-align: right;
-}
-
-.moxquo{
-  background:#5c4763;
-  padding:10px;
-  text-align:justify;
-  height: 50px;
-  line-height: 10px;
-}
-
-.moxgif{
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  border:10px solid #222;
-  margin: auto;
-  margin-bottom: 20px;
-  background:url(https://i.imgur.com/96AigOD.gif);
-}
-
-.musicmox{
-  width: 240px;
-  height: 380px;
-  background:rgba(0,0,0,0.6);
-  margin-left: 40px;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  bottom: -520px;
-  transition: all ease-in-out 0.8s;
-}
-
-.moxybaul:hover .musicmox{
-  bottom: 0px;
-  transition: all ease-in-out 0.8s;
-  transition-delay: 0.8s;
+.chose-genre {
+/* 	display:block; */
+position:absolute;
+	bottom: 200px;
+	font-size: 24px;
 }
 
 
-.mmox{
-  width: 240px;
-  display: flex;
-  align-items: center;
-  background:rgba(0,0,0,0.4);
-  padding:4px;
-  line-height: 10px;
-}
-
-.moxybaul:hover .datosmox{
-  top: 0px;
-  transition: all ease-in-out 0.8s;
-  transition-delay: 0.8s;
-}
-
-.mmox i{
-  font-size: 20px;
-  color: #ccc;
-  padding:10px;
-}
-
-.mmox a:hover{
-  color: #ccc;
-  transition: all ease-in-out 0.3s;
-}
-
-.mmox a{
-  width: 70px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #5c4763;
-  border:0;
-  text-decoration: none;
-  transition: all ease-in-out 0.3s;
-}
-
-.mmox m{
-  font-size: 11px;
-  color: #999;
-  margin-left: 5px;
-  display: flex;
-}
-
-.mmox m:before{
-  content: '/';
-  font-weight: 700;
-  color: #5c4763;
-  margin-right: 10px;
-}
-
-.botonmox{
-  width: 250px;
-  margin: auto;
-  display: flex;
-  align-items:center;
-  margin-top: 20px;
-  justify-content: space-between;
-}
-
-.botonmox a{
-  color: #5c4763;
-  font-size: 20px;
-  -webkit-text-stroke: 1px transparent;
-  transition: all ease-in-out 0.4s;
-}
-
-.botonmox a:hover{
-  -webkit-text-stroke: 1px #5c4763;
-  color: transparent;
-  transition: all ease-in-out 0.4s;
-}
-
-.bottomlyrm{
-  font-family: rajdhani;
-  font-size: 10px;
-/*   text-transform: uppercase; */
-  letter-spacing: 6px;
-  color: #ccc;
-  position: relative;
-  top: -600px;
-  text-align: center;
-  line-height: 10px;
-  transition: all ease-in-out 0.8s;
-  transition-delay: 1s;
-}
-
-.moxybaul:hover .bottomlyrm{
-  filter:blur(10px);
-  opacity:0;
-  transition: all ease-in-out 0.8s;
-}
-
-@font-face {
-font-family: 'Chill';
-font-style: normal;
-font-weight: normal;
-src: url('https://dl.dropbox.com/s/agpnu5irqlaaeco/Chillvornia%20Stamp%20Slant.otf') format('woff');
-}

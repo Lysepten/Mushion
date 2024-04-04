@@ -87,6 +87,7 @@ public class MushionController {
 	@RequestMapping("/usr/spotify/recommendTest")
 	public String SpotifyPlayerTest() {
 		
+		
 		return "/usr/spotify/recommendTest";
 	}
 	

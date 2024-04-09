@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
 <link rel="stylesheet" href="/resource/recommend.css" />
-<link rel="stylesheet" href="/resource/recommendTest.css" />
 
 <!-- 폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +18,6 @@
 <html class="html-body">
 <body>
 
-<!-- <div class="genreRecommend"> -->
-<!-- <div class="recommend-body"> -->
 <c:if test="${maxGenre == 'Classic'}">
 <div class="container-body">
 	<div class="container">

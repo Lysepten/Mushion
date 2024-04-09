@@ -4,6 +4,7 @@
 <%@ include file="../common/mushionHead.jspf"%>
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
+<link rel="stylesheet" href="/resource/recommend.css" />
 <link rel="stylesheet" href="/resource/recommendTest.css" />
 
 <!-- 폰트 -->
@@ -15,13 +16,22 @@
 
 <!-- <!DOCTYPE html> -->
 <html class="html-body">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/564x/fc/6d/42/fc6d42ca2c29ebdcfbc3fa2621b0fbe2.jpg" /><img
-			src="https://i.pinimg.com/564x/0d/6a/37/0d6a378dd61ac1ad40488ba7ebffb4c1.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-	</div>
+<div class="login-box">
+  <h2>Spotify Login</h2>
+<!--   <h2>🔽</h2> -->
+<!--   <h2>👇</h2> -->
+  <form>
+    <div class="user-box">
+    </div>
+    <div class="user-box">
+    </div>
+    <a href="https://accounts.spotify.com/authorize?client_id=1440fd0b1217439f81573cf6470a1a51&response_type=code&redirect_uri=http://localhost:8081/usr/home/SpotifyRedirect&scope=user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+<img class="image" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkNTY5%2FbtsGmfpjKD9%2F4bRbprRlQiQXuH9dbF6C61%2Fimg.png" height="100" alt="" />
+    </a>
+  </form>
 </div>
 </html>

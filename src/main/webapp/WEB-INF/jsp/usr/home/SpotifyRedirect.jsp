@@ -48,15 +48,15 @@ $.ajax({
 
     // 액세스 토큰을 사용하여 API 호출 등 필요한 작업을 수행합니다.
     console.log("엑세스 토큰 잘 나오나? : " + accessToken);
+    console.log("리프레시 토큰 잘 나오나? : " + refreshToken);
 
-	
     const script = document.createElement("script");
     script.src = "https://sdk.scdn.co/spotify-player.js";
     script.async = true;
 
     document.body.appendChild(script);
-    
 
+    // 스포티파이 플레이어 SDK
     window.onSpotifyWebPlaybackSDKReady = () => {
         const player = new Spotify.Player({
             name: 'Web Playback SDK Quick Start Player',
@@ -69,10 +69,10 @@ $.ajax({
             console.log('Ready with Device ID 1', device_id);
             getdeviceId = device_id;
             console.log("디바이스 ID : "+ getdeviceId);
-            
+
             BearerAuthorizationCode = 'Bearer '+ accessToken;
             console.log("BearerAuthorizationCode : " + BearerAuthorizationCode)
-            
+
             // Web Transfer Playback
 				$.ajax({
  				 url: 'https://api.spotify.com/v1/me/player',
@@ -94,15 +94,14 @@ $.ajax({
 				});
 
          // Web Transfer Playback end
-           
-         
+
         });
 
-        // Not Ready
+        // 플레이어를 불러오지 못했을때.
         player.addListener('not_ready', ({ device_id }) => {
             console.log('Device ID has gone offline', device_id);
         });
-        
+
         player.addListener('not_ready', ({ device_id }) => {
         	  console.log('Device ID is not ready for playback', device_id);
         	});
@@ -118,11 +117,11 @@ $.ajax({
         player.addListener('account_error', ({ message }) => {
             console.error(message);
         });
-		
+
         document.getElementById('togglePlay').onclick = function() {
           player.togglePlay();
-          
-          // playbackState
+
+          // playbackState(현재 재생 목록에 대한 아티스트 정보)
           player.getCurrentState().then(state => {
         	  if (!state) {
         	    console.error('User is not playing music through the Web Playback SDK');
@@ -144,11 +143,7 @@ $.ajax({
         	  var SpotifySongName = document.getElementById('spotifySongName');
         	  SpotifySongName.textContent = current_track.name;
         	  
-//         	  var SpotifyArtistGenres = document.getElementById('spotifyArtistGenres');
-        	  
         	  ArtistUri = current_track.artists[0].uri.split(":");
-			
-//         	  SpotifyArtistGenres.textContent = current_track.artists[0].uri;
         	  
         	});
           // playbackState end
@@ -218,11 +213,8 @@ $.ajax({
           });
         });
         
+//         현재 재생중인 곡의 아티스트 장르
         document.getElementById('ArtistGenresExtraction').onclick = function() {
-//         	console.log("버튼테스트중~")
-//         	console.log(ArtistUri[2]);
-//         	console.log("코드 잘 나오나 : " + BearerAuthorizationCode);
-        	
         	$.ajax({
         		  url: 'https://api.spotify.com/v1/artists/'+ArtistUri[2],
         		  type: 'GET',
@@ -232,13 +224,7 @@ $.ajax({
         		  success: function(response) {
         		    console.log(response);
         		    
-//         		    setAttribute('checked',true);
-        		    
-//         		    var SpotifyArtistGenres = document.getElementById('spotifyArtistGenre');
-        		    
         		    var Genre = document.getElementById('Genre');
-        		    
-//         		    SpotifyArtistGenres.textContent = response.genres;
         		    
         		    Genre.value = response.genres;
         		    
@@ -254,7 +240,6 @@ $.ajax({
         player.connect();
     }
 
-    
   },
   error: function(error) {
     // 요청이 실패한 경우 에러 처리를 수행합니다.
@@ -268,13 +253,11 @@ function GenreCheck() {
 	var hiddenInputValue = document.querySelector('.args-form input[type="hidden"]').value.trim();
 
 	console.log(hiddenInputValue);
-	
+
 	 if(hiddenInputValue == "" || hiddenInputValue == " " || hiddenInputValue == null) {
 		 alert('장르를 찾지 못했습니다. 다시 선택 해주세요.');
 		 return false;
-
 	 }
-
 	}
 
 </script>
@@ -290,7 +273,6 @@ function GenreCheck() {
     </div>
     <div class="album-cover">
       <div class="album-overlay"></div>
-<!-- <img src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt=""> -->
       <img id="spotifyimg" class="spotifyimg1" src="https://img.hankyung.com/photo/202101/01.25017855.1.jpg" alt="" />
       <h2 id="spotifySongName" class="song-title">
       </h2>

@@ -1,20 +1,13 @@
 .recommend-body {
   display: flex;
-  
-/*   justify-content: center; */
-/*   align-items: center; */
-/*   height: 100vh; */
-/*   background: #111; */
+ 
 }
 
 .image {
-/* 	padding: 50px; */
+
 display: block;
-/*   margin: 0 1em; */
 margin-left :auto;
 margin-right : auto;
-/*   width: 400px; */
-/*   height: 300px; */
   overflow: hidden;
   transition: transform 0.5s ease;
 }
@@ -43,10 +36,53 @@ margin-right : auto;
 }
 
 .chose-genre {
-/* 	display:block; */
+
 position:absolute;
 	bottom: 650px;
 	font-size: 24px;
 }
 
+ 
+ 
+.container-body {
+  display: flex;
+	justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  
+}
+
+:root {
+  --magnifier: 1.1;
+  --gap: 1vmin;
+  --transition: 0.5s;
+}
+  
+.container {
+  width: 80vw;
+  height: 50vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+img {
+  --brightness: 0.75;
+  --grayscale: 1;
+  transition: flex var(--transition), filter var(--transition);
+  height: 100%;
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  flex: 1;
+}
+
+img:hover {
+  --brightness: 1.15;
+  --grayscale: 0;
+  flex: var(--magnifier);
+}
 

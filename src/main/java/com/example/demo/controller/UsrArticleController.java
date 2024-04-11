@@ -62,7 +62,7 @@ public class UsrArticleController {
 			return rq.historyBackOnView("없는 게시판이야");
 		}
 
-		int itemsInAPage = 10;
+		int itemsInAPage = 16;
 
 		int pagesCount = (int) Math.ceil(articlesCount / (double) itemsInAPage);
 

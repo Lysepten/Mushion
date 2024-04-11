@@ -60,9 +60,9 @@
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZ6rHv%2FbtsFmlXTOOh%2F8Ru2UtPX6qK786jKZNDklk%2Fimg.jpg"
     class="ms-logo-img"/>
   </a> 
- <a href="../home/main" class="ms-home">홈</a>
+ <a href="../home/Mushion" class="ms-home">홈</a>
  <a href="" class="ms-news">뉴스</a>
- <a href="" class="ms-more">더보기</a>
+ <a href="/usr/article/list" class="ms-more">더보기</a>
  <a href="/usr/article/MushionSuggestList" class="ms-fm">패션 & 뮤직</a>
  
  <a href="/usr/member/MushionLogin" class="ms-login">로그인</a>

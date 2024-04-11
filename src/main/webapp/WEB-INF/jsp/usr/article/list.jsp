@@ -17,20 +17,30 @@ table {
    text-align: center; 
   } 
    thead tr { 
-    background-color: #0D1E27; 
-     color: #ffffff; 
+     background-color: #0D1E27;  
+      color: #ffffff;  
   } 
-  tbody tr:nth-child(2n) { 
-   background-color: #E9EBF0; 
-/*     color: white;  */
+  tbody tr:nth-child(2n+1) { 
+   background-color: #E9EBF0;
   } 
    tbody tr:nth-child(3n+1) {  
     background-color: #E9EBF0;
    }  
+   tbody tr:nth-child(2n) {  
+    color: #ffffff; 
+   }  
+/*    tbody tr:nth-child(4n) {   */
+/*     color: black;  */
+/*    }   */
    
-/*   th:nth-child(2n+1), td:nth-child(2n+1) { */
-/*     background-color: #e3f2fd; */
-/*   } */
+   td:nth-child(n+3) { 
+     background-color: #E9EBF0; 
+     color: black;
+   } 
+   
+   td:nth-child(-n+2)  { 
+/*      color: #ffffff;  */
+   } 
 </style>
 
 <!-- <body class="section-body"> -->

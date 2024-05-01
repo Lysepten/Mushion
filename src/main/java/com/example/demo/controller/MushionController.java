@@ -1,5 +1,11 @@
 package com.example.demo.controller;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -79,14 +85,15 @@ public class MushionController {
 	@RequestMapping("/usr/home/SpotifyRedirect")
 	public String SpotifyRedirect(@RequestParam String code, Model model) {
 		
+		
 		model.addAttribute("code", code);
+		
 		
 		return "/usr/home/SpotifyRedirect";
 	}
 	
 	@RequestMapping("/usr/spotify/recommendTest")
 	public String SpotifyPlayerTest() {
-		
 		
 		return "/usr/spotify/recommendTest";
 	}
@@ -112,6 +119,8 @@ public class MushionController {
 		int Punk = 0;
 		int Reggae = 0;
 		int RhythmAndBlues = 0;
+		
+		int fashionStyleId = 0;
 		
 		if(args == null) {
 			return "값을 입력해주세요";
@@ -201,46 +210,92 @@ public class MushionController {
 		
 		if(maxGenre.equals("Jazz")) {
 			maxGenre = "Classic";
+			fashionStyleId = 4;
 		}
 		if(maxGenre.equals("Hiphop")) {
 			maxGenre = "Street";
+			fashionStyleId = 13;
 		}
 		if(maxGenre.equals("Rock")) {
 			maxGenre = "Grunge";
+			fashionStyleId = 6;
 		}
 		if(maxGenre.equals("Pop")) {
 			maxGenre = "Minimal";
+			fashionStyleId = 8;
 		}
 		if(maxGenre.equals("Blues")) {
 			maxGenre = "Casual";
+			fashionStyleId = 3;
 		}
 		if(maxGenre.equals("Classical")) {
 			maxGenre = "Classic";
+			fashionStyleId = 4;
 		}
 		if(maxGenre.equals("Country")) {
 			maxGenre = "Hippie";
+			fashionStyleId = 7;
 		}
 		if(maxGenre.equals("Dance")) {
 			maxGenre = "Sporty";
+			fashionStyleId = 12;
 		}
 		if(maxGenre.equals("Electronic")) {
 			maxGenre = "Sporty";
+			fashionStyleId = 12;
 		}
 		if(maxGenre.equals("Folk")) {
 			maxGenre = "Bohemian";
+			fashionStyleId = 2;
 		}
 		if(maxGenre.equals("Metal")) {
 			maxGenre = "Biker";
+			fashionStyleId = 1;
 		}
 		if(maxGenre.equals("Punk")) {
 			maxGenre = "Punk";
+			fashionStyleId = 9;
 		}
 		if(maxGenre.equals("Reggae")) {
 			maxGenre = "Resort";
+			fashionStyleId = 10;
 		}
 		if(maxGenre.equals("RhythmAndBlues")) {
 			maxGenre = "Vintage";
+			fashionStyleId = 14;
 		}
+		
+		ResultSet rset = null;
+		
+		List<String> snapshotUrlList = new ArrayList<>();
+		
+		try {
+
+			String url = "jdbc:mysql://127.0.0.1:3306/Spring_AM_01?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull";
+		    Connection conn = DriverManager.getConnection(url, "root", "");
+		    String selectQuery = "SELECT * FROM snapshotUrl WHERE fashionStyleId = " + fashionStyleId;
+		    PreparedStatement pstmt = conn.prepareStatement(selectQuery);
+
+		    rset = pstmt.executeQuery();
+		    
+		    while (rset.next()) {
+
+		    	String snapshotUrl = rset.getString("url").trim();
+		    	snapshotUrlList.add(snapshotUrl);
+		    	
+		    	System.err.println(snapshotUrl);
+
+		    }
+		    
+		    model.addAttribute("snapshotUrlList", snapshotUrlList);
+
+		    conn.close();
+
+	    } catch (SQLException e) {
+	        System.out.println("데이터베이스 처리 중 오류가 발생했습니다.");
+	        e.printStackTrace();
+	    }
+		
 		
 		model.addAttribute("maxGenre", maxGenre);
 		model.addAttribute("artistGenre", artistGenre);

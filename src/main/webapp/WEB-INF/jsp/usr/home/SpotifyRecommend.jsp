@@ -173,4 +173,9 @@
 	</div>
 </div>
 	</c:if>
+	<c:forEach var="url" items="${snapshotUrlList}">
+    <img src="${url}" alt="image" />
+</c:forEach>
+
+<%-- 	<div>${snapshotUrlList } 잘 나오는지 테스트중</div> --%>
 </body>

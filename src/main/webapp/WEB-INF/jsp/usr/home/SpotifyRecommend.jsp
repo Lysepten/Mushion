@@ -123,15 +123,16 @@
 	</c:if>
 
 <c:if test="${maxGenre == 'Biker'}">
+
 <div class="container-body">
 	<div class="container">
-		<img src="https://i.pinimg.com/564x/de/89/f6/de89f6cc647631fc784cac6ece745b90.jpg" /><img
-			src="https://i.pinimg.com/564x/e8/f2/ff/e8f2ffa2fa5c5ba5b7663334c5b26d92.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
 	</div>
+			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
 </div>
 	</c:if>
 
@@ -173,9 +174,7 @@
 	</div>
 </div>
 	</c:if>
-	<c:forEach var="url" items="${snapshotUrlList}">
-    <img src="${url}" alt="image" />
-</c:forEach>
+	
 
 <%-- 	<div>${snapshotUrlList } 잘 나오는지 테스트중</div> --%>
 </body>

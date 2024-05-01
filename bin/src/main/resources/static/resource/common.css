@@ -1,0 +1,83 @@
+/* 폰트 */
+@font-face {
+	font-family: 'LotteMartDream';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2')
+		format('woff2'),
+		url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff')
+		format('woff');
+}
+
+@font-face {
+	font-family: 'LotteMartDream';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2')
+		format('woff2'),
+		url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff')
+		format('woff');
+}
+
+@font-face {
+	font-family: 'LotteMartDream';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2')
+		format('woff2'),
+		url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff')
+		format('woff');
+}
+
+/* .msinter { */
+/* 	font-family: "Inter", sans-serif; */
+/*   font-optical-sizing: auto; */
+/*   font-weight: <weight>; */
+/*   font-style: normal; */
+/*   font-variation-settings:"slnt" 0; */
+/* } */
+
+.lottemartdream * {
+	font-family: 'LotteMartDream', sans-serif;
+}
+
+html>body {
+	font-family: 'LotteMartDream', sans-serif;
+}
+
+/* 라이브러리 */
+
+/* 커스텀 */
+header>div>ul>li {
+	margin-right: 30px;
+}
+
+
+.table-box-1 th, .table-box-1 td {
+	border: 1px solid black;
+	padding: 10px;
+	text-align: center;
+}
+
+/*네비게이션 2차메뉴 */
+header>div>ul>li>ul {
+	display: none;
+	position: absolute;
+	background-color: white;
+}
+
+header>div>ul>li:hover>ul {
+	display: block;
+}
+
+header>div>ul>li:hover>ul {
+	display: block;
+}
+
+.mainHD {
+	background-color: #0D1E27;
+	color: #c8c8c8;
+}

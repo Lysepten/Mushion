@@ -1,0 +1,1063 @@
+/* 눈누 프리텐다드 폰트 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 클리어 픽스(사용 전) */
+.clearfix:before, .clearfix:after {
+    display: block;
+    content: '';
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear:both;
+}
+
+/* 노멀라이징 테스트 */
+.section-body {
+
+    font-style: normal;
+	background-color: #0D1E27;
+    color: #E9EBF0;
+}
+
+.html-body {
+	background-color: #071015;
+	color: #f2f2f2;
+}
+
+.topdb-text{
+	font-family: 'Pretendard-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+	font-weight: 400;
+	font-size: 23px;
+}
+
+/* 폰트2 */
+.section {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.msfont {
+	font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.interfont {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+}
+
+.maintxsize {
+	font-size: 22px;
+}
+
+																			/* 헤더 */
+/* header */
+.msheader {
+width: 1903px;
+height: 140px;
+left: 0px;
+top: 0px;
+background: #0D1E27;
+}
+
+/* Mushion. logo */
+.test1 {
+position: absolute;
+width: 132px;
+height: 34px;
+left: 212px;
+top: 53px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 28px;
+line-height: 34px;
+
+color: white;
+}
+
+/* Mushion. logo img*/
+
+.ms-logo-img {
+position: absolute;
+width: 48px;
+height: 48px;
+left: 151px;
+top: 46px;
+border-radius: 50px;
+}
+
+
+/* Home */
+.ms-home {
+position: absolute;
+width: 68px;
+height: 29px;
+left: 685px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+
+/* News */
+.ms-news {
+	position: absolute;
+width: 59px;
+height: 29px;
+left: 1009px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+/* head-fashion-music */
+.ms-fm {
+	position: absolute;
+width: 105.7px;
+height: 29px;
+left: 800px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+
+/* more */
+.ms-more {
+position: absolute;
+width: 92px;
+height: 29px;
+left: 1133px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+/* login page move */
+.ms-login {
+position: absolute;
+width: 92px;
+height: 29px;
+left: 1550px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+
+/* join page move */
+.ms-join {
+position: absolute;
+width: 92px;
+height: 29px;
+left: 1650px;
+top: 55px;
+color: #c8c8c8;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-size: 24px;
+font-weight: 500;
+line-height: 29px;
+
+white-space: nowrap;
+}
+																/* 메인 페이지 */
+/* html { */
+/* background-color: black; */
+/* height: 100%; */
+/* } */
+/* body { */
+/* background-color: black; */
+/* height: 100%; */
+/* } */
+
+/* body */
+/* body contents */
+.msbody {
+position: relative;
+width: 1903px;
+height: 1440px;
+
+background: #071015;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* login body */
+.loginbody {
+	background-color: black;
+}
+
+/* Mushion. */
+.ms-body-main-mushion-text {
+position: absolute;
+width: 448px;
+height: 83px;
+left: 161px;
+top: 165px;
+
+font-family: "Barlow", sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 118px;
+line-height: 100%;
+
+color: #e9ebf0;
+}
+
+/* 추천 음악 듣기... */
+.ms-body-recommendMusic {
+position: absolute;
+width: 116px;
+height: 24px;
+left: 499px;
+top: 414px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+
+opacity: 0.75;
+white-space: nowrap;
+}
+
+/* Fashion & Music */
+
+.fashion-music-font {
+position: absolute;
+width: 420px;
+height: 48px;
+left: 759px;
+top: 1214px;
+
+font-family: "Kite One", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 58px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Fashion */
+.fashion-font {
+position: absolute;
+width: 420px;
+height: 48px;
+left: 1327px;
+top: 1214px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Music */
+.music-font {
+position: absolute;
+width: 420px;
+height: 48px;
+left: 173px;
+top: 1214px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: rgba(0, 0, 0, 0.8);
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 메인페이지 소개글 */
+.body-mushion-text2 {
+position: absolute;
+width: 893px;
+height: 56px;
+left: 167px;
+top: 305px;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 28px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+
+opacity: 0.75;
+}
+
+/* Explore */
+.explore-btn {
+box-sizing: border-box;
+
+position: absolute;
+width: 217px;
+height: 64px;
+left: 167px;
+top: 393px;
+
+border: 2px solid #028BAF;
+border-radius: 12px;
+opacity: 0.75;
+}
+
+.explore-btn-text {
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 34px;
+
+color:#028BAF;
+}
+
+/* Select category */
+.Select-category {
+position: absolute;
+width: 245px;
+height: 39px;
+left: 1500px;
+top: 320px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+text-shadow: 0px 100px 80px rgba(0, 0, 0, 0.36), 0px 50.0488px 40.0391px rgba(0, 0, 0, 0.27372), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.234572), 0px 19.3198px 15.4559px rgba(0, 0, 0, 0.205522), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.18), 0px 7.88218px 6.30574px rgba(0, 0, 0, 0.154478), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.125428), 0px 1.99324px 1.59459px rgba(0, 0, 0, 0.0862802);
+}
+
+/* main page img1 */
+.main-img1 {
+position: absolute;
+width: 151.66px;
+height: 450px;
+left: 308px;
+top: 732px;
+
+background: url(qfqref.png);
+}
+
+
+
+/* main page img2 */
+.main-img2 {
+position: absolute;
+width: 138.64px;
+height: 450px;
+left: 1461px;
+top: 732px;
+
+background: url(qwefvqwerfvqv3232.png);
+}
+
+
+
+/* main page img3 */
+.main-img3 {
+position: absolute;
+width: 402.5px;
+height: 450px;
+left: 759px;
+top: 732px;
+
+background: url(qwef134f134f143.png);
+}
+
+																		/* 로그인 페이지 */
+/* mushion login body */
+.ms-login-body {
+position: relative;
+width: 1903px;
+height: 1107px;
+
+background: #0D1E27;
+}
+
+/* Auto layout */
+.ms-login-layout {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 1468px;
+height: 1107px;
+left: 217px;
+top: 0px;
+}
+
+/* 로그인 페이지 이미지 */
+.ms-login-mainimg {
+width: 748px;
+height: 1106.64px;
+
+background: url(.jpg), url(.jpg);
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+
+/* login mainlayout */
+.ms-login-mainlayout {
+width: 720px;
+height: 1107px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+/* login mainlayout2 */
+.ms-login-mainlayout2 {
+	position: absolute;
+width: 720px;
+height: 1107px;
+left: 748px;
+top: 0px;
+
+background: #071015;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* 계정이 필요하신가요 ? 무료로 가입하기 */
+.ms-login-jointext {
+position: absolute;
+width: 389px;
+left: calc(50% - 410px/2 + 386.5px);
+top: 70%;
+bottom: 10.03%;
+}
+/* 계정이 필요하신가요 ? */
+.ms-dojoin-text {
+	font-family: "Roboto", sans-serif;
+	font-size: 22px;
+	line-height: 2rem;
+	font-weight: 500;
+	text-align: left;
+	color: #a9acbb;
+	white-space: nowrap;
+}
+/* 무료로 가입하기 */
+.ms-dojoin-text2 {
+	font-family: "Roboto", sans-serif;
+	font-size: 22px;
+	line-height: 2rem;
+	font-weight: 500;
+	text-align: left;
+	color: #28a7ff;
+	white-space: nowrap;
+}
+/* 환영합니다. */
+.ms-login-welcome-text {
+position: absolute;
+width: 78px;
+height: 19px;
+left: 900px;
+top: 111px;
+
+font-family: "Roboto", sans-serif;
+font-weight: 500;
+font-style: normal;
+font-size: 15px;
+line-height: 19px;
+
+color: #A9ACBB;
+
+white-space: nowrap;
+}
+
+/* 사용중인 계정으로 로그인 */
+.ms-login-welcome-text2 {
+position: absolute;
+width: 361px;
+height: 40px;
+left: 900px;
+top: 168px;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 40px;
+
+
+color: #FFFFFF;
+white-space: nowrap;
+}
+
+/* 비밀번호를 잊으셨나요? */
+.ms-login-welcome-text3{
+position: absolute;
+left: 78%;
+right: 8.31%;
+top: 44.26%;
+bottom: 54.02%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 19px;
+
+color: #028BAF;
+white-space: nowrap;
+}
+
+
+/* 아이디 기억하기 */
+.ms-login-welcome-text4 {
+position: absolute;
+left: 63.83%;
+right: 28.88%;
+top: 44.26%;
+bottom: 54.02%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 19px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+
+/* 내 계정으로 로그인 */
+.ms-login-mylogin {
+box-sizing: border-box;
+
+position: absolute;
+left: 61.04%;
+right: 10.42%;
+top: 55.37%;
+bottom: 40.29%;
+
+background: #28A7FF;
+border: 1px solid #28A7FF;
+border-radius: 48px;
+}
+/* 내 계정으로 로그인 텍스트 */
+.ms-login-mylogin-text {
+position: absolute;
+width: 126px;
+left: calc(50% - 130px/2 + 371px);
+top: 56.7%;
+bottom: 41.64%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 19px;
+
+color: #FFFFFF;
+white-space: nowrap;
+}
+
+
+/* 비밀번호 텍스트 */
+.ms-login-pw-text {
+position: absolute;
+left: 64.92%;
+right: 28.47%;
+top: 35.8%;
+bottom: 62.69%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 19px;
+/* identical to box height */
+
+/* Label */
+color: #A9ACBB;
+white-space: nowrap;
+}
+/* 비밀번호 텍스트 테두리 */
+.ms-login-pw {
+box-sizing: border-box;
+
+position: absolute;
+width: 411px;
+height: 54px;
+left: 900px;
+top: 376px;
+
+border: 1px solid #28A7FF;
+border-radius: 12px;
+}
+
+/* 아이디 텍스트 */
+.ms-login-id-text {
+position: absolute;
+width: 80%;
+height: 100%;
+left: 13%;
+/* right: 25%; */
+/* top: 25.8%; */
+/* bottom: 72.54%; */
+border: 0;
+outline: none;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #A9ACBB;
+background-color: transparent;
+white-space: nowrap;
+z-index: 1000;
+}
+
+/* 비밀번호 텍스트 테두리 */
+.ms-login-id {
+/* box-sizing: border-box; */
+
+position: absolute;
+width: 411px;
+height: 54px;
+left: 900px;
+top: 268px;
+
+border: 1px solid #28A7FF;
+border-radius: 12px;
+}
+
+/* Naver */
+.ms-login-Naver-btn {
+position: absolute;
+left: 61.31%;
+right: 25.07%;
+top: 48.42%;
+bottom: 47.24%;
+
+background: #00C73C;
+border-radius: 48px;
+	
+}
+
+
+/* Naver img */
+.ms-login-Naver-btn-img {
+position: absolute;
+left: 910px;
+top: 540px;
+
+width: 2.5rem;
+height: 40px;
+}
+/* Naver text */
+.ms-login-Naver-btn-text {
+position: absolute;
+left: 64.8%;
+right: 29.5%;
+top: 49.77%;
+bottom: 48.51%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+white-space: nowrap;
+}
+
+
+/* Googole */
+.ms-login-google-btn {
+position: absolute;
+left: 1140px;
+top: 545px;
+
+width: 2rem;
+height: 31px;
+}
+
+/* Google text */
+.ms-login-google-btn-text {
+position: absolute;
+left: 81%;
+right: 15.19%;
+top: 49.77%;
+bottom: 48.51%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+
+/* 로그인 페이지 뒤로가기 */
+.ms-login-back-btn {
+position: absolute;
+width: 89px;
+left: 63%;
+top: 87.44%;
+bottom: 10.03%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+/* 로그인 페이지 홈으로 */
+.ms-login-home-btn {
+position: absolute;
+width: 89px;
+left: 63%;
+top: 93%;
+bottom: 10.03%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+
+.ms-join-imgbox {
+display: flex;
+/* justify-content: center; */
+width: 50%;
+height: 100%;
+float: left;
+}													/* 회원가입 페이지 */
+.ms-join-img {
+/* 	display: block; */
+/* 	width: 500px; */
+/* 	float: left; */
+/* 	height: 100%; */	object-fit: cover;
+}
+
+/* join-body */
+.ms-join-body {
+position: relative;
+height: 100%;
+background: #0D1E27;
+/* width: 1903px; */
+/* width: 80%; */
+}
+
+/* join-body2 */
+.ms-join-body2 {
+/* position: absolute; */
+width: 70%;
+height: 100%;
+margin-left: auto;
+margin-right: auto;
+background-color: #071015;
+/* left: 217px; */
+}
+
+
+/* 세로 메뉴 바 */
+.ms-join-body3 {
+display: flex;
+justify-content: center;
+width: 50%;
+height: 100%;
+float: right;
+padding-top: 4%;
+/* position: absolute; */
+/* left: 100%; */
+/* right: 50%; */
+}
+.content-main-box {
+	width: 65%;
+/* 	padding-left: 5%; */
+	padding-right: 5%
+	
+}
+.content-welcome-box {
+	width: 100%;
+}
+
+/* .ms-join-width-box { */
+/* display: flex; */
+/* flex-direction: column; */
+/* justify-content: space-between; */
+/* align-items: flex-start; */
+/* padding: 0px; */
+/* gap: 10px; */
+
+/* width: 449px; */
+/* height: 92px; */
+/* left: 898px; */
+/* top: 465.95px; */
+
+/* border-radius: 35px; */
+/* } */
+
+/* 우리와 함께해요 👋 */
+.content-welcome-box-text {
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 2rem;
+line-height: 62px;
+color: #FFFFFF;
+}
+
+
+
+
+/* 커뮤니티에 오신 것을 환영합니다. 가입하고 함께 해요! */
+.content-welcome-box-text2 {
+display: block;
+font-family: 'Pretendard-Regular';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 30px;
+
+color: #94A3B8;
+padding-bottom: 3%;
+}
+
+/* content box */
+.ms-join-content-box {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+padding: 0% 0% 2% 0%;
+gap: 5px;
+
+border-radius: 35px;
+}
+/* content text */
+.ms-join-content-text {
+font-family: 'Pretendard-Regular';
+font-weight: 400;
+font-size: 15px;
+color: #E4E4E7;
+}
+
+/* content input box */
+.ms-join-content-inputbox {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 17px 22px;
+
+width: 100%;
+height: 100%;
+
+border: 1px solid #28A7FF;
+border-radius: 15px;
+
+}
+/* content input text */
+.ms-join-content-inputtext {
+font-family: 'Pretendard-Regular';
+font-weight: 400;
+font-size: 16px;
+color: #94A3B8;
+}
+
+/* join create button */
+.ms-join-create-button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 16px;
+margin-top: 5%;
+gap: 10px;
+
+width: 40%;
+height: 15%;
+
+background: #28A7FF;
+border-radius: 50px;
+}
+
+/* join create text */
+.ms-join-create-text {
+color: white;
+font-family: 'Pretendard-Regular';
+}
+/* join back button */
+.ms-join-back-btn {
+position: absolute;
+width: 89px;
+left: 70%;
+top: 87.44%;
+bottom: 10.03%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+/* join home button */
+.ms-join-home-btn {
+position: absolute;
+width: 89px;
+left: 70%;
+top: 93%;
+bottom: 10.03%;
+
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 28px;
+
+color: #A9ACBB;
+white-space: nowrap;
+}
+
+/* 스포티파이 페이지 */
+#player {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+/*   background-color: #ccc; */
+  border: none;
+  margin-right: 10px;
+}
+
+#current-track-info {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sf-player {
+	display: inline-block;
+	background-color: white;
+}
+
+.sf-img {
+	width: 400px;
+}
+
+/* 임시 테스트 */
+.args-form {
+/* 	display: flex; */
+/* 	justify-content: space-around; */
+/* 	align-items: center; */
+/* 	width: 80px; */
+/*     background-color: gray; */
+/*     margin: 0 auto; */
+/*     border-radius: 10px; */
+}
+
+.genreRecommend {
+	
+/* 	display: flex; */
+/* 	justify-content: space-around; */
+/* 	align-items: center; */
+/* 	white-space: nowrap; */
+}
+
+.image {
+	display: inline;
+	height: 100px;
+}
+
+.genreRedirect {
+	cursor : pointer;
+}
+
+.spotify-now-playing {
+	color: black;
+}

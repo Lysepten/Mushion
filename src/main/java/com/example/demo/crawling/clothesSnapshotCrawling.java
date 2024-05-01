@@ -31,6 +31,10 @@ public class clothesSnapshotCrawling {
 		// 크롤링
 		ChromeOptions options = new ChromeOptions();
 		options.setCapability("ignoreProtectedModeSettings", true);
+		options.setCapability("unexpectedAlertBehaviour", "ignore");
+		options.addArguments("--disable-extensions");
+		options.addArguments("--disable-notifications");
+		
 		driver = new ChromeDriver(options);
 
 		// DB
@@ -61,8 +65,6 @@ public class clothesSnapshotCrawling {
 		    	pstmt.setString(1, imageUrl);
 		    	pstmt.setInt(2, fashionStyleId);
 		    	pstmt.executeUpdate();
-		    	
-		    	System.out.println("이미지 주소: " + imageUrl);
 		    }
 		}
 		
@@ -88,8 +90,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 		
@@ -115,8 +115,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 		
@@ -142,8 +140,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 		
@@ -169,8 +165,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 
@@ -196,8 +190,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 
@@ -223,8 +215,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 
@@ -250,8 +240,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 		
@@ -277,8 +265,6 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
 				    }
 				}
 		
@@ -304,8 +290,7 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
+
 				    }
 				}
 		
@@ -331,8 +316,7 @@ public class clothesSnapshotCrawling {
 				    	pstmt.setString(1, imageUrl);
 				    	pstmt.setInt(2, fashionStyleId);
 				    	pstmt.executeUpdate();
-				    	
-				    	System.out.println("이미지 주소: " + imageUrl);
+
 				    }
 				}
 				
@@ -359,8 +343,6 @@ public class clothesSnapshotCrawling {
 						    	pstmt.setString(1, imageUrl);
 						    	pstmt.setInt(2, fashionStyleId);
 						    	pstmt.executeUpdate();
-						    	
-						    	System.out.println("이미지 주소: " + imageUrl);
 						    }
 						}
 		

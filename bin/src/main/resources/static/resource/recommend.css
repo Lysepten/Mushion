@@ -1,0 +1,130 @@
+.recommend-body {
+  display: flex;
+ 
+}
+
+.image {
+
+display: block;
+margin-left :auto;
+margin-right : auto;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+.image--inverted:hover {
+  transform: scale(0.96);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.image--inverted {
+  transition: transform 0.5s ease;
+}
+
+.image:hover img {
+  transform: scale(1.15);
+}
+
+/* .chose-genre { */
+
+/* position:absolute; */
+/* 	bottom: 650px; */
+/* 	font-size: 24px; */
+/* } */
+
+.chose-genre {
+  position: absolute;
+  bottom: 650px; /* 원하는 위치로 조정 */
+  font-size: 24px;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+ 
+ 
+.container-body {
+  display: flex;
+	justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+:root {
+  --magnifier: 1.1;
+  --gap: 1vmin;
+  --transition: 0.5s;
+}
+  
+.container {
+  width: 80vw;
+/*   height: 50vmin; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5개의 열을 가진 그리드 설정 */
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+
+.img-wrapper {
+  position: relative; /* 이미지와 텍스트의 위치를 조정하기 위해 상대적인 위치 설정 */
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  margin-bottom: 20px;
+}
+
+.img-wrapper img {
+  --brightness: 0.75;
+  --grayscale: 1;
+  transition: flex var(--transition), filter var(--transition);
+  width: 100%; /* Ensure the image fills the container width */
+  height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+  -o-object-fit: cover;
+  object-fit: cover;
+  overflow: hidden;
+  flex: 1;
+  
+}
+
+/* img { */
+/*   --brightness: 0.75; */
+/*   --grayscale: 1; */
+/*   transition: flex var(--transition), filter var(--transition); */
+/*   height: 100%; */
+/*   filter: grayscale(var(--grayscale)) brightness(var(--brightness)); */
+/*   -o-object-fit: cover; */
+/*      object-fit: cover; */
+/*   overflow: hidden; */
+/*   flex: 1; */
+/* } */
+
+/* img:hover { */
+/*   --brightness: 1.15; */
+/*   --grayscale: 0; */
+/*   flex: var(--magnifier); */
+/* } */
+
+
+.img-wrapper:hover img {
+  --brightness: 1.15;
+  --grayscale: 0;
+  flex: var(--magnifier);
+transform: scale(1.1);
+transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.img-wrapper img:not(:hover) {
+  transition: filter 0.5s ease, transform 1s ease; /* Slowly return to the original size when the mouse leaves */
+}

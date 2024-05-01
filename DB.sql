@@ -550,3 +550,17 @@ CREATE TABLE topdb (
 );
 
 SELECT * FROM topdb;
+
+
+CREATE TABLE snapshotUrl (
+
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+url TEXT,
+fashionStyleId INT NOT NULL
+);
+
+SELECT *
+FROM snapshotUrl
+WHERE fashionStyleId = 1;
+
+DROP TABLE snapshotUrl;

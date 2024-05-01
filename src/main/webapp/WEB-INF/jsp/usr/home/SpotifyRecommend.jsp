@@ -19,111 +19,7 @@
 <body>
 
 <c:if test="${maxGenre == 'Classic'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/564x/fc/6d/42/fc6d42ca2c29ebdcfbc3fa2621b0fbe2.jpg" /><img
-			src="https://i.pinimg.com/564x/0d/6a/37/0d6a378dd61ac1ad40488ba7ebffb4c1.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Street'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Grunge'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" /><img
-			src="https://i.pinimg.com/564x/ed/76/4a/ed764aabcde4caf9196ad931f059a454.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Minimal'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://cdn.imweb.me/thumbnail/20220831/601b733c0051b.jpg" /><img
-			src="https://i.pinimg.com/564x/62/b5/07/62b5072c14af1a2d3ad35cbd7a0169b7.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Casual'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/564x/9d/44/1c/9d441c9713f9e0652348c04da676b480.jpg" /><img
-			src="https://i.pinimg.com/564x/df/f3/73/dff373e56ac13407ac14ea0479f82e88.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Hippie'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/564x/8c/8d/a0/8c8da08dd416f26a5851a08608282987.jpg" /><img
-			src="https://i.pinimg.com/564x/f0/b9/2f/f0b92f614e8cc6f13280b85452106918.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Sporty'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/564x/98/cb/41/98cb41bc714130624621bfb20fa82664.jpg" /><img
-			src="https://i.pinimg.com/564x/82/f1/47/82f147b85cff17c00f58658a3404954d.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Bohemian'}">
-<div class="container-body">
-	<div class="container">
-		<img src="https://i.pinimg.com/564x/a9/6b/67/a96b67f506d54c7d5e36f2788177f6d5.jpg" /><img
-			src="https://i.pinimg.com/564x/cf/37/9a/cf379aa68836180b219ae2687a510cf4.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
-	</div>
-</div>
-	</c:if>
-
-<c:if test="${maxGenre == 'Biker'}">
-			<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
 
 <div class="container-body">
 	<div class="container">
@@ -136,45 +32,160 @@
 </div>
 	</c:if>
 
-<c:if test="${maxGenre == 'Punk'}">
+<c:if test="${maxGenre == 'Street'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
 <div class="container-body">
 	<div class="container">
-		<img src="https://i.pinimg.com/564x/a8/65/2b/a8652bd7d54e700f06f18e2df864b8c5.jpg" /><img
-			src="https://i.pinimg.com/564x/cd/bc/db/cdbcdb84f8894650dfa3e8a6364a3cc9.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Grunge'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Minimal'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Casual'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Hippie'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Sporty'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Bohemian'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+	</c:if>
+
+<c:if test="${maxGenre == 'Biker'}">
+
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
+	</div>
+</div>
+
+	</c:if>
+
+<c:if test="${maxGenre == 'Punk'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
+<div class="container-body">
+	<div class="container">
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
 	</div>
 </div>
 	</c:if>
 
 <c:if test="${maxGenre == 'Resort'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
 <div class="container-body">
 	<div class="container">
-		<img src="http://www.kstarfashion.com/news/photo/201805/131665_67365_5429.jpg" /><img
-			src="https://i.pinimg.com/564x/6c/02/0e/6c020eada3db7b49f7d21a01ec644b4c.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
 	</div>
 </div>
 	</c:if>
 
 <c:if test="${maxGenre == 'Vintage'}">
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+
 <div class="container-body">
 	<div class="container">
-		<img src="https://cdn.imweb.me/upload/S201612025840bcf9c3866/8cf723f484387.jpg" /><img
-			src="https://i.pinimg.com/originals/24/34/4b/24344b97a484f1154fea471db52c5468.jpg" /><img
-			src="https://i.pinimg.com/736x/8a/30/77/8a3077971d898103b9fdee8b636f9375.jpg" /><img
-			src="https://i.pinimg.com/736x/9c/c9/85/9cc9851f4f7b777a25e77d90401eb606.jpg" /><img
-			src="https://www.topstarnews.net/news/photo/201905/620746_311554_4140.jpg" />
-			<div class="chose-genre">선택한 아티스트의 장르는 ${artistGenre } 입니다. 어울리는 스타일은~! : ${maxGenre } 입니다. 이런 스타일 어때요?</div>
+		<c:forEach var="url" items="${snapshotUrlList}">
+	 <div class="img-wrapper">
+    <img src="${url}" alt="image" />
+     </div>
+</c:forEach>
 	</div>
 </div>
 	</c:if>
-	
 
-<%-- 	<div>${snapshotUrlList } 잘 나오는지 테스트중</div> --%>
 </body>

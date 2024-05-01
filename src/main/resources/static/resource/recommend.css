@@ -44,7 +44,7 @@ margin-right : auto;
 	font-weight: 600;
     font-style: normal;
     font-size: 30px;
-    padding: 50px;
+    padding: 150px;
 }
 
  
@@ -83,7 +83,7 @@ margin-right : auto;
 
 .img-wrapper img {
   --brightness: 0.75;
-  --grayscale: 1;
+  --grayscale: 0;
   transition: flex var(--transition), filter var(--transition);
   height: auto;
   filter: grayscale(var(--grayscale)) brightness(var(--brightness));
@@ -96,7 +96,7 @@ margin-right : auto;
 
 
 .img-wrapper:hover img {
-  --brightness: 1.15;
+  --brightness: 1.05;
   --grayscale: 0;
   flex: var(--magnifier);
 transform: scale(1.05);

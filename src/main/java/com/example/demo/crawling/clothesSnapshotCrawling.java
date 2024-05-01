@@ -42,6 +42,8 @@ public class clothesSnapshotCrawling {
 	    Connection conn = DriverManager.getConnection(url, "root", "");
 	    String insertQuery = "INSERT INTO snapshotUrl (url, fashionStyleId) VALUES (?, ?)";
 	    PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+	    
+	    // 크롤링 메서드, DB 주입 메서드 분리 필요.
 		
 		// 무신사 스냅샷 그런지 스타일 이미지
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EA%B7%B8%EB%9F%B0%EC%A7%80&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
@@ -347,9 +349,6 @@ public class clothesSnapshotCrawling {
 						}
 		
 		//스타일 리스트 전체
-//		List<WebElement> informNames = driver.findElements(By.className("style-list-item"));
-		
-//		List<snapshotUrl> snapshotUrlList = new ArrayList<>();
 
 		System.out.println("DB 전송 완료");
 

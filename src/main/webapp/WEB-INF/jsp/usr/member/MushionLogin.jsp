@@ -93,12 +93,12 @@
           <p class="ms-login-mylogin-text">
             내 계정으로 로그인
           </p>
-          <p class="ms-login-pw-text">
-            비밀번호
-          </p>
+          
           <div
             class="ms-login-pw"
-          ></div>
+          >
+          <input class="ms-login-pw-text" placeholder="비밀번호" type="text" />
+          </div>
           
 			<!-- 자물쇠 이모티콘 도형 (임시) -->
           <svg
@@ -136,7 +136,7 @@
           </svg>
 			<!-- 자물쇠 이모티콘 도형 (임시) -->
  		<div class="ms-login-id">
- 		<input class="ms-login-id-text" value="아이디" type="text" />
+ 		<input class="ms-login-id-text" placeholder="아이디" type="text" />
           </div>
 		
 

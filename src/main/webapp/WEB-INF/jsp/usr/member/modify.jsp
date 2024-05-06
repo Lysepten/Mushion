@@ -39,76 +39,6 @@
 	}
 </script>
 
-<section class="mt-8 text-xl px-4">
-	<div class="mx-auto">
-		<form action="../member/doModify" method="POST" onsubmit="MemberModify__submit(this); return false;">
-			<table class="member-modify-box table-box-1" border="1">
-				<tbody>
-					<tr>
-						<th>가입일</th>
-						<td>${rq.loginedMember.regDate }</td>
-					</tr>
-					<tr>
-						<th>아이디</th>
-						<td>${rq.loginedMember.loginId }</td>
-					</tr>
-					<tr>
-						<th>새 비밀번호</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="새 비밀번호를 입력해주세요" name="loginPw" />
-						</td>
-					</tr>
-					<tr>
-						<th>새 비밀번호 확인</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="새 비밀번호 확인을 입력해주세요" name="loginPwConfirm" />
-						</td>
-					</tr>
-					<tr>
-						<th>이름</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="이름을 입력해주세요" name="name" value="${rq.loginedMember.name }" />
-						</td>
-					</tr>
-					<tr>
-						<th>닉네임</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="닉네임을 입력해주세요" name="nickname" value="${rq.loginedMember.nickname }" />
-						</td>
-					</tr>
-					<tr>
-						<th>전화번호</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="전화번호를 입력해주세요" name="cellphoneNum" value="${rq.loginedMember.cellphoneNum }" />
-						</td>
-					</tr>
-					<tr>
-						<th>이메일</th>
-						<td>
-							<input class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="이메일을 입력해주세요" name="email" value="${rq.loginedMember.email }" />
-						</td>
-					</tr>
-
-					<tr>
-						<th></th>
-						<td>
-							<input class="btn btn-outline btn-info" type="submit" value="수정" />
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
-		<div class="btns">
-			<button class="btn btn-outline" class="" type="button" onclick="history.back();">뒤로가기</button>
-		</div>
-	</div>
-</section>
 <div class="div">
   <div class="div-2">
     <div class="div-12">
@@ -155,32 +85,36 @@
         </div>
       </div>
       <div class="div-29"></div>
+      
       <div class="div-30">
+      <form action="../member/doModify" method="POST" onsubmit="MemberModify__submit(this); return false;">
         <div class="div-31">
           <div class="div-32">기본 정보</div>
+          
           <div class="div-33">
             <a href="/usr/home/Mushion"class="div-34">취소</a>
-            <a href="../member/checkPw" class="div-35">변경</a>
+            <input class="div-35" type="submit" value="완료"/>
           </div>
         </div>
         <div class="div-36"></div>
         <div class="div-37">
-          <div class="div-38">NICKNAME</div>
-          <div class="div-39">NAME</div>
+          <div class="div-38">닉네임</div>
+          <div class="div-39">이름</div>
         </div>
-        <div class="div-40">
-          <div class="div-41">
-          <input autocomplete="off" type="text"
-								placeholder="닉네임을 입력해주세요" name="nickname" value="${rq.loginedMember.nickname }" />
-          
-          </div>
-          <div class="div-42">${rq.loginedMember.name }</div>
-        </div>
-        <div class="div-43">CELL PHONE</div>
-        <div class="div-44">${rq.loginedMember.cellphoneNum }</div>
-        <div class="div-45">EMAIL</div>
-        <div class="div-46">${rq.loginedMember.email }</div>
-      </div>
+				<div class="div-40">
+				<input class="div-41" autocomplete="off" type="text" placeholder="닉네임을 입력해주세요" name="nickname"
+						value="${rq.loginedMember.nickname }" /> <input class="div-42" autocomplete="off" type="text"
+						placeholder="이름을 입력해주세요" name="name" value="${rq.loginedMember.name }" />
+				</div>
+				
+				<div class="div-43">전화번호</div>
+				<input class="div-44" type="text" autocomplete="off" type="text" placeholder="전화번호를 입력해주세요" name="cellphoneNum"
+					value="${rq.loginedMember.cellphoneNum }"/>
+				
+				<div class="div-45">이메일</div>
+				<input class="div-46" type="text" placeholder="이메일을 입력해주세요" name="email" value="${rq.loginedMember.email }" />
+			</div>
+			</form>
     </div>
   </div>
 </div>
@@ -584,7 +518,8 @@ width: 1920px;
 	height: 40px;
 	width: 90px;
 	text-align: center;
-	padding-top: 8px;
+/* 	padding-top: 8px; */
+	cursor: pointer;
   }
   @media (max-width: 991px) {
     .div-35 {
@@ -682,6 +617,7 @@ width: 1920px;
     color: #fff;
     padding-top: 3px;
     text-align: center;
+    width: 645px;
   }
   @media (max-width: 991px) {
     .div-44 {
@@ -711,6 +647,7 @@ width: 1920px;
     color: #fff;
     padding-top: 3px;
     text-align: center;
+    width: 645px;
   }
   @media (max-width: 991px) {
     .div-46 {
@@ -727,12 +664,14 @@ font-style: normal;
 input{
 background-color: #071015;
 width: 90%;
-
+border: none;
+outline: none;
 };
 
 input:focus {
 border: none;
 outline-color: navy;
+outline: none;
 }
 
 </style>

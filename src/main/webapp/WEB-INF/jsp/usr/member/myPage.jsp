@@ -66,7 +66,7 @@
           <div class="div-32">기본 정보</div>
           <div class="div-33">
             <a href="/usr/home/Mushion"class="div-34">취소</a>
-            <a href="../member/checkPw" class="div-35">변경</a>
+            <a href="../member/checkPw" class="div-35">수정</a>
           </div>
         </div>
         <div class="div-36"></div>

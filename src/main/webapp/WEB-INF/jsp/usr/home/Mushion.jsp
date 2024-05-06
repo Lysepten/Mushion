@@ -158,13 +158,13 @@
   </p>
   <a href="/usr/home/SpotifyAPI">
   <img
-    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGpihb%2FbtsHcoFb7rv%2FJLIA4B5fp3NKncezsTxlQK%2Fimg.png"
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJNw9U%2FbtsFm4uGOBY%2F3fhelcTffJ02r1AM8kLiDK%2Fimg.png"
     class="main-img1"
   />
   </a>
   <a href="">
   <img
-    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fw7sY1%2FbtsHcsHDmmm%2FzcBJNJQhtGjaL3fcyLpKl0%2Fimg.png"
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcRFpwE%2FbtsFmg9YU4r%2Foe0li1KKGOe7yUC6JsVbXk%2Fimg.png"
     class="main-img2"
   />
   </a>

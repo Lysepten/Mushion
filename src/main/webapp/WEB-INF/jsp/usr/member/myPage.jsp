@@ -65,8 +65,8 @@
         <div class="div-31">
           <div class="div-32">기본 정보</div>
           <div class="div-33">
-            <div class="div-34">취소</div>
-            <div class="div-35">저장</div>
+            <a href="/usr/home/Mushion"class="div-34">취소</a>
+            <a href="../member/checkPw" class="div-35">변경</a>
           </div>
         </div>
         <div class="div-36"></div>
@@ -75,13 +75,13 @@
           <div class="div-39">NAME</div>
         </div>
         <div class="div-40">
-          <div class="div-41"></div>
-          <div class="div-42"></div>
+          <div class="div-41">${rq.loginedMember.nickname }</div>
+          <div class="div-42">${rq.loginedMember.name }</div>
         </div>
         <div class="div-43">CELL PHONE</div>
-        <div class="div-44"></div>
+        <div class="div-44">${rq.loginedMember.cellphoneNum }</div>
         <div class="div-45">EMAIL</div>
-        <div class="div-46"></div>
+        <div class="div-46">${rq.loginedMember.email }</div>
       </div>
     </div>
   </div>
@@ -440,6 +440,7 @@ width: 1920px;
     font-weight: 600;
     font-style: normal;
     font-size: 18px;
+   	padding-top: 10px;
   }
   .div-33 {
     display: flex;
@@ -459,9 +460,12 @@ width: 1920px;
     border-style: solid;
     border-width: 2px;
     color: #a9acbb;
-    font-weight: 400;
+    font-weight: 600;
     justify-content: center;
-    padding: 14px 32px;
+	height: 40px;
+	width: 90px;
+	text-align: center;
+	padding-top: 7px;
   }
   @media (max-width: 991px) {
     .div-34 {
@@ -479,7 +483,10 @@ width: 1920px;
     color: #fff;
     font-weight: 600;
     justify-content: center;
-    padding: 14px 32px;
+	height: 40px;
+	width: 90px;
+	text-align: center;
+	padding-top: 8px;
   }
   @media (max-width: 991px) {
     .div-35 {
@@ -539,6 +546,9 @@ width: 1920px;
     width: 360px;
     max-width: 100%;
     height: 35px;
+    color: #fff;
+    padding-top: 3px;
+    text-align: center;
   }
   .div-42 {
     border-radius: 7px;
@@ -548,6 +558,9 @@ width: 1920px;
     width: 265px;
     max-width: 100%;
     height: 35px;
+    color: #fff;
+    padding-top: 3px;
+    text-align: center;
   }
   .div-43 {
     color: #fff;
@@ -567,22 +580,28 @@ width: 1920px;
     border-width: 2px;
     margin-top: 20px;
     height: 35px;
+    color: #fff;
+    padding-top: 3px;
+    text-align: center;
   }
   @media (max-width: 991px) {
     .div-44 {
       max-width: 100%;
     }
   }
+  
   .div-45 {
     color: #fff;
     margin-top: 29px;
 /*     font: 400 14px Inter, sans-serif; */
   }
+  
   @media (max-width: 991px) {
     .div-45 {
       max-width: 100%;
     }
   }
+
   .div-46 {
     border-radius: 7px;
     border-color: rgba(2, 139, 175, 1);
@@ -590,6 +609,9 @@ width: 1920px;
     border-width: 2px;
     margin-top: 20px;
     height: 35px;
+    color: #fff;
+    padding-top: 3px;
+    text-align: center;
   }
   @media (max-width: 991px) {
     .div-46 {

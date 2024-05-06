@@ -264,7 +264,36 @@ white-space: nowrap;
 	
 }
 
+.ms-checkPw {
+	border-radius: 10px;
+	width: 500px;
+margin-left: auto;
+margin-right: auto;
 
+}
+
+.ms-checkPw-tbody table {
+	
+	border : 2px solid #028BAF;
+	border-radius: 10px;
+}
+
+
+.ms-checkPw-tbody th {
+	
+	border : 2px solid #028BAF;
+}
+
+.ms-checkPw-tbody td {
+	
+	border : 2px solid #028BAF;
+}
+
+.ms-checkPw-tbody-text {
+	
+	
+	
+}
 																/* 메인 페이지 */
 /* html { */
 /* background-color: black; */
@@ -610,7 +639,6 @@ font-style: normal;
 font-weight: 400;
 font-size: 32px;
 line-height: 40px;
-
 
 color: #FFFFFF;
 white-space: nowrap;

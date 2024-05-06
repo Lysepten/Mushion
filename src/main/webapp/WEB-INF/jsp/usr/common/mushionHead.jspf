@@ -74,7 +74,7 @@
 
 <!-- <a class="ms-write-text" href="../article/write">글쓰기</a> -->
 
-<a class="h-full px-3 flex items-center ms-mypage-text" href="/usr/member/myPage">프로필</a>
+<a class="h-full px-3 flex items-center ms-mypage-text" href="/usr/member/myPage" style="height: 29px" >프로필</a>
 
 <a class="ms-logout-text" onclick="if(confirm('로그아웃 할래?') == false) return false;" href="../member/doLogout">로그아웃</a>
 </c:if>

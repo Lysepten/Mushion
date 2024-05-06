@@ -53,10 +53,12 @@
 					<th>전화번호</th>
 					<td>${rq.loginedMember.cellphoneNum }</td>
 				</tr>
+
 				<tr>
 					<th>이메일</th>
 					<td>${rq.loginedMember.email }</td>
 				</tr>
+
 				<tr>
 					<th></th>
 					<td>

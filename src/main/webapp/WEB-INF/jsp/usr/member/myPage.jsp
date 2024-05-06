@@ -17,24 +17,6 @@
 
 <div class="div">
   <div class="div-2">
-<!--     <div class="div-3"> -->
-<!--       <div class="div-4"> -->
-<!--         <div class="div-5"> -->
-<!--           <img -->
-<!--             loading="lazy" -->
-<!--             srcset="..." -->
-<!--             class="img" -->
-<!--           /> -->
-<!--           <div class="div-6">Mushion.</div> -->
-<!--         </div> -->
-<!--         <div class="div-7"> -->
-<!--           <div class="div-8">홈</div> -->
-<!--           <div class="div-9">패션 & 뮤직</div> -->
-<!--           <div class="div-10">뉴스</div> -->
-<!--           <div class="div-11">더보기</div> -->
-<!--         </div> -->
-<!--       </div> -->
-<!--     </div> -->
     <div class="div-12">
       <div class="div-13">
         <div class="div-14">프로필</div>
@@ -43,8 +25,8 @@
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/b9b3cd478ee61b7811749e5cc3044a95d71f601dd882279c29366feef9a46c56?"
           class="img-2"
         />
-        <div class="div-15">신짱구</div>
-        <div class="div-16">웹개발자</div>
+        <div class="div-15">${rq.loginedMember.name }</div>
+        <div class="div-16">${rq.loginedMember.nickname }</div>
         <div class="div-17">
           <div class="div-18">
             <div class="div-19">Jazz</div>

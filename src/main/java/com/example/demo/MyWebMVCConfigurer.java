@@ -77,6 +77,10 @@ public class MyWebMVCConfigurer implements WebMvcConfigurer {
 		// 뮤션 로그인
 		ir.addPathPatterns("/usr/member/MushionLogin");
 		
+		// 뮤션 회원가입
+		ir.addPathPatterns("/usr/member/MushionJoin");
+		
+		
 		ir.addPathPatterns("/usr/member/doLogin");
 		ir.addPathPatterns("/usr/member/login");
 		ir.addPathPatterns("/usr/member/join");

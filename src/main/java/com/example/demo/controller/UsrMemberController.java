@@ -127,7 +127,7 @@ public class UsrMemberController {
 
 		Member member = memberService.getMember(joinRd.getData1());
 
-		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/login");
+		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/MushionLogin");
 	}
 
 	@RequestMapping("/usr/member/myPage")

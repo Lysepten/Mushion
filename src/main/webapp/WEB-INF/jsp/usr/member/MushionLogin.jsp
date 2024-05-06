@@ -86,18 +86,19 @@
           ></path>
         </svg>
 <!--         체크박스 도형 (임시) -->
-
-          <div
+			
+			<form action="../member/doLogin" method="POST"> 
+			<input type="hidden" name="afterLoginUri" value="${param.afterLoginUri }" />
+          <button type="submit" style="background-color:#28A7FF"
             class="ms-login-mylogin"
-          ></div>
-          <p class="ms-login-mylogin-text">
+          ><p class="ms-login-mylogin-text">
             내 계정으로 로그인
-          </p>
+          </p></button>
           
           <div
             class="ms-login-pw"
           >
-          <input class="ms-login-pw-text" placeholder="비밀번호" type="text" />
+          <input class="ms-login-pw-text" placeholder="비밀번호" type="text" name="loginId" />
           </div>
           
 			<!-- 자물쇠 이모티콘 도형 (임시) -->
@@ -136,9 +137,11 @@
           </svg>
 			<!-- 자물쇠 이모티콘 도형 (임시) -->
  		<div class="ms-login-id">
- 		<input class="ms-login-id-text" placeholder="아이디" type="text" />
+ 		<input class="ms-login-id-text" placeholder="아이디" type="text" name="loginPw" />
           </div>
-		
+          
+          
+		</form>
 
          
           
@@ -178,14 +181,14 @@
           </svg>
 		  <!-- 유저모양 이모티콘 도형 (임시) -->
 		  
-          <div
+          <button
             class="ms-login-Naver-btn"
-          ></div>
+          ><p class="ms-login-Naver-btn-text">네이버로 로그인</p></button>
           <img
             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAsWJ7%2FbtsFoF97hDR%2FyJIQfxgLKwls4Sv7dFfPp0%2Fimg.png"
             class="ms-login-Naver-btn-img"
           />
-          <p class="ms-login-Naver-btn-text">네이버로 로그인</p>
+          
         
 		  <!-- 구글 로그인 도형 -->
           <svg

@@ -71,8 +71,14 @@ public class MyWebMVCConfigurer implements WebMvcConfigurer {
 		ir.addPathPatterns("/usr/reactionPoint/doBadReaction");
 
 		ir = registry.addInterceptor(needLogoutInterceptor);
+		// 기존 로그인 (삭제해야함)
 		ir.addPathPatterns("/usr/member/login");
+		
+		// 뮤션 로그인
+		ir.addPathPatterns("/usr/member/MushionLogin");
+		
 		ir.addPathPatterns("/usr/member/doLogin");
+		ir.addPathPatterns("/usr/member/login");
 		ir.addPathPatterns("/usr/member/join");
 		ir.addPathPatterns("/usr/member/doJoin");
 		ir.addPathPatterns("/usr/member/findLoginId");

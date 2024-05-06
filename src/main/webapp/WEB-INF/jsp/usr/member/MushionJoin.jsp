@@ -48,7 +48,7 @@
   <div class="ms-join-body2">
   		<div class="ms-join-imgbox">
       <img
-      src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcuD0Jt%2FbtsFkUUqiCH%2F2AAHbFgq6UScpEPJUe7Yw0%2Fimg.png"
+      src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsGkyw%2FbtsHb6EJ1Z5%2FNJTRs1PSk7TkSIcdTVXYt0%2Fimg.jpg"
       class="ms-join-img"
     /></div>
     <div class="ms-join-body3">

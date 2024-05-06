@@ -46,7 +46,8 @@
 
 <div class="ms-login-body">
   <div class="ms-login-layout">
-    <img class="ms-login-mainimg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcuD0Jt%2FbtsFkUUqiCH%2F2AAHbFgq6UScpEPJUe7Yw0%2Fimg.png" />
+    <img class="ms-login-mainimg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbdbmfd%2FbtsHb7wVcE4%2FbsYKIuYTTrsFIk1FS4oyo1%2Fimg.jpg"
+    " />
     <div class="ms-login-mainlayout">
       <div class="ms-login-mainlayout2">
       </div>

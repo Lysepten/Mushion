@@ -511,9 +511,9 @@ background: url(qwefvqwerfvqv3232.png);
 /* main page img3 */
 .main-img3 {
 position: absolute;
-width: 402.5px;
+/* width: 402.5px; */
 height: 450px;
-left: 759px;
+left: 680px;
 top: 732px;
 
 background: url(qwef134f134f143.png);

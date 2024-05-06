@@ -171,7 +171,7 @@
   
   <a href="">
   <img
-    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbHCHJK%2FbtsHecRCh8C%2FMqJUKmFlqkQ3Cq51kVfPL0%2Fimg.png"
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsmOo3%2FbtsHeeIHkFh%2FaiDo1trZ6gaHgywwpi2wS1%2Fimg.png"
     class="main-img3"
   />
   </a>

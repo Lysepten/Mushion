@@ -264,7 +264,7 @@ function GenreCheck() {
 
 <!DOCTYPE html>
 <html class="html-body" lang="en" >
-<div class="container">
+<!-- <div class="container"> -->
   <div class="iphone neu">
     <div class="title">
       <div><i class="fas fa-chevron-left"></i></div>
@@ -300,5 +300,5 @@ function GenreCheck() {
 
     </div>
   </div>
-</div>
+<!-- </div> -->
 </html>

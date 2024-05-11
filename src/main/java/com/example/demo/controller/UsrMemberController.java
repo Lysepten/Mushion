@@ -42,7 +42,7 @@ public class UsrMemberController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined()) {
-			return Ut.jsHistoryBack("F-A", "이미 로그인 함");
+			return Ut.jsHistoryBack("F-A", "이미 로그인 상태입니다.");
 		}
 
 		return "usr/member/login";
@@ -55,7 +55,7 @@ public class UsrMemberController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined()) {
-			return Ut.jsHistoryBack("F-A", "이미 로그인 함");
+			return Ut.jsHistoryBack("F-A", "이미 로그인 상태입니다.");
 		}
 
 		if (Ut.isNullOrEmpty(loginId)) {
@@ -146,11 +146,11 @@ public class UsrMemberController {
 	public String doCheckPw(String loginPw) {
 
 		if (Ut.isNullOrEmpty(loginPw)) {
-			return rq.historyBackOnView("비번 입력해");
+			return rq.historyBackOnView("비밀번호를 입력하세요.");
 		}
 
 		if (rq.getLoginedMember().getLoginPw().equals(loginPw) == false) {
-			return rq.historyBackOnView("비번 틀림");
+			return rq.historyBackOnView("비밀번호가 틀렸습니다.");
 		}
 
 		return "usr/member/modify";

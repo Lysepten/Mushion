@@ -5,6 +5,10 @@
 <%@ include file="../common/head.jspf"%>
 <%@ include file="../common/toastUiEditorLib.jspf"%>
 
+<%-- <%@ include file="../common/mushionHead.jspf"%> --%>
+<link rel="stylesheet" href="/resource/common.css" />
+<link rel="stylesheet" href="/resource/mushion.css" />
+
 <!-- <iframe src="http://localhost:8081/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
 
 <!-- 변수 -->
@@ -267,7 +271,7 @@ white-space: nowrap;
 
 
 .article-section {
- width: 1091px; 
+ width: 1091px;
 display:block; 
 margin-top: 2rem;
  margin-left: auto;
@@ -300,77 +304,194 @@ display:inline;
 }
 
 .toast-ui-editor{
-    background-color: #fff;
+/*     background-color: rgb(242, 242, 242); */
     border-radius: 10px;
+
 }
+
+.detail-regdate {
+color: #6e6e73;
+font-size: 14px;
+}
+
+.detail-writer{
+/* color: #6e6e73; */
+font-size: 16px;
+
+}
+
+.detail-hitCount{
+color: #6e6e73;
+font-size: 14px;
+}
+
+
+.detail-title{
+font-size: 40px;
+}
+
+.detail-body{
+font-size: 17px;
+}
+
+#likeCount{
+display:inline;
+font-weight: 600;
+/* white-space: nowrap; */
+}
+
+
+#DislikeCount{
+display:inline;
+font-weight: 600;
+}
+
+.toast-ui-viewer{
+ background-color: rgb(242, 242, 242);
+/*      border-radius: 10px; */
+
+}
+
+.detail-contents{
+ width:900px;
+margin-left:auto;
+margin-right: auto;
+background-color: rgb(242, 242, 242);
+border-radius: 10px;
+color:black;
+padding-left: 50px;
+box-shadow: inset 0px 0px 10px #666;
+}
+
+#likeButton{
+margin-bottom: 10px;
+width: 75px;
+display:inline;
+white-space: nowrap;
+}
+
+#DislikeButton{
+width: 75px;
+display:inline;
+white-space: nowrap;
+}
+
+.section-line{
+margin-top: 50px;
+margin-bottom: 50px;
+width: 100%;
+height: 1px;
+background-color: rgb(2, 139, 175);
+}
+
+.detail-section-line {
+margin-top: 10px;
+margin-bottom: 20px; 
+width: 10%;
+height: 1px;
+background-color: rgb(2, 139, 175);
+}
+
+.detail-img-body{
+/* text-align: center; */
+padding-top: 100px;
+padding-bottom: 200px;
+}
+
+.detail-img{
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 50px;
+}
+
+.deteail-reply{
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+width: 95%;
+border-radius: 7px;
+color:black;
+}
+
+.detail-reply-section{
+background-color: #0D1E27;
+border-radius: 7px;
+}
+
+.detail-reply-toptr{
+ background-color: #0A171E; 
+ padding-left: 10px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+.detail-reply-toptr-list{
+background-color: #0A171E;
+padding-left: 15px;
+padding-top: 15px;
+ padding-bottom: 15px;
+ border-radius: 7px;
+}
+
 
 </style>
 
-<!-- <html class="html-body"> -->
+<html class="html-body">
 <section class="article-section">
-		<table class="">
+		<table class="detail-contents">
 			<tbody>
 				<tr>
-					<th>번호</th>
-					<td>${article.id }${goodRP}${badRP}</td>
-				</tr>
+					<th></th>
+<%-- 					<td>${article.id }${goodRP}${badRP}</td> --%>
 				<tr>
-					<th>작성날짜</th>
-					<td>${article.regDate }</td>
+					<th></th>
+					<td class="detail-title">${article.title } </td>
 				</tr>
-				<tr>
-					<th>수정날짜</th>
-					<td>${article.updateDate }</td>
+								<tr>
+					<th class="detail-writer"></th>
+					<td class="detail-writer">작성자 : ${article.extra__writer } <div class="detail-section-line"></div></td>
+					
 				</tr>
+<!-- 				<tr> -->
+<!-- 					<th>첨부 이미지</th> -->
+<!-- 					<td> -->
+<%-- 						<div>${rq.getImgUri(article.id)}</div> --%>
+<!-- 					</td> -->
+<!-- 				</tr> -->
 				<tr>
-					<th>작성자</th>
-					<td>${article.extra__writer }</td>
-				</tr>
-				<tr>
-					<th>좋아요</th>
-					<td id="likeCount">${article.goodReactionPoint }</td>
-				</tr>
-				<tr>
-					<th>싫어요</th>
-					<td id="DislikeCount">${article.badReactionPoint }</td>
-				</tr>
-				<tr>
-					<th>추천 ${usersReaction }</th>
-					<td>
-						<!-- href="/usr/reactionPoint/doGoodReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" -->
-						<button id="likeButton" class="btn btn-outline btn-success" onclick="doGoodReaction(${param.id})">좋아요</button>
-
-						<button id="DislikeButton" class="btn btn-outline btn-error" onclick="doBadReaction(${param.id})">싫어요</button>
-					</td>
-				</tr>
-				<tr>
-					<th>조회수</th>
-					<td>
-						<span class="article-detail__hit-count">${article.hitCount }</span>
-					</td>
-				</tr>
-				<tr>
-					<th>제목</th>
-					<td>${article.title }</td>
-				</tr>
-				<tr>
-					<th>첨부 이미지</th>
-					<td>
-						<img class="w-full rounded-xl" src="${rq.getImgUri(article.id)}" onerror="${rq.profileFallbackImgOnErrorHtml}"
+					<th></th>
+					<td class="detail-img-body">
+					<img class="detail-img" src="${rq.getImgUri(article.id)}" onerror="${rq.profileFallbackImgOnErrorHtml}"
 							alt="" />
-						<div>${rq.getImgUri(article.id)}</div>
+						<div class="toast-ui-viewer">
+							<script class="detail-body" type="text/x-template">${article.body}</script>
+							
+						</div>
+					</td>
+					
+				</tr>
+<!-- 				</tr> -->
+				<tr>
+					<th class="detail-hitCount"></th>
+					<td>
+					 <button id="likeButton" class="btn btn-outline btn-success btn-xs" onclick="doGoodReaction(${param.id})">좋아요 👍 <div id="likeCount"> ${article.goodReactionPoint }</div></button>
+					<button id="DislikeButton" class="btn btn-outline btn-error btn-xs" onclick="doBadReaction(${param.id})">싫어요 👎 <div id="DislikeCount"> ${article.badReactionPoint }</div></button>
+		
+						<span class="article-detail__hit-count detail-hitCount"><div class="detail-section-line"></div>조회수 : ${article.hitCount }</span>
 					</td>
 				</tr>
 				<tr>
-					<th>내용</th>
-					<td>
-						<div class="toast-ui-viewer">
-							<script type="text/x-template">${article.body}</script>
-						</div>
+					<th class="detail-regdate"></th>
+					<td class="detail-regdate">게시일 :${article.regDate } 
+					
 					</td>
 				</tr>
 			</tbody>
 		</table>
+
+		<div class="section-line"></div>
 		<div class="btns">
 			<button class="btn btn-outline" type="button" onclick="history.back();">뒤로가기</button>
 			<c:if test="${article.userCanModify }">
@@ -379,39 +500,18 @@ display:inline;
 			<c:if test="${article.userCanDelete }">
 				<a class="btn btn-outline" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
 					href="../article/doDelete?id=${article.id }">삭제</a>
-			</c:if>
+		</c:if>
 		</div>
 </section>
 
-<section class="article-section">
+<section class="article-section detail-reply-section">
 	<c:if test="${rq.isLogined() }">
-		<form action="../reply/doWrite" method="POST" onsubmit="ReplyWrite__submit(this); return false;">
-			<input type="hidden" name="relTypeCode" value="article" />
-			<input type="hidden" name="relId" value="${article.id }" />
-			<table class="">
-				<tbody>
-					<tr>
-						<th>내용</th>
-						<td>
-							<textarea class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" placeholder="내용을 입력해주세요"
-								name="body"> </textarea>
-						</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td>
-							<input class="btn btn-outline btn-info" type="submit" value="댓글 작성" />
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
 	</c:if>
 	<c:if test="${!rq.isLogined() }">
-		<a class="btn btn-outline btn-ghost" href="${rq.loginUri }">LOGIN</a> 하고 댓글 써
+		<a class="btn btn-outline btn-ghost" href="${rq.loginUri }">LOGIN</a> 후 댓글을 작성해주세요
 	</c:if>
-	<div class="mx-auto">
-		<h2>댓글 리스트(${repliesCount })</h2>
+	<div class="">
+		<h2 class="detail-reply-toptr-list" >댓글 리스트(${repliesCount })</h2>
 		<table class="">
 			<colgroup>
 				<col style="width: 2%" />
@@ -423,20 +523,19 @@ display:inline;
 			<col style="width: 10%" />
 			<col style="width: 8%" />
 			</colgroup>
-			<thead>
-				<tr>
-					<th>번호</th>
-					<th>날짜</th>
-					<th>내용</th>
-					<th>작성자</th>
-					<th>좋아요</th>
-					<th>싫어요</th>
-					<th>수정</th>
-					<th>삭제</th>
+			<thead class="detail-reply-toptr">
+				<tr class="detail-reply-toptr">
+					<th class="detail-reply-toptr">번호</th>
+					<th class="detail-reply-toptr">날짜</th>
+					<th class="detail-reply-toptr">내용</th>
+					<th class="detail-reply-toptr">작성자</th>
+					<th class="detail-reply-toptr">좋아요</th>
+					<th class="detail-reply-toptr">싫어요</th>
+					<th class="detail-reply-toptr"></th>
+					<th class="detail-reply-toptr"></th>
 				</tr>
 			</thead>
 			<tbody>
-
 				<c:forEach var="reply" items="${replies }">
 					<tr class="hover">
 						<td>${reply.id }</td>
@@ -467,11 +566,28 @@ display:inline;
 						</td>
 					</tr>
 				</c:forEach>
+				<form action="../reply/doWrite" method="POST" onsubmit="ReplyWrite__submit(this); return false;">
+			<input type="hidden" name="relTypeCode" value="article" />
+			<input type="hidden" name="relId" value="${article.id }" />
+			<table class="">
+				<tbody>
+<!-- 					<tr> -->
+							<textarea class="deteail-reply" autocomplete="off" placeholder="내용을 입력해주세요"
+								name="body"> </textarea>
+<!-- 					</tr> -->
+					<tr>
+						<th></th>
+						<td>
+							<input class="btn btn-outline btn-info" type="submit" value="댓글 작성" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
 			</tbody>
 		</table>
 	</div>
 	</section>
-<!-- </html> -->
-
-
+</html>
+	
 <%@ include file="../common/foot.jspf"%>

@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE WRITE"></c:set>
-<%@ include file="../common/head.jspf"%>
+
+<%@ include file="../common/mushionHead.jspf"%>
+<link rel="stylesheet" href="/resource/common.css" />
+<link rel="stylesheet" href="/resource/mushion.css" />
+
+<%-- <%@ include file="../common/head.jspf"%> --%>
 <%@ include file="../common/toastUiEditorLib.jspf"%>
 <!-- Article write 관련 -->
 <script type="text/javascript">
@@ -62,6 +67,9 @@ display:block;
 margin-top: 2rem;
  margin-left: auto;
  margin-right: auto; 
+ font-family: "Pretendard-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .article-write-button {
@@ -86,9 +94,14 @@ display:inline;
 /* top: 1018px; */
 }
 
+.toast-ui-editor{
+    background-color: #fff;
+    border-radius: 10px;
+}
 
 </style>
 
+<html class="html-body">
 <section class="article-section">
 	<div class="mx-auto">
 		<form action="../article/doWrite" method="POST" onsubmit="ArticleWrite__submit(this); return false;"
@@ -151,7 +164,7 @@ display:inline;
 		
 	</div>
 </section>
-
+</html>
 
 
 <%@ include file="../common/foot.jspf"%>

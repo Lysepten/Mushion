@@ -2,10 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%-- <%@ include file="../common/head.jspf"%> --%>
 <%@ include file="../common/toastUiEditorLib.jspf"%>
 
-<%-- <%@ include file="../common/mushionHead.jspf"%> --%>
+<%@ include file="../common/mushionHead.jspf"%>
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
 
@@ -453,7 +453,6 @@ width: 100px;
 			<tbody>
 				<tr>
 					<th></th>
-<%-- 					<td>${article.id }${goodRP}${badRP}</td> --%>
 				<tr>
 					<th></th>
 					<td class="detail-title">${article.title } </td>
@@ -463,12 +462,6 @@ width: 100px;
 					<td class="detail-writer">작성자 : ${article.extra__writer } <div class="detail-section-line"></div></td>
 					
 				</tr>
-<!-- 				<tr> -->
-<!-- 					<th>첨부 이미지</th> -->
-<!-- 					<td> -->
-<%-- 						<div>${rq.getImgUri(article.id)}</div> --%>
-<!-- 					</td> -->
-<!-- 				</tr> -->
 				<tr>
 					<th></th>
 					<td class="detail-img-body">
@@ -481,19 +474,18 @@ width: 100px;
 					</td>
 					
 				</tr>
-<!-- 				</tr> -->
 				<tr>
 					<th class="detail-hitCount"></th>
 					<td>
 					 <button id="likeButton" class="btn btn-outline btn-success btn-xs" onclick="doGoodReaction(${param.id})">좋아요 👍 <div id="likeCount"> ${article.goodReactionPoint }</div></button>
 					<button id="DislikeButton" class="btn btn-outline btn-error btn-xs" onclick="doBadReaction(${param.id})">싫어요 👎 <div id="DislikeCount"> ${article.badReactionPoint }</div></button>
-		
+					<div class="detail-section-line"></div>
 						<span class="article-detail__hit-count detail-hitCount"></div>조회수 : ${article.hitCount }</span>
 					</td>
 				</tr>
 				<tr>
 					<th class="detail-regdate"></th>
-					<td class="detail-regdate">게시일 :${article.regDate } 
+					<td class="detail-regdate">게시일 : ${article.regDate } 
 					
 					</td>
 				</tr>

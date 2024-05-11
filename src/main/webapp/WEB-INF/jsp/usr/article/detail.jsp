@@ -424,18 +424,27 @@ border-radius: 7px;
  background-color: #0A171E; 
  padding-left: 10px;
  padding-top: 10px;
- padding-bottom: 10px;
+ padding-bottom: 20px;
 }
 
 .detail-reply-toptr-list{
 background-color: #0A171E;
-padding-left: 15px;
-padding-top: 15px;
+padding-left: 20px;
+padding-top: 20px;
  padding-bottom: 15px;
  border-radius: 7px;
+ font-weight: 600;
 }
 
+.detail-reply-tbody{
+text-align: center;
+}
 
+.back-btn{
+margin-top:30px;
+margin-left: 100px;
+width: 100px;
+}
 </style>
 
 <html class="html-body">
@@ -479,7 +488,7 @@ padding-top: 15px;
 					 <button id="likeButton" class="btn btn-outline btn-success btn-xs" onclick="doGoodReaction(${param.id})">좋아요 👍 <div id="likeCount"> ${article.goodReactionPoint }</div></button>
 					<button id="DislikeButton" class="btn btn-outline btn-error btn-xs" onclick="doBadReaction(${param.id})">싫어요 👎 <div id="DislikeCount"> ${article.badReactionPoint }</div></button>
 		
-						<span class="article-detail__hit-count detail-hitCount"><div class="detail-section-line"></div>조회수 : ${article.hitCount }</span>
+						<span class="article-detail__hit-count detail-hitCount"></div>조회수 : ${article.hitCount }</span>
 					</td>
 				</tr>
 				<tr>
@@ -491,17 +500,18 @@ padding-top: 15px;
 			</tbody>
 		</table>
 
-		<div class="section-line"></div>
+<!-- 		<div class="section-line"></div> -->
 		<div class="btns">
-			<button class="btn btn-outline" type="button" onclick="history.back();">뒤로가기</button>
+			<button class="btn back-btn" type="button" onclick="history.back();">뒤로가기</button>
 			<c:if test="${article.userCanModify }">
-				<a class="btn btn-outline" href="../article/modify?id=${article.id }">수정</a>
+				<a class="btn" href="../article/modify?id=${article.id }">수정</a>
 			</c:if>
 			<c:if test="${article.userCanDelete }">
-				<a class="btn btn-outline" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
+				<a class="btn" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
 					href="../article/doDelete?id=${article.id }">삭제</a>
 		</c:if>
 		</div>
+		<div class="section-line"></div>
 </section>
 
 <section class="article-section detail-reply-section">
@@ -514,14 +524,14 @@ padding-top: 15px;
 		<h2 class="detail-reply-toptr-list" >댓글 리스트(${repliesCount })</h2>
 		<table class="">
 			<colgroup>
-				<col style="width: 2%" />
+				<col style="width: 3%" />
 			<col style="width: 20%" />
 			<col style="width: 40%" />
 			<col style="width: 10%" />
 			<col style="width: 10%" />
 			<col style="width: 10%" />
-			<col style="width: 10%" />
 			<col style="width: 8%" />
+			<col style="width: 9%" />
 			</colgroup>
 			<thead class="detail-reply-toptr">
 				<tr class="detail-reply-toptr">
@@ -535,7 +545,7 @@ padding-top: 15px;
 					<th class="detail-reply-toptr"></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="detail-reply-tbody">
 				<c:forEach var="reply" items="${replies }">
 					<tr class="hover">
 						<td>${reply.id }</td>
@@ -553,14 +563,14 @@ padding-top: 15px;
 							<c:if test="${reply.userCanModify }">
 								<%-- 							href="../reply/modify?id=${reply.id }" --%>
 								<button onclick="toggleModifybtn('${reply.id}');" id="modify-btn-${reply.id }" style="white-space: nowrap;"
-									class="btn btn-outline">수정</button>
+									class="btn btn-xs">수정</button>
 								<button onclick="doModifyReply('${reply.id}');" style="white-space: nowrap; display: none;"
 									id="save-btn-${reply.id }" class="btn btn-outline">저장</button>
 							</c:if>
 						</td>
 						<td>
 							<c:if test="${reply.userCanDelete }">
-								<a style="white-space: nowrap;" class="btn btn-outline"
+								<a style="white-space: nowrap;" class="btn btn-xs"
 									onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;" href="../reply/doDelete?id=${reply.id }">삭제</a>
 							</c:if>
 						</td>
@@ -578,7 +588,7 @@ padding-top: 15px;
 					<tr>
 						<th></th>
 						<td>
-							<input class="btn btn-outline btn-info" type="submit" value="댓글 작성" />
+							<input class="btn btn-info btn-sm" type="submit" value="댓글 작성" />
 						</td>
 					</tr>
 				</tbody>

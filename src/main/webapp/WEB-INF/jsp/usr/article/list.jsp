@@ -1,34 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="#{board.code } ARTICLE LIST"></c:set>
-<%@ include file="../common/head.jspf"%>
+
+<%-- <%@ include file="../common/head.jspf"%> --%>
+<%@ include file="../common/mushionHead.jspf"%>
+
+<link rel="stylesheet" href="/resource/common.css" />
+<link rel="stylesheet" href="/resource/mushion.css" />
 
 
-<section class="mt-8 text-xl px-4">
+<style>
+
+ table { 
+     border-collapse: collapse; 
+     text-indent: 0; 
+     border: none;
+ }
+
+ tbody { 
+     display: table-row-group; 
+     vertical-align: middle; 
+     unicode-bidi: isolate; 
+    border: none; 
+ } 
+
+tr, td {
+border: none;
+padding: 10px;
+text-align: center;
+}
+
+thead{
+height:50px;
+background-color: #0D1E27;
+border-radius: 10px;
+}
+
+th{
+white-space: nowrap;
+}
+
+.article-section {
+width: 1091px;
+display:block; 
+margin-top: 50px;
+ margin-left: auto;
+ margin-right: auto; 
+ font-family: "Pretendard-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.search-form {
+ width: 800px;
+ margin-left: auto;
+ margin-right: auto; 
+ text-align: center;
+ margin-bottom: 20px;
+ margin-top: 20px;
+ color:black;
+  font-family: "Pretendard-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.list-search-button{
+background-color : #028BAF;
+height: 32px;
+border-radius: 7px;
+  font-size: 0.875rem;
+}
+
+
+</style>
+
+<html class="html-body">
+<section class="article-section">
 	<div class="mx-auto overflow-x-auto">
 		<div class="mb-4 flex">
 			<div class="badge badge-outline">${articlesCount }개</div>
 			<div class="flex-grow"></div>
-			<form action="">
-				<input type="hidden" name="boardId" value="${param.boardId }" />
-				<select data-value="${param.searchKeywordTypeCode }" class="select select-bordered select-sm w-full max-w-xs"
-					name="searchKeywordTypeCode">
-					<option value="title">title</option>
-					<option value="body">body</option>
-					<option value="title,body">title+body</option>
-				</select>
-				<input value="${param.searchKeyword }" name="searchKeyword" type="text" placeholder="searchKeyword?"
-					class="input-sm input input-bordered w-48 max-w-xs" />
-				<button class="btn btn-ghost btn-sm" type="submit">검색</button>
-			</form>
 		</div>
 	</div>
-	<table class="table-box-1 table" border="1">
+	<table class="">
 		<colgroup>
-			<col style="width: 10%" />
+			<col style="width: 2%" />
 			<col style="width: 20%" />
-			<col style="width: 60%" />
+			<col style="width: 40%" />
 			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 8%" />
 		</colgroup>
 		<thead>
 			<tr>
@@ -64,7 +127,18 @@
 		</tbody>
 	</table>
 	</div>
-
+			<form action="" class="search-form">
+				<input type="hidden" name="boardId" value="${param.boardId }" />
+				<select data-value="${param.searchKeywordTypeCode }" class="select select-bordered select-sm max-w-xs"
+					name="searchKeywordTypeCode">
+					<option value="title">제목</option>
+					<option value="body">내용</option>
+					<option value="title,body">제목 + 내용</option>
+				</select>
+				<input value="${param.searchKeyword }" name="searchKeyword" type="text" placeholder="검색어를 입력하세요"
+					class="input-sm input input-bordered w-48 max-w-xs" />
+				<button class="list-search-button" type="submit">검색</button>
+			</form>
 	<!-- 	동적 페이징 -->
 	<div class="pagination flex justify-center mt-3">
 		<c:set var="paginationLen" value="3" />
@@ -91,16 +165,8 @@
 
 	</div>
 
-	<!-- 	원래 페이징 -->
-	<div class="pagination flex justify-center mt-3">
-		<div class="btn-group">
-			<c:forEach begin="1" end="${pagesCount }" var="i">
-				<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }&boardId=${param.boardId}">${i }</a>
-			</c:forEach>
-		</div>
-	</div>
 </section>
-
+</html>
 
 
 <%@ include file="../common/foot.jspf"%>

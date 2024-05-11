@@ -241,10 +241,74 @@ function doModifyReply(replyId) {
 
 </script>
 
+<style>
 
-<section class="mt-8 text-xl px-4 ">
-	<div class="">
-		<table class="table-box-1 " border="1">
+ table { 
+     border-collapse: collapse; 
+     text-indent: 0; 
+     border: none;
+ }
+
+ tbody { 
+     display: table-row-group; 
+     vertical-align: middle; 
+     unicode-bidi: isolate; 
+    border: none; 
+ } 
+
+tr, td {
+border: none;
+padding: 10px;
+}
+
+th{
+white-space: nowrap;
+}
+
+
+.article-section {
+ width: 1091px; 
+display:block; 
+margin-top: 2rem;
+ margin-left: auto;
+ margin-right: auto; 
+ font-family: "Pretendard-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.article-write-button {
+display:inline;
+background-color: rgba(40, 167, 255, 1);
+width: 90px;
+height: 40px;
+border-radius: 7px;
+margin-left: 800px;
+}
+
+.article-back-button{
+display:inline;
+/* position: absolute; */
+ width: 90px; 
+ height: 40px; 
+ border-radius: 7px; 
+ border-color: rgba(2, 139, 175, 1); 
+ border-style: solid; 
+ border-width: 2px; 
+/* left: 500px; */
+/* top: 1018px; */
+}
+
+.toast-ui-editor{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+</style>
+
+<!-- <html class="html-body"> -->
+<section class="article-section">
+		<table class="">
 			<tbody>
 				<tr>
 					<th>번호</th>
@@ -307,7 +371,7 @@ function doModifyReply(replyId) {
 				</tr>
 			</tbody>
 		</table>
-		<div class="btns mt-5">
+		<div class="btns">
 			<button class="btn btn-outline" type="button" onclick="history.back();">뒤로가기</button>
 			<c:if test="${article.userCanModify }">
 				<a class="btn btn-outline" href="../article/modify?id=${article.id }">수정</a>
@@ -317,15 +381,14 @@ function doModifyReply(replyId) {
 					href="../article/doDelete?id=${article.id }">삭제</a>
 			</c:if>
 		</div>
-	</div>
 </section>
 
-<section class="mt-5 px-3">
+<section class="article-section">
 	<c:if test="${rq.isLogined() }">
 		<form action="../reply/doWrite" method="POST" onsubmit="ReplyWrite__submit(this); return false;">
 			<input type="hidden" name="relTypeCode" value="article" />
 			<input type="hidden" name="relId" value="${article.id }" />
-			<table class="write-box table-box-1" border="1">
+			<table class="">
 				<tbody>
 					<tr>
 						<th>내용</th>
@@ -349,12 +412,16 @@ function doModifyReply(replyId) {
 	</c:if>
 	<div class="mx-auto">
 		<h2>댓글 리스트(${repliesCount })</h2>
-		<table class="table-box-1 table" border="1">
+		<table class="">
 			<colgroup>
-				<col style="width: 10%" />
-				<col style="width: 20%" />
-				<col style="width: 60%" />
-				<col style="width: 10%" />
+				<col style="width: 2%" />
+			<col style="width: 20%" />
+			<col style="width: 40%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 8%" />
 			</colgroup>
 			<thead>
 				<tr>
@@ -403,11 +470,8 @@ function doModifyReply(replyId) {
 			</tbody>
 		</table>
 	</div>
+	</section>
+<!-- </html> -->
 
-</section>
-
-<script>
-
-</script>
 
 <%@ include file="../common/foot.jspf"%>

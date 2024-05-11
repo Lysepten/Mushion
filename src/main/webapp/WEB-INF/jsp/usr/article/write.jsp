@@ -46,7 +46,7 @@
      border-collapse: collapse; 
      text-indent: 0; 
      border: none;
- } */
+ }
 
  tbody { 
      display: table-row-group; 
@@ -99,6 +99,10 @@ display:inline;
     border-radius: 10px;
 }
 
+.write-text{
+color:black;
+}
+
 </style>
 
 <html class="html-body">
@@ -130,7 +134,7 @@ display:inline;
 					<tr>
 						<th>제목</th>
 						<td>
-							<input class="input input-bordered w-full max-w-xs" autocomplete="off" type="text"
+							<input class="input input-bordered w-full max-w-xs write-text" autocomplete="off" type="text"
 								placeholder="제목을 입력해주세요" name="title" />
 						</td>
 					</tr>

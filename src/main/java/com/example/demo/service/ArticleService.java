@@ -20,6 +20,11 @@ public class ArticleService {
 	public ArticleService(ArticleRepository articleRepository) {
 		this.articleRepository = articleRepository;
 	}
+	
+	public List<topdb> getForMushionSuggestList() {
+
+		return articleRepository.getForMushionSuggestList();
+	}
 
 	// 서비스 메서드
 	public Article getForPrintArticle(int loginedMemberId, int id) {
@@ -118,12 +123,6 @@ public class ArticleService {
 		return articleRepository.getForPrintArticles(boardId, limitFrom, limitTake, searchKeywordTypeCode,
 				searchKeyword);
 	}
-	
-	public List<topdb> getForMushionSuggestList() {
-
-		return articleRepository.getForMushionSuggestList();
-	}
-	
 
 	public ResultData increaseGoodReactionPoint(int relId) {
 		int affectedRow = articleRepository.increaseGoodReactionPoint(relId);
@@ -173,6 +172,9 @@ public class ArticleService {
 		return articleRepository.getBadRP(relId);
 	}
 
-
+	public int getCurrentArticleId() {
+		return articleRepository.getCurrentArticleId();
+		
+	}
 
 }

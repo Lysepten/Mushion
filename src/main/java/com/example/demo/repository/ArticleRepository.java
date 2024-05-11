@@ -13,6 +13,12 @@ import com.example.demo.vo.topdb;
 
 @Mapper
 public interface ArticleRepository {
+	
+	@Select("""
+			SELECT *
+			FROM topdb
+			""")
+	public List<topdb> getForMushionSuggestList();
 
 	@Insert("""
 			INSERT INTO
@@ -46,12 +52,12 @@ public interface ArticleRepository {
 			</script>
 				""")
 	public Article getForPrintArticle(int id);
-	
 
 	@Delete("DELETE FROM article WHERE id = #{id}")
 	public void deleteArticle(int id);
 
 	@Update("""
+			<script>
 			UPDATE article
 				<set>
 					<if test="title != null and title != ''">title = #{title},</if>
@@ -59,6 +65,7 @@ public interface ArticleRepository {
 					updateDate = NOW()
 				</set>
 			WHERE id = #{id}
+			</script>
 				""")
 	public void modifyArticle(int id, String title, String body);
 
@@ -205,11 +212,10 @@ public interface ArticleRepository {
 			""")
 	public int getBadRP(int relId);
 
-
 	@Select("""
-			SELECT *
-			FROM topdb
+			SELECT MAX(id) + 1
+			FROM article
 			""")
-	public List<topdb> getForMushionSuggestList();
-	
+	public int getCurrentArticleId();
+
 }

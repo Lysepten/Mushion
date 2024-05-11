@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
 <%@ include file="../common/head.jspf"%>
+<%@ include file="../common/toastUiEditorLib.jspf"%>
 
 <!-- <iframe src="http://localhost:8081/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
 
@@ -236,6 +238,7 @@ function doModifyReply(replyId) {
         }
 	})
 }
+
 </script>
 
 
@@ -287,10 +290,21 @@ function doModifyReply(replyId) {
 					<td>${article.title }</td>
 				</tr>
 				<tr>
-					<th>내용</th>
-					<td>${article.body }</td>
+					<th>첨부 이미지</th>
+					<td>
+						<img class="w-full rounded-xl" src="${rq.getImgUri(article.id)}" onerror="${rq.profileFallbackImgOnErrorHtml}"
+							alt="" />
+						<div>${rq.getImgUri(article.id)}</div>
+					</td>
 				</tr>
-
+				<tr>
+					<th>내용</th>
+					<td>
+						<div class="toast-ui-viewer">
+							<script type="text/x-template">${article.body}</script>
+						</div>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 		<div class="btns mt-5">
@@ -316,8 +330,8 @@ function doModifyReply(replyId) {
 					<tr>
 						<th>내용</th>
 						<td>
-							<textarea class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="내용을 입력해주세요" name="body"> </textarea>
+							<textarea class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" placeholder="내용을 입력해주세요"
+								name="body"> </textarea>
 						</td>
 					</tr>
 					<tr>
@@ -331,7 +345,7 @@ function doModifyReply(replyId) {
 		</form>
 	</c:if>
 	<c:if test="${!rq.isLogined() }">
-		<a class="btn btn-outline btn-ghost" href="../member/login">LOGIN</a> 하고 댓글 써
+		<a class="btn btn-outline btn-ghost" href="${rq.loginUri }">LOGIN</a> 하고 댓글 써
 	</c:if>
 	<div class="mx-auto">
 		<h2>댓글 리스트(${repliesCount })</h2>
@@ -392,6 +406,8 @@ function doModifyReply(replyId) {
 
 </section>
 
+<script>
 
+</script>
 
 <%@ include file="../common/foot.jspf"%>

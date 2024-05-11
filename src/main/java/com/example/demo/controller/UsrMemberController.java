@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.MemberService;
@@ -22,9 +23,26 @@ public class UsrMemberController {
 	@Autowired
 	private MemberService memberService;
 
+	@RequestMapping("/usr/member/getLoginIdDup")
+	@ResponseBody
+	public ResultData getLoginIdDup(String loginId) {
+
+		if (Ut.isEmpty(loginId)) {
+			return ResultData.from("F-1", "아이디를 입력해주세요");
+		}
+
+		Member existsMember = memberService.getMemberByLoginId(loginId);
+
+		if (existsMember != null) {
+			return ResultData.from("F-2", "해당 아이디는 이미 사용중이야", "loginId", loginId);
+		}
+
+		return ResultData.from("S-1", "사용 가능!", "loginId", loginId);
+	}
+
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
-	public String doLogout(HttpServletRequest req) {
+	public String doLogout(HttpServletRequest req, @RequestParam(defaultValue = "/") String afterLogoutUri) {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (!rq.isLogined()) {
@@ -33,7 +51,7 @@ public class UsrMemberController {
 
 		rq.logout();
 
-		return Ut.jsReplace("S-1", "로그아웃 되었습니다", "/");
+		return Ut.jsReplace("S-1", "로그아웃 되었습니다", afterLogoutUri);
 	}
 
 	@RequestMapping("/usr/member/login")
@@ -42,7 +60,7 @@ public class UsrMemberController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined()) {
-			return Ut.jsHistoryBack("F-A", "이미 로그인 상태입니다.");
+			return Ut.jsHistoryBack("F-A", "이미 로그인 함");
 		}
 
 		return "usr/member/login";
@@ -50,12 +68,13 @@ public class UsrMemberController {
 
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
-	public String doLogin(HttpServletRequest req, String loginId, String loginPw, String afterLoginUri) {
+	public String doLogin(HttpServletRequest req, String loginId, String loginPw,
+			@RequestParam(defaultValue = "/") String afterLoginUri) {
 
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined()) {
-			return Ut.jsHistoryBack("F-A", "이미 로그인 상태입니다.");
+			return Ut.jsHistoryBack("F-A", "이미 로그인 함");
 		}
 
 		if (Ut.isNullOrEmpty(loginId)) {
@@ -71,8 +90,10 @@ public class UsrMemberController {
 			return Ut.jsHistoryBack("F-3", Ut.f("%s(은)는 존재하지 않는 아이디입니다", loginId));
 		}
 
-		if (member.getLoginPw().equals(loginPw) == false) {
-			return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다"));
+		System.out.println(Ut.sha256(loginPw));
+
+		if (member.getLoginPw().equals(Ut.sha256(loginPw)) == false) {
+			return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다!!!!!"));
 		}
 
 		rq.login(member);
@@ -127,7 +148,7 @@ public class UsrMemberController {
 
 		Member member = memberService.getMember(joinRd.getData1());
 
-		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/MushionLogin");
+		return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "../member/login");
 	}
 
 	@RequestMapping("/usr/member/myPage")
@@ -146,11 +167,11 @@ public class UsrMemberController {
 	public String doCheckPw(String loginPw) {
 
 		if (Ut.isNullOrEmpty(loginPw)) {
-			return rq.historyBackOnView("비밀번호를 입력하세요.");
+			return rq.historyBackOnView("비번 입력해");
 		}
 
-		if (rq.getLoginedMember().getLoginPw().equals(loginPw) == false) {
-			return rq.historyBackOnView("비밀번호가 틀렸습니다.");
+		if (rq.getLoginedMember().getLoginPw().equals(Ut.sha256(loginPw)) == false) {
+			return rq.historyBackOnView("비번 틀림");
 		}
 
 		return "usr/member/modify";
@@ -181,12 +202,38 @@ public class UsrMemberController {
 		ResultData modifyRd;
 
 		if (Ut.isNullOrEmpty(loginPw)) {
-			modifyRd = memberService.modifyWithoutPw(rq.getLoginedMemberId(), name, nickname, cellphoneNum,
-					email);
+			modifyRd = memberService.modifyWithoutPw(rq.getLoginedMemberId(), name, nickname, cellphoneNum, email);
 		} else {
 			modifyRd = memberService.modify(rq.getLoginedMemberId(), loginPw, name, nickname, cellphoneNum, email);
 		}
 
 		return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "../member/myPage");
 	}
+
+	@RequestMapping("/usr/member/findLoginId")
+	public String showFindLoginId() {
+
+		return "usr/member/findLoginId";
+	}
+
+	@RequestMapping("/usr/member/doFindLoginId")
+	@ResponseBody
+	public String doFindLoginId(@RequestParam(defaultValue = "/") String afterFindLoginIdUri, String name,
+			String email) {
+
+		Member member = memberService.getMemberByNameAndEmail(name, email);
+
+		if (member == null) {
+			return Ut.jsHistoryBack("F-1", "너는 없는 사람이야");
+		}
+
+		return Ut.jsReplace("S-1", Ut.f("너의 아이디는 [ %s ] 야", member.getLoginId()), afterFindLoginIdUri);
+	}
+	
+	@RequestMapping("/usr/member/findLoginPw")
+	public String showFindLoginPw() {
+
+		return "usr/member/findLoginPw";
+	}
+
 }

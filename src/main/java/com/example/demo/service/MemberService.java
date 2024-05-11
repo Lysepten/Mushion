@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.MemberRepository;
@@ -10,12 +11,14 @@ import com.example.demo.vo.ResultData;
 
 @Service
 public class MemberService {
+
+	@Value("${custom.siteMainUri}")
+	private String siteMainUri;
+	@Value("${custom.siteName}")
+	private String siteName;
+
 	@Autowired
 	private MemberRepository memberRepository;
-
-	public MemberService(MemberRepository memberRepository) {
-		this.memberRepository = memberRepository;
-	}
 
 	public ResultData<Integer> join(String loginId, String loginPw, String name, String nickname, String cellphoneNum,
 			String email) {
@@ -32,6 +35,8 @@ public class MemberService {
 			return ResultData.from("F-8", Ut.f("이미 사용중인 이름(%s)과 이메일(%s)입니다", name, email));
 		}
 
+		loginPw = Ut.sha256(loginPw);
+
 		memberRepository.join(loginId, loginPw, name, nickname, cellphoneNum, email);
 
 		int id = memberRepository.getLastInsertId();
@@ -40,7 +45,7 @@ public class MemberService {
 
 	}
 
-	private Member getMemberByNameAndEmail(String name, String email) {
+	public Member getMemberByNameAndEmail(String name, String email) {
 		return memberRepository.getMemberByNameAndEmail(name, email);
 	}
 
@@ -54,6 +59,9 @@ public class MemberService {
 
 	public ResultData modify(int loginedMemberId, String loginPw, String name, String nickname, String cellphoneNum,
 			String email) {
+
+		loginPw = Ut.sha256(loginPw);
+
 		memberRepository.modify(loginedMemberId, loginPw, name, nickname, cellphoneNum, email);
 		return ResultData.from("S-1", "회원정보 수정 완료");
 	}
@@ -62,6 +70,11 @@ public class MemberService {
 			String email) {
 		memberRepository.modifyWithoutPw(loginedMemberId, name, nickname, cellphoneNum, email);
 		return ResultData.from("S-1", "회원정보 수정 완료");
+	}
+
+
+	private void setTempPassword(Member actor, String tempPassword) {
+		memberRepository.modify(actor.getId(), Ut.sha256(tempPassword), null, null, null, null);
 	}
 
 }

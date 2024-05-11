@@ -1,51 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="#{board.code } ARTICLE LIST"></c:set>
-<%@ include file="../common/mushionHead.jspf"%>
-<link rel="stylesheet" href="/resource/common.css" />
-<link rel="stylesheet" href="/resource/mushion.css" />
+<%@ include file="../common/head.jspf"%>
 
-<style>
-table { 
-  width: 100%; 
-    border-top: 1px solid #444444;
-     border-collapse: collapse;
- } 
-   th, td { 
-    border-bottom: 1px solid #444444; 
-    padding: 10px; 
-   text-align: center; 
-  } 
-   thead tr { 
-     background-color: #0D1E27;  
-      color: #ffffff;  
-  } 
-  tbody tr:nth-child(2n+1) { 
-   background-color: #E9EBF0;
-  } 
-   tbody tr:nth-child(3n+1) {  
-    background-color: #E9EBF0;
-   }  
-   tbody tr:nth-child(2n) {  
-    color: #ffffff; 
-   }  
-/*    tbody tr:nth-child(4n) {   */
-/*     color: black;  */
-/*    }   */
-   
-   td:nth-child(n+3) { 
-     background-color: #E9EBF0; 
-     color: black;
-   } 
-   
-   td:nth-child(-n+2)  { 
-/*      color: #ffffff;  */
-   } 
-</style>
 
-<!-- <body class="section-body"> -->
-<div class="msbody">
-
+<section class="mt-8 text-xl px-4">
 	<div class="mx-auto overflow-x-auto">
 		<div class="mb-4 flex">
 			<div class="badge badge-outline">${articlesCount }개</div>
@@ -140,6 +99,8 @@ table {
 			</c:forEach>
 		</div>
 	</div>
-</body>
+</section>
+
+
 
 <%@ include file="../common/foot.jspf"%>

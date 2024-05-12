@@ -312,11 +312,13 @@ display:inline;
 .detail-regdate {
 color: #6e6e73;
 font-size: 14px;
+padding-bottom: 20px;
 }
 
 .detail-writer{
 /* color: #6e6e73; */
 font-size: 16px;
+padding-left: 10px;
 
 }
 
@@ -328,6 +330,8 @@ font-size: 14px;
 
 .detail-title{
 font-size: 40px;
+padding-left: 10px;
+padding-top: 20px;
 }
 
 .detail-body{
@@ -394,8 +398,10 @@ background-color: rgb(2, 139, 175);
 
 .detail-img-body{
 /* text-align: center; */
-padding-top: 100px;
+padding-top: 50px;
 padding-bottom: 200px;
+padding-left: 50px;
+padding-right: 50px;
 }
 
 .detail-img{
@@ -418,26 +424,29 @@ color:black;
 .detail-reply-section{
 background-color: #0D1E27;
 border-radius: 7px;
+margin-bottom: 50px;
+padding-bottom: 10px;
 }
 
 .detail-reply-toptr{
  background-color: #0A171E; 
- padding-left: 10px;
- padding-top: 10px;
+ padding-left: 25px;
+ padding-top: 20px;
  padding-bottom: 20px;
 }
 
 .detail-reply-toptr-list{
-background-color: #0A171E;
+background-color: rgb(7, 16, 21);
 padding-left: 20px;
-padding-top: 20px;
- padding-bottom: 15px;
- border-radius: 7px;
+/* padding-top: 20px; */
+  padding-bottom: 15px; 
+/*  border-radius: 7px; */
  font-weight: 600;
 }
 
 .detail-reply-tbody{
 text-align: center;
+padding-left: 27px;
 }
 
 .back-btn{
@@ -445,6 +454,8 @@ margin-top:30px;
 margin-left: 100px;
 width: 100px;
 }
+
+
 </style>
 
 <html class="html-body">
@@ -510,7 +521,7 @@ width: 100px;
 	<c:if test="${rq.isLogined() }">
 	</c:if>
 	<c:if test="${!rq.isLogined() }">
-		<a class="btn btn-outline btn-ghost" href="${rq.loginUri }">LOGIN</a> 후 댓글을 작성해주세요
+		<a class="btn" href="${rq.loginUri }"> 로그인 </a> 후 댓글을 작성해주세요
 	</c:if>
 	<div class="">
 		<h2 class="detail-reply-toptr-list" >댓글 리스트(${repliesCount })</h2>
@@ -540,18 +551,18 @@ width: 100px;
 			<tbody class="detail-reply-tbody">
 				<c:forEach var="reply" items="${replies }">
 					<tr class="hover">
-						<td>${reply.id }</td>
-						<td>${reply.regDate.substring(0,10) }</td>
-						<td>
+						<td class="detail-reply-tbody">${reply.id }</td>
+						<td class="detail-reply-tbody">${reply.regDate.substring(0,10) }</td>
+						<td class="detail-reply-tbody">
 							<span id="reply-${reply.id }">${reply.body }</span>
 							<form method="POST" id="modify-form-${reply.id }" style="display: none;" action="/usr/reply/doModify">
 								<input type="text" value="${reply.body }" name="reply-text-${reply.id }" />
 							</form>
 						</td>
-						<td>${reply.extra__writer }</td>
-						<td>${reply.goodReactionPoint }</td>
-						<td>${reply.badReactionPoint }</td>
-						<td>
+						<td class="detail-reply-tbody">${reply.extra__writer }</td>
+						<td class="detail-reply-tbody">${reply.goodReactionPoint }</td>
+						<td class="detail-reply-tbody">${reply.badReactionPoint }</td>
+						<td class="detail-reply-tbody">
 							<c:if test="${reply.userCanModify }">
 								<%-- 							href="../reply/modify?id=${reply.id }" --%>
 								<button onclick="toggleModifybtn('${reply.id}');" id="modify-btn-${reply.id }" style="white-space: nowrap;"

@@ -111,7 +111,7 @@ public class Rq {
 	}
 
 	public String getLoginUri() {
-		return "../member/login?afterLoginUri=" + getAfterLoginUri();
+		return "../member/MushionLogin?afterLoginUri=" + getAfterLoginUri();
 	}
 
 	private String getAfterLoginUri() {

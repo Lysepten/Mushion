@@ -25,7 +25,7 @@
  } 
 
 tr, td {
-border: none;
+/* border: none; */
 padding: 10px;
 text-align: center;
 }
@@ -51,6 +51,10 @@ margin-top: 50px;
   font-style: normal;
 }
 
+tr{
+border-radius: 10px;
+}
+
 .search-form {
  width: 800px;
  margin-left: auto;
@@ -69,6 +73,7 @@ background-color : #028BAF;
 height: 32px;
 border-radius: 7px;
   font-size: 0.875rem;
+  color:white;
 }
 
 
@@ -80,6 +85,7 @@ border-radius: 7px;
 		<div class="mb-4 flex">
 			<div class="badge badge-outline">${articlesCount }개</div>
 			<div class="flex-grow"></div>
+			<a class="btn btn-xs mr-4" href="/usr/article/write">글쓰기</a>
 		</div>
 	</div>
 	<table class="">

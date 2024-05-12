@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
 
-<script src="/resource/common.js" defer="defer"></script>
+<!-- <script src="/resource/common.js" defer="defer"></script> -->
+
 <!-- 테일윈드 불러오기 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
 
@@ -60,10 +61,10 @@
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZ6rHv%2FbtsFmlXTOOh%2F8Ru2UtPX6qK786jKZNDklk%2Fimg.jpg"
     class="ms-logo-img"/>
   </a> 
- <a href="../home/Mushion" class="ms-home">홈</a>
- <a href="" class="ms-news">뉴스</a>
- <a href="/usr/article/list" class="ms-more">더보기</a>
- <a href="/usr/article/MushionSuggestList" class="ms-fm">패션 & 뮤직</a>
+ <a href="../home/Mushion" class="ms-home">패션</a>
+ <a href="/usr/article/MushionSuggestList" class="ms-news">뮤직</a>
+ <a href="/usr/article/list" class="ms-more">게시판</a>
+ <a href="/usr/home/SpotifyAPI" class="ms-fm">패션 & 뮤직</a>
  
 <c:if test="${!rq.isLogined() }">
 <a href="/usr/member/MushionLogin" class="ms-login">로그인</a>

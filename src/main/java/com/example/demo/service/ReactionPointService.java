@@ -24,7 +24,7 @@ public class ReactionPointService {
 	public ResultData usersReaction(int loginedMemberId, String relTypeCode, int relId) {
 
 		if (loginedMemberId == 0) {
-			return ResultData.from("F-L", "로그인 하고 써야해");
+			return ResultData.from("F-L", "로그인 하고 이용해주세요");
 		}
 
 		int sumReactionPointByMemberId = reactionPointRepository.getSumReactionPoint(loginedMemberId, relTypeCode,

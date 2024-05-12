@@ -34,7 +34,7 @@ public class UsrMemberController {
 		Member existsMember = memberService.getMemberByLoginId(loginId);
 
 		if (existsMember != null) {
-			return ResultData.from("F-2", "해당 아이디는 이미 사용중이야", "loginId", loginId);
+			return ResultData.from("F-2", "해당 아이디는 이미 사용중입니다.", "loginId", loginId);
 		}
 
 		return ResultData.from("S-1", "사용 가능!", "loginId", loginId);
@@ -60,7 +60,7 @@ public class UsrMemberController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined()) {
-			return Ut.jsHistoryBack("F-A", "이미 로그인 함");
+			return Ut.jsHistoryBack("F-A", "이미 로그인 상태입니다.");
 		}
 
 		return "usr/member/login";
@@ -74,7 +74,7 @@ public class UsrMemberController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (rq.isLogined()) {
-			return Ut.jsHistoryBack("F-A", "이미 로그인 함");
+			return Ut.jsHistoryBack("F-A", "이미 로그인 상태입니다.");
 		}
 
 		if (Ut.isNullOrEmpty(loginId)) {
@@ -93,7 +93,7 @@ public class UsrMemberController {
 		System.out.println(Ut.sha256(loginPw));
 
 		if (member.getLoginPw().equals(Ut.sha256(loginPw)) == false) {
-			return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다!!!!!"));
+			return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다!"));
 		}
 
 		rq.login(member);
@@ -167,11 +167,11 @@ public class UsrMemberController {
 	public String doCheckPw(String loginPw) {
 
 		if (Ut.isNullOrEmpty(loginPw)) {
-			return rq.historyBackOnView("비번 입력해");
+			return rq.historyBackOnView("비밀번호를 입력 해주세요.");
 		}
 
 		if (rq.getLoginedMember().getLoginPw().equals(Ut.sha256(loginPw)) == false) {
-			return rq.historyBackOnView("비번 틀림");
+			return rq.historyBackOnView("비밀번호가 틀렸습니다.");
 		}
 
 		return "usr/member/modify";
@@ -224,10 +224,10 @@ public class UsrMemberController {
 		Member member = memberService.getMemberByNameAndEmail(name, email);
 
 		if (member == null) {
-			return Ut.jsHistoryBack("F-1", "너는 없는 사람이야");
+			return Ut.jsHistoryBack("F-1", "실패했습니다.");
 		}
 
-		return Ut.jsReplace("S-1", Ut.f("너의 아이디는 [ %s ] 야", member.getLoginId()), afterFindLoginIdUri);
+		return Ut.jsReplace("S-1", Ut.f("아이디는 [ %s ] 입니다.", member.getLoginId()), afterFindLoginIdUri);
 	}
 	
 	@RequestMapping("/usr/member/findLoginPw")

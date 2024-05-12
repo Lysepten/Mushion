@@ -17,14 +17,14 @@
 		}
 		form.title.value = form.title.value.trim();
 		if (form.title.value == 0) {
-			alert('제목을 입력해주세요');
+			alert('제목을 입력해주세요.');
 			return;
 		}
 		const editor = $(form).find('.toast-ui-editor').data(
 				'data-toast-editor');
 		const markdown = editor.getMarkdown().trim();
 		if (markdown.length == 0) {
-			alert('내용 써라');
+			alert('내용을 입력해주세요.');
 			editor.focus();
 			return;
 		}
@@ -83,15 +83,12 @@ margin-left: 800px;
 
 .article-back-button{
 display:inline;
-/* position: absolute; */
  width: 90px; 
  height: 40px; 
  border-radius: 7px; 
  border-color: rgba(2, 139, 175, 1); 
  border-style: solid; 
  border-width: 2px; 
-/* left: 500px; */
-/* top: 1018px; */
 }
 
 .toast-ui-editor{
@@ -124,7 +121,6 @@ color:black;
 						<th>게시판</th>
 						<td>
 							<select class="select select-ghost w-full max-w-xs" name="boardId">
-								<!-- 									<option selected="selected" disabled>게시판을 선택해주세요</option> -->
 								<option value="1">공지사항</option>
 								<option value="2">자유</option>
 								<option value="3">QNA</option>

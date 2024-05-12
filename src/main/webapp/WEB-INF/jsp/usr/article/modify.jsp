@@ -17,14 +17,14 @@
 		}
 		form.title.value = form.title.value.trim();
 		if (form.title.value == 0) {
-			alert('제목을 입력해주세요');
+			alert('제목을 입력해주세요.');
 			return;
 		}
 		const editor = $(form).find('.toast-ui-editor').data(
 				'data-toast-editor');
 		const markdown = editor.getMarkdown().trim();
 		if (markdown.length == 0) {
-			alert('내용 써라');
+			alert('내용을 입력해주세요.');
 			editor.focus();
 			return;
 		}
@@ -84,8 +84,6 @@ display:inline;
  border-color: rgba(2, 139, 175, 1); 
  border-style: solid; 
  border-width: 2px; 
-/* left: 500px; */
-/* top: 1018px; */
 }
 
 .toast-ui-editor{
@@ -135,7 +133,6 @@ color:black;
 					<tr>
 						<th>내용</th>
 						<td>
-							<%-- 								<textarea class="input input-bordered w-full max-w-xs" type="text" name="body" placeholder="내용을 입력해주세요" />${article.body }</textarea> --%>
 							<div class="toast-ui-editor">
 								<script type="text/x-template">${article.body }
       </script>

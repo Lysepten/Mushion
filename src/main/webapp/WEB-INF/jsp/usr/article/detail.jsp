@@ -66,7 +66,7 @@
 	
 	function doGoodReaction(articleId) {
 		if(isNaN(params.memberId) == true){
-			if(confirm('로그인 해야해. 로그인 페이지로 가실???')){
+			if(confirm('로그인이 필요한 서비스입니다. 로그인 페이지로 가시겠습니까?')){
 				var currentUri = encodeURIComponent(window.location.href);
 				window.location.href = '../member/login?afterLoginUri=' + currentUri; // 로그인 페이지에 원래 페이지의 uri를 같이 보냄
 			}
@@ -121,7 +121,7 @@
 	function doBadReaction(articleId) {
 		
 		if(isNaN(params.memberId) == true){
-			if(confirm('로그인 해야해. 로그인 페이지로 가실???')){
+			if(confirm('로그인이 필요한 서비스입니다. 로그인 페이지로 가시겠습니까?')){
 				var currentUri = encodeURIComponent(window.location.href);
 				window.location.href = '../member/login?afterLoginUri=' + currentUri; // 로그인 페이지에 원래 페이지의 uri를 같이 보냄
 			}
@@ -189,7 +189,7 @@
 			console.log(form.body.value);
 			
 			if (form.body.value.length < 3) {
-				alert('댓글은 3글자 이상 입력해');
+				alert('댓글은 3글자 이상 입력해주세요');
 				form.body.focus();
 				return;
 			}
@@ -292,19 +292,15 @@ margin-left: 800px;
 
 .article-back-button{
 display:inline;
-/* position: absolute; */
  width: 90px; 
  height: 40px; 
  border-radius: 7px; 
  border-color: rgba(2, 139, 175, 1); 
  border-style: solid; 
  border-width: 2px; 
-/* left: 500px; */
-/* top: 1018px; */
 }
 
 .toast-ui-editor{
-/*     background-color: rgb(242, 242, 242); */
     border-radius: 10px;
 
 }
@@ -320,7 +316,6 @@ padding-top: 20px;
 }
 
 .detail-writer{
-/* color: #6e6e73; */
 font-size: 16px;
 padding-left: 10px;
 
@@ -346,7 +341,6 @@ font-size: 17px;
 #likeCount{
 display:inline;
 font-weight: 600;
-/* white-space: nowrap; */
 }
 
 
@@ -357,7 +351,6 @@ font-weight: 600;
 
 .toast-ui-viewer{
  background-color: rgb(242, 242, 242);
-/*      border-radius: 10px; */
 
 }
 
@@ -397,7 +390,6 @@ background-color: rgb(2, 139, 175);
 .section-line-2 {
 margin-top: 20px;
 margin-bottom: 30px;
-/* padding-left:10%; */
 margin-left: 5%;
 width: 90%;
 height: 1px;
@@ -415,7 +407,6 @@ background-color: rgb(2, 139, 175);
 
 
 .detail-img-body{
-/* text-align: center; */
 padding-top: 50px;
 padding-bottom: 200px;
 padding-left: 50px;
@@ -457,9 +448,7 @@ padding-bottom: 10px;
 .detail-reply-toptr-list{
 background-color: rgb(7, 16, 21);
 padding-left: 20px;
-/* padding-top: 20px; */
   padding-bottom: 15px; 
-/*  border-radius: 7px; */
  font-weight: 600;
 }
 
@@ -470,7 +459,6 @@ padding-left: 27px;
 
 .back-btn{
 margin-top:30px;
-/* margin-left: 100px; */
 width: 80px;
 }
 
@@ -531,17 +519,14 @@ margin-left: 980px;
 				<a class="btn btn-xs" href="../article/modify?id=${article.id }">수정</a>
 			</c:if>
 			<c:if test="${article.userCanDelete }">
-				<a class="btn btn-xs" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
+				<a class="btn btn-xs" onclick="if(confirm('정말 삭제 하시겠습니까?') == false) return false;"
 					href="../article/doDelete?id=${article.id }">삭제</a>
 		</c:if>
 		</div>
 					</td>
 				</tr>
 			</tbody>
-		</table>
-
-<!-- 		<div class="section-line"></div> -->
-		
+		</table>		
 		<div class="section-line"></div>
 </section>
 
@@ -592,7 +577,6 @@ margin-left: 980px;
 						<td class="detail-reply-tbody">${reply.badReactionPoint }</td>
 						<td class="detail-reply-tbody">
 							<c:if test="${reply.userCanModify }">
-								<%-- 							href="../reply/modify?id=${reply.id }" --%>
 								<button onclick="toggleModifybtn('${reply.id}');" id="modify-btn-${reply.id }" style="white-space: nowrap;"
 									class="btn btn-xs">수정</button>
 								<button onclick="doModifyReply('${reply.id}');" style="white-space: nowrap; display: none;"
@@ -602,7 +586,7 @@ margin-left: 980px;
 						<td>
 							<c:if test="${reply.userCanDelete }">
 								<a style="white-space: nowrap;" class="btn btn-xs"
-									onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;" href="../reply/doDelete?id=${reply.id }">삭제</a>
+									onclick="if(confirm('정말 삭제 하시겠습니까?') == false) return false;" href="../reply/doDelete?id=${reply.id }">삭제</a>
 							</c:if>
 						</td>
 					</tr>

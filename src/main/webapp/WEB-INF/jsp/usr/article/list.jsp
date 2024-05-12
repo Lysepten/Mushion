@@ -11,6 +11,10 @@
 
 <style>
 
+.msheader {
+width: 1920px;
+}
+
  table { 
      border-collapse: collapse; 
      text-indent: 0; 
@@ -76,6 +80,13 @@ border-radius: 7px;
   color:white;
 }
 
+.number{
+padding-left: 20px;
+}
+
+.id-number{
+padding-left: 27px;
+}
 
 </style>
 
@@ -101,7 +112,7 @@ border-radius: 7px;
 		</colgroup>
 		<thead>
 			<tr>
-				<th>번호</th>
+				<th class="number">번호</th>
 				<th>날짜</th>
 				<th>제목</th>
 				<th>작성자</th>
@@ -115,7 +126,7 @@ border-radius: 7px;
 			<c:forEach var="article" items="${articles }">
 				<tr class="hover">
 
-					<td>${article.id }</td>
+					<td class="id-number">${article.id }</td>
 					<td>${article.regDate.substring(0,10) }</td>
 					<td>
 						<a href="detail?id=${article.id }">${article.title }
@@ -167,11 +178,13 @@ border-radius: 7px;
 		<c:if test="${endPage < pagesCount }">
 			<button class="btn btn-sm btn-disabled">...</button>
 			<a class="btn btn-sm" href="${baseUri }&page=${pagesCount }">${pagesCount }</a>
+			
 		</c:if>
-
+		
 	</div>
-
+	
 </section>
+
 </html>
 
 

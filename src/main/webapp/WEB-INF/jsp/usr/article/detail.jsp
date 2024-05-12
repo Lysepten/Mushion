@@ -315,6 +315,10 @@ font-size: 14px;
 padding-bottom: 20px;
 }
 
+.detail-regdate-2{
+padding-top: 20px;
+}
+
 .detail-writer{
 /* color: #6e6e73; */
 font-size: 16px;
@@ -325,6 +329,7 @@ padding-left: 10px;
 .detail-hitCount{
 color: #6e6e73;
 font-size: 14px;
+padding-bottom: 10px;
 }
 
 
@@ -358,6 +363,7 @@ font-weight: 600;
 
 .detail-contents{
  width:900px;
+ margin-top: 60px;
 margin-left:auto;
 margin-right: auto;
 background-color: rgb(242, 242, 242);
@@ -451,11 +457,13 @@ padding-left: 27px;
 
 .back-btn{
 margin-top:30px;
-margin-left: 100px;
-width: 100px;
+/* margin-left: 100px; */
+width: 80px;
 }
 
-
+.detail-td-reaction{
+text-align: center;
+}
 </style>
 
 <html class="html-body">
@@ -487,33 +495,35 @@ width: 100px;
 				</tr>
 				<tr>
 					<th class="detail-hitCount"></th>
-					<td>
+					<td class="detail-td-reaction">
 					 <button id="likeButton" class="btn btn-outline btn-success btn-xs" onclick="doGoodReaction(${param.id})">좋아요 👍 <div id="likeCount"> ${article.goodReactionPoint }</div></button>
 					<button id="DislikeButton" class="btn btn-outline btn-error btn-xs" onclick="doBadReaction(${param.id})">싫어요 👎 <div id="DislikeCount"> ${article.badReactionPoint }</div></button>
 					<div class="detail-section-line"></div>
-						<span class="article-detail__hit-count detail-hitCount"></div>조회수 : ${article.hitCount }</span>
+						
 					</td>
 				</tr>
 				<tr>
 					<th class="detail-regdate"></th>
-					<td class="detail-regdate">게시일 : ${article.regDate } 
-					
+					<td class="detail-regdate">
+					<span class="article-detail__hit-count detail-hitCount">조회수 : ${article.hitCount }</span>
+					<div class="detail-regdate-2">게시일 : ${article.regDate } </div>
+					<div class="btns">
+			<button class="btn back-btn btn-xs" type="button" onclick="history.back();">뒤로가기</button>
+			<c:if test="${article.userCanModify }">
+				<a class="btn btn-xs" href="../article/modify?id=${article.id }">수정</a>
+			</c:if>
+			<c:if test="${article.userCanDelete }">
+				<a class="btn btn-xs" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
+					href="../article/doDelete?id=${article.id }">삭제</a>
+		</c:if>
+		</div>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 
 <!-- 		<div class="section-line"></div> -->
-		<div class="btns">
-			<button class="btn back-btn" type="button" onclick="history.back();">뒤로가기</button>
-			<c:if test="${article.userCanModify }">
-				<a class="btn" href="../article/modify?id=${article.id }">수정</a>
-			</c:if>
-			<c:if test="${article.userCanDelete }">
-				<a class="btn" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
-					href="../article/doDelete?id=${article.id }">삭제</a>
-		</c:if>
-		</div>
+		
 		<div class="section-line"></div>
 </section>
 

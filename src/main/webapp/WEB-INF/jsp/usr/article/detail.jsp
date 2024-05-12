@@ -394,6 +394,16 @@ height: 1px;
 background-color: rgb(2, 139, 175);
 }
 
+.section-line-2 {
+margin-top: 20px;
+margin-bottom: 30px;
+/* padding-left:10%; */
+margin-left: 5%;
+width: 90%;
+height: 1px;
+background-color: rgb(2, 139, 175);
+}
+
 .detail-section-line {
 margin-top: 10px;
 margin-bottom: 20px; 
@@ -401,6 +411,8 @@ width: 10%;
 height: 1px;
 background-color: rgb(2, 139, 175);
 }
+
+
 
 .detail-img-body{
 /* text-align: center; */
@@ -425,6 +437,7 @@ display:block;
 width: 95%;
 border-radius: 7px;
 color:black;
+height: 100px;
 }
 
 .detail-reply-section{
@@ -463,6 +476,11 @@ width: 80px;
 
 .detail-td-reaction{
 text-align: center;
+}
+
+.detail-reply-create-btn{
+display: block;
+margin-left: 980px;
 }
 </style>
 
@@ -593,7 +611,8 @@ text-align: center;
 			<input type="hidden" name="relTypeCode" value="article" />
 			<input type="hidden" name="relId" value="${article.id }" />
 			<table class="">
-				<tbody>
+				<tbody class="">
+				<div class="section-line-2"></div>
 <!-- 					<tr> -->
 							<textarea class="deteail-reply" autocomplete="off" placeholder="내용을 입력해주세요"
 								name="body"> </textarea>
@@ -601,7 +620,7 @@ text-align: center;
 					<tr>
 						<th></th>
 						<td>
-							<input class="btn btn-info btn-sm" type="submit" value="댓글 작성" />
+							<input class="detail-reply-create-btn btn btn-info btn-xs" type="submit" value="댓글 작성" />
 						</td>
 					</tr>
 				</tbody>

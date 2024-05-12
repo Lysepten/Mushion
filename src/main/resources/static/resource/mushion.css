@@ -583,7 +583,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 .ms-login-jointext {
 position: absolute;
 width: 389px;
-left: calc(50% - 410px/2 + 386.5px);
+left: calc(50% - 380px/2 + 386.5px);
 top: 70%;
 bottom: 10.03%;
 }
@@ -862,7 +862,7 @@ bottom: 48.51%;
 
 font-family: "Pretendard-Regular", sans-serif;
 font-style: normal;
-font-weight: 600;
+font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 

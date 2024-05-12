@@ -29,13 +29,15 @@
 <!-- 조회수 -->
 <script>
 	function ArticleDetail__doIncreaseHitCount() {
-		const localStorageKey = 'article__' + params.id + '__alreadyView';
+		
+		// 로컬스토리지 수정 필요
+// 		const localStorageKey = 'article__' + params.id + '__alreadyView';
 
-		if (localStorage.getItem(localStorageKey)) {
-			return;
-		}
+// 		if (localStorage.getItem(localStorageKey)) {
+// 			return;
+// 		}
 
-		localStorage.setItem(localStorageKey, true);
+// 		localStorage.setItem(localStorageKey, true);
 
 		$.get('../article/doIncreaseHitCountRd', {
 			id : params.id,
@@ -511,7 +513,8 @@ margin-left: 980px;
 				<tr>
 					<th class="detail-regdate"></th>
 					<td class="detail-regdate">
-					<span class="article-detail__hit-count detail-hitCount">조회수 : ${article.hitCount }</span>
+					<span class="detail-hitCount">조회수 : </span>
+					<span class="article-detail__hit-count">${article.hitCount }</span>
 					<div class="detail-regdate-2">게시일 : ${article.regDate } </div>
 					<div class="btns">
 			<button class="btn back-btn btn-xs" type="button" onclick="history.back();">뒤로가기</button>

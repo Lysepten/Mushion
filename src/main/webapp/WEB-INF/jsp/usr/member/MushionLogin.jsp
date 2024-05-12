@@ -44,6 +44,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
 </style>
 
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js" integrity="sha384-l+xbElFSnPZ2rOaPrU//2FF5B4LB8FiX5q4fXYTlfcG4PGpMkE1vcL7kNXI6Cci0" crossorigin="anonymous"></script>
+  <script>
+    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+    Kakao.init('4f69b55c9c466f91d08d33415d35266a');
+
+    // SDK 초기화 여부를 판단합니다.
+    console.log(Kakao.isInitialized());
+  </script>
+  
+  <script>
+  function loginWithKakao() {
+    Kakao.Auth.authorize({
+      redirectUri: 'http://localhost:8081/usr/home/KakaoLogin',
+    });
+  }
+  
+</script>
+
+<style>
+#kakao-login-btn{
+border-radius: 50px;
+}
+
+.kakao-login-btn{
+border-radius: 50px;
+}
+</style>
+
 <div class="ms-login-body">
   <div class="ms-login-layout">
     <img class="ms-login-mainimg" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbdbmfd%2FbtsHb7wVcE4%2FbsYKIuYTTrsFIk1FS4oyo1%2Fimg.jpg"
@@ -184,11 +212,18 @@
 		  
           <button
             class="ms-login-Naver-btn"
-          ><p class="ms-login-Naver-btn-text">네이버로 로그인</p></button>
-          <img
-            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAsWJ7%2FbtsFoF97hDR%2FyJIQfxgLKwls4Sv7dFfPp0%2Fimg.png"
-            class="ms-login-Naver-btn-img"
-          />
+          >
+<!--           <p class="ms-login-Naver-btn-text">네이버로 로그인</p> -->
+          <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+  <img class="kakao-login-btn" src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
+    alt="카카오 로그인 버튼" />
+</a>
+<p id="token-result"></p>
+          </button>
+<!--           <img -->
+<!--             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAsWJ7%2FbtsFoF97hDR%2FyJIQfxgLKwls4Sv7dFfPp0%2Fimg.png" -->
+<!--             class="ms-login-Naver-btn-img" -->
+<!--           /> -->
           
         
 		  <!-- 구글 로그인 도형 -->
@@ -212,7 +247,7 @@
           />
           <!--         구글 로그인 도형 -->
           <p class="ms-login-google-btn-text">
-            구글로 로그인
+            Google 로그인
           </p>
           <a class="ms-login-back-btn" href="/usr/home/Mushion">이전 페이지로 이동</a>
           <a class="ms-login-home-btn" href="/usr/home/main">홈으로</a>

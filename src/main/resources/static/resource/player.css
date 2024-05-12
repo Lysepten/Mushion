@@ -118,6 +118,10 @@ body {
   color: #e22d49;
 }
 
+.grey{
+	color:rgb(126, 138, 152);
+}
+
 .msheader {
 	width: 1920;
 }

@@ -81,7 +81,7 @@ border-radius: 50px;
       </div>
         <p class="ms-login-jointext">
           <span class="ms-dojoin-text">계정이 필요하신가요 ? </span
-          ><span class="ms-dojoin-text2">무료로 가입하기</span>
+          ><span class="ms-dojoin-text2"><a href="/usr/member/MushionJoin">무료로 가입하기</a></span>
         </p>
         <p class="ms-login-welcome-text">
           환영합니다.

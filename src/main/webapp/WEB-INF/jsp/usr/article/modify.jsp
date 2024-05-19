@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="ARTICLE MODIFY"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%-- <%@ include file="../common/head.jspf"%> --%>
 <%@ include file="../common/toastUiEditorLib.jspf"%>
 
-<%-- <%@ include file="../common/mushionHead.jspf"%> --%>
+<%@ include file="../common/mushionHead.jspf"%>
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
 

@@ -127,7 +127,7 @@ border-radius: 50px;
           <div
             class="ms-login-pw"
           >
-          <input class="ms-login-pw-text" placeholder="비밀번호" type="text" name="loginId" />
+          <input class="ms-login-pw-text" placeholder="비밀번호" type="password" name="loginId" />
           </div>
           
 			<!-- 자물쇠 이모티콘 도형 (임시) -->

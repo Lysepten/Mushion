@@ -147,7 +147,7 @@
       Fashion
     </p>
     </a>
-    <a href="">
+    <a href="/usr/article/MushionSuggestList">
     <p class="music-font">
       Music
     </p>
@@ -156,7 +156,7 @@
   <p class="Select-category">
     Select category
   </p>
-  <a href="">
+  <a href="/usr/article/MushionSuggestList">
   <img
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJNw9U%2FbtsFm4uGOBY%2F3fhelcTffJ02r1AM8kLiDK%2Fimg.png"
     class="main-img1"

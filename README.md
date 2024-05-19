@@ -74,6 +74,22 @@
 - 회원가입한 **Mushion** 계정으로 로그인이 가능합니다.
 - 카카오, 구글 **소셜 로그인** 기능은 구현중 입니다.
 
+## [프로필]
+
+![](https://velog.velcdn.com/images/lysepten/post/7b5afb29-cffd-4f9d-aa61-abcb5df5a743/image.PNG)
+
+- 로그인 후 본인의 **기본정보** 확인이 가능합니다.
+- **ID, 닉네임, 이름, 전화번호, 이메일**을 확인 할 수 있습니다.
+- **프로필 사진, 음악취향, 스타일, 소셜 미디어**는 구현중 입니다.
+
+![](https://velog.velcdn.com/images/lysepten/post/837a53da-23db-485d-9192-ee8829299667/image.PNG)
+
+- 수정 버튼을 누르면 **본인확인**을 위해 비밀번호를 입력합니다.
+
+![](https://velog.velcdn.com/images/lysepten/post/cff015eb-6cfa-49d2-a735-47c183d239d5/image.PNG)
+
+- **닉네임, 이름, 전화번호, 이메일** 수정이 가능합니다.
+
 ## [Music]
 
 ![](https://velog.velcdn.com/images/lysepten/post/7fabb1e5-9325-4070-9db5-3654b26b274b/image.PNG)

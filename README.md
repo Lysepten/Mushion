@@ -114,6 +114,7 @@ ___
 ![](https://velog.velcdn.com/images/lysepten/post/9cbef455-bc8d-494b-a12d-9e0d5487a6e3/image.PNG)
 
 - **Spotify** 계정으로 로그인 후 내 플레이 리스트의 **음악 재생**이 가능합니다.
+- 재생중인 **아티스트의 이름**, **곡 제목**, **앨범 커버**를 볼 수 있습니다.
 - ❤ 버튼을 누른 후 스타일을 **추천** 받을 수 있습니다.
 
 ![](https://velog.velcdn.com/images/lysepten/post/056201a9-0159-4809-b1dc-9c582ddfcc17/image.bmp)

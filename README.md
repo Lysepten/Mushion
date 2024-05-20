@@ -11,7 +11,11 @@
 
 - 커뮤니티 게시판 이용이 가능합니다.
 
-# 개발 인원
+# 📅 개발 기간
+___
+- 2024.03.02 ~ 2024.05.12
+
+# 🙋‍♂️ 개발 인원
 - 1명
 
 |신규섭|
@@ -19,7 +23,7 @@
 |<img src="https://velog.velcdn.com/images/yunlinit/post/e11db386-253c-4de1-94cd-908cd7c5ab74/image.jpg" height="300"/>|
 |tlstlsrbrb11@gmail.com|
 
-# 기술 스택
+# 🛠 기술 스택
 
 - **언어**
   - Java
@@ -40,7 +44,7 @@
 - **개발 환경**
   - JDK, MAVEN, Spring Tool Suit 4, Window 10
 
-# 페이지별 기능
+# 🔎 페이지별 기능
 
 ## [메인 홈]
 

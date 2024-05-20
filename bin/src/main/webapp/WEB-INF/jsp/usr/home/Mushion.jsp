@@ -137,7 +137,7 @@
       추천 음악 듣기..
     </p>
 
-    <a href="" class="fashion-music-font"
+    <a href="/usr/home/SpotifyAPI" class="fashion-music-font"
     >
       <span>Fashion</span>
       <span>&#x26; Music</span>
@@ -147,7 +147,7 @@
       Fashion
     </p>
     </a>
-    <a href="/usr/home/SpotifyAPI">
+    <a href="/usr/article/MushionSuggestList">
     <p class="music-font">
       Music
     </p>
@@ -156,7 +156,7 @@
   <p class="Select-category">
     Select category
   </p>
-  <a href="/usr/home/SpotifyAPI">
+  <a href="/usr/article/MushionSuggestList">
   <img
     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJNw9U%2FbtsFm4uGOBY%2F3fhelcTffJ02r1AM8kLiDK%2Fimg.png"
     class="main-img1"
@@ -169,9 +169,9 @@
   />
   </a>
   
-  <a href="">
+  <a href="/usr/home/SpotifyAPI">
   <img
-    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLwPd2%2FbtsFlO6U3aK%2FZRjRDCwWgYLLICkaOUXH3K%2Fimg.png"
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsmOo3%2FbtsHeeIHkFh%2FaiDo1trZ6gaHgywwpi2wS1%2Fimg.png"
     class="main-img3"
   />
   </a>

@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="pageTitle" value="ARTICLE DETAIL"></c:set>
-<%@ include file="../common/head.jspf"%>
+<%-- <%@ include file="../common/head.jspf"%> --%>
+<%@ include file="../common/toastUiEditorLib.jspf"%>
+
+<%@ include file="../common/mushionHead.jspf"%>
+<link rel="stylesheet" href="/resource/common.css" />
+<link rel="stylesheet" href="/resource/mushion.css" />
 
 <!-- <iframe src="http://localhost:8081/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
 
@@ -23,13 +29,15 @@
 <!-- 조회수 -->
 <script>
 	function ArticleDetail__doIncreaseHitCount() {
-		const localStorageKey = 'article__' + params.id + '__alreadyView';
+		
+		// 로컬스토리지 수정 필요
+// 		const localStorageKey = 'article__' + params.id + '__alreadyView';
 
-		if (localStorage.getItem(localStorageKey)) {
-			return;
-		}
+// 		if (localStorage.getItem(localStorageKey)) {
+// 			return;
+// 		}
 
-		localStorage.setItem(localStorageKey, true);
+// 		localStorage.setItem(localStorageKey, true);
 
 		$.get('../article/doIncreaseHitCountRd', {
 			id : params.id,
@@ -60,9 +68,9 @@
 	
 	function doGoodReaction(articleId) {
 		if(isNaN(params.memberId) == true){
-			if(confirm('로그인 해야해. 로그인 페이지로 가실???')){
+			if(confirm('로그인이 필요한 서비스입니다. 로그인 페이지로 가시겠습니까?')){
 				var currentUri = encodeURIComponent(window.location.href);
-				window.location.href = '../member/MushionLogin?afterLoginUri=' + currentUri; // 로그인 페이지에 원래 페이지의 uri를 같이 보냄
+				window.location.href = '../member/login?afterLoginUri=' + currentUri; // 로그인 페이지에 원래 페이지의 uri를 같이 보냄
 			}
 			return;
 		}
@@ -115,9 +123,9 @@
 	function doBadReaction(articleId) {
 		
 		if(isNaN(params.memberId) == true){
-			if(confirm('로그인 해야해. 로그인 페이지로 가실???')){
+			if(confirm('로그인이 필요한 서비스입니다. 로그인 페이지로 가시겠습니까?')){
 				var currentUri = encodeURIComponent(window.location.href);
-				window.location.href = '../member/MushionLogin?afterLoginUri=' + currentUri; // 로그인 페이지에 원래 페이지의 uri를 같이 보냄
+				window.location.href = '../member/login?afterLoginUri=' + currentUri; // 로그인 페이지에 원래 페이지의 uri를 같이 보냄
 			}
 			return;
 		}
@@ -183,7 +191,7 @@
 			console.log(form.body.value);
 			
 			if (form.body.value.length < 3) {
-				alert('댓글은 3글자 이상 입력해');
+				alert('댓글은 3글자 이상 입력해주세요');
 				form.body.focus();
 				return;
 			}
@@ -236,162 +244,379 @@ function doModifyReply(replyId) {
         }
 	})
 }
+
 </script>
 
+<style>
 
-<section class="mt-8 text-xl px-4 ">
-	<div class="">
-		<table class="table-box-1 " border="1">
+ table { 
+     border-collapse: collapse; 
+     text-indent: 0; 
+     border: none;
+ }
+
+ tbody { 
+     display: table-row-group; 
+     vertical-align: middle; 
+     unicode-bidi: isolate; 
+    border: none; 
+ } 
+
+tr, td {
+border: none;
+padding: 10px;
+}
+
+th{
+white-space: nowrap;
+}
+
+
+.article-section {
+ width: 1091px;
+display:block; 
+margin-top: 2rem;
+ margin-left: auto;
+ margin-right: auto; 
+ font-family: "Pretendard-Regular", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.article-write-button {
+display:inline;
+background-color: rgba(40, 167, 255, 1);
+width: 90px;
+height: 40px;
+border-radius: 7px;
+margin-left: 800px;
+}
+
+.article-back-button{
+display:inline;
+ width: 90px; 
+ height: 40px; 
+ border-radius: 7px; 
+ border-color: rgba(2, 139, 175, 1); 
+ border-style: solid; 
+ border-width: 2px; 
+}
+
+.toast-ui-editor{
+    border-radius: 10px;
+
+}
+
+.detail-regdate {
+color: #6e6e73;
+font-size: 14px;
+padding-bottom: 20px;
+}
+
+.detail-regdate-2{
+padding-top: 20px;
+}
+
+.detail-writer{
+font-size: 16px;
+padding-left: 10px;
+
+}
+
+.detail-hitCount{
+color: #6e6e73;
+font-size: 14px;
+padding-bottom: 10px;
+}
+
+
+.detail-title{
+font-size: 40px;
+padding-left: 10px;
+padding-top: 20px;
+}
+
+.detail-body{
+font-size: 17px;
+}
+
+#likeCount{
+display:inline;
+font-weight: 600;
+}
+
+
+#DislikeCount{
+display:inline;
+font-weight: 600;
+}
+
+.toast-ui-viewer{
+ background-color: rgb(242, 242, 242);
+
+}
+
+.detail-contents{
+ width:900px;
+ margin-top: 60px;
+margin-left:auto;
+margin-right: auto;
+background-color: rgb(242, 242, 242);
+border-radius: 10px;
+color:black;
+padding-left: 50px;
+box-shadow: inset 0px 0px 10px #666;
+}
+
+#likeButton{
+margin-bottom: 10px;
+width: 75px;
+display:inline;
+white-space: nowrap;
+}
+
+#DislikeButton{
+width: 75px;
+display:inline;
+white-space: nowrap;
+}
+
+.section-line{
+margin-top: 50px;
+margin-bottom: 50px;
+width: 100%;
+height: 1px;
+background-color: rgb(2, 139, 175);
+}
+
+.section-line-2 {
+margin-top: 20px;
+margin-bottom: 30px;
+margin-left: 5%;
+width: 90%;
+height: 1px;
+background-color: rgb(2, 139, 175);
+}
+
+.detail-section-line {
+margin-top: 10px;
+margin-bottom: 20px; 
+width: 10%;
+height: 1px;
+background-color: rgb(2, 139, 175);
+}
+
+
+
+.detail-img-body{
+padding-top: 50px;
+padding-bottom: 200px;
+padding-left: 50px;
+padding-right: 50px;
+}
+
+.detail-img{
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 50px;
+}
+
+.deteail-reply{
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+width: 95%;
+border-radius: 7px;
+color:black;
+height: 100px;
+}
+
+.detail-reply-section{
+background-color: #0D1E27;
+border-radius: 7px;
+margin-bottom: 50px;
+padding-bottom: 10px;
+}
+
+.detail-reply-toptr{
+ background-color: #0A171E; 
+ padding-left: 25px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+}
+
+.detail-reply-toptr-list{
+background-color: rgb(7, 16, 21);
+padding-left: 20px;
+  padding-bottom: 15px; 
+ font-weight: 600;
+}
+
+.detail-reply-tbody{
+text-align: center;
+padding-left: 27px;
+}
+
+.back-btn{
+margin-top:30px;
+width: 80px;
+}
+
+.detail-td-reaction{
+text-align: center;
+}
+
+.detail-reply-create-btn{
+display: block;
+margin-left: 980px;
+}
+</style>
+
+<html class="html-body">
+<section class="article-section">
+		<table class="detail-contents">
 			<tbody>
 				<tr>
-					<th>번호</th>
-					<td>${article.id }${goodRP}${badRP}</td>
+					<th></th>
+				<tr>
+					<th></th>
+					<td class="detail-title">${article.title } </td>
+				</tr>
+								<tr>
+					<th class="detail-writer"></th>
+					<td class="detail-writer">작성자 : ${article.extra__writer } <div class="detail-section-line"></div></td>
+					
 				</tr>
 				<tr>
-					<th>작성날짜</th>
-					<td>${article.regDate }</td>
+					<th></th>
+					<td class="detail-img-body">
+					<img class="detail-img" src="${rq.getImgUri(article.id)}" onerror="${rq.profileFallbackImgOnErrorHtml}"
+							alt="" />
+						<div class="toast-ui-viewer">
+							<script class="detail-body" type="text/x-template">${article.body}</script>
+							
+						</div>
+					</td>
+					
 				</tr>
 				<tr>
-					<th>수정날짜</th>
-					<td>${article.updateDate }</td>
-				</tr>
-				<tr>
-					<th>작성자</th>
-					<td>${article.extra__writer }</td>
-				</tr>
-				<tr>
-					<th>좋아요</th>
-					<td id="likeCount">${article.goodReactionPoint }</td>
-				</tr>
-				<tr>
-					<th>싫어요</th>
-					<td id="DislikeCount">${article.badReactionPoint }</td>
-				</tr>
-				<tr>
-					<th>추천 ${usersReaction }</th>
-					<td>
-						<!-- href="/usr/reactionPoint/doGoodReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" -->
-						<button id="likeButton" class="btn btn-outline btn-success" onclick="doGoodReaction(${param.id})">좋아요</button>
-
-						<button id="DislikeButton" class="btn btn-outline btn-error" onclick="doBadReaction(${param.id})">싫어요</button>
+					<th class="detail-hitCount"></th>
+					<td class="detail-td-reaction">
+					 <button id="likeButton" class="btn btn-outline btn-success btn-xs" onclick="doGoodReaction(${param.id})">좋아요 👍 <div id="likeCount"> ${article.goodReactionPoint }</div></button>
+					<button id="DislikeButton" class="btn btn-outline btn-error btn-xs" onclick="doBadReaction(${param.id})">싫어요 👎 <div id="DislikeCount"> ${article.badReactionPoint }</div></button>
+					<div class="detail-section-line"></div>
+						
 					</td>
 				</tr>
 				<tr>
-					<th>조회수</th>
-					<td>
-						<span class="article-detail__hit-count">${article.hitCount }</span>
-					</td>
-				</tr>
-				<tr>
-					<th>제목</th>
-					<td>${article.title }</td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td>${article.body }</td>
-				</tr>
-
-			</tbody>
-		</table>
-		<div class="btns mt-5">
-			<button class="btn btn-outline" type="button" onclick="history.back();">뒤로가기</button>
+					<th class="detail-regdate"></th>
+					<td class="detail-regdate">
+					<span class="detail-hitCount">조회수 : </span>
+					<span class="article-detail__hit-count">${article.hitCount }</span>
+					<div class="detail-regdate-2">게시일 : ${article.regDate } </div>
+					<div class="btns">
+			<button class="btn back-btn btn-xs" type="button" onclick="history.back();">뒤로가기</button>
 			<c:if test="${article.userCanModify }">
-				<a class="btn btn-outline" href="../article/modify?id=${article.id }">수정</a>
+				<a class="btn btn-xs" href="../article/modify?id=${article.id }">수정</a>
 			</c:if>
 			<c:if test="${article.userCanDelete }">
-				<a class="btn btn-outline" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
+				<a class="btn btn-xs" onclick="if(confirm('정말 삭제 하시겠습니까?') == false) return false;"
 					href="../article/doDelete?id=${article.id }">삭제</a>
-			</c:if>
+		</c:if>
 		</div>
-	</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>		
+		<div class="section-line"></div>
 </section>
 
-<section class="mt-5 px-3">
+<section class="article-section detail-reply-section">
 	<c:if test="${rq.isLogined() }">
-		<form action="../reply/doWrite" method="POST" onsubmit="ReplyWrite__submit(this); return false;">
-			<input type="hidden" name="relTypeCode" value="article" />
-			<input type="hidden" name="relId" value="${article.id }" />
-			<table class="write-box table-box-1" border="1">
-				<tbody>
-					<tr>
-						<th>내용</th>
-						<td>
-							<textarea class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="내용을 입력해주세요" name="body"> </textarea>
-						</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td>
-							<input class="btn btn-outline btn-info" type="submit" value="댓글 작성" />
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
 	</c:if>
 	<c:if test="${!rq.isLogined() }">
-		<a class="btn btn-outline btn-ghost" href="../member/login">LOGIN</a> 하고 댓글 써
+		<a class="btn" href="${rq.loginUri }"> 로그인 </a> 후 댓글을 작성해주세요
 	</c:if>
-	<div class="mx-auto">
-		<h2>댓글 리스트(${repliesCount })</h2>
-		<table class="table-box-1 table" border="1">
+	<div class="">
+		<h2 class="detail-reply-toptr-list" >댓글 리스트(${repliesCount })</h2>
+		<table class="">
 			<colgroup>
-				<col style="width: 10%" />
-				<col style="width: 20%" />
-				<col style="width: 60%" />
-				<col style="width: 10%" />
+				<col style="width: 3%" />
+			<col style="width: 20%" />
+			<col style="width: 40%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 10%" />
+			<col style="width: 8%" />
+			<col style="width: 9%" />
 			</colgroup>
-			<thead>
-				<tr>
-					<th>번호</th>
-					<th>날짜</th>
-					<th>내용</th>
-					<th>작성자</th>
-					<th>좋아요</th>
-					<th>싫어요</th>
-					<th>수정</th>
-					<th>삭제</th>
+			<thead class="detail-reply-toptr">
+				<tr class="detail-reply-toptr">
+					<th class="detail-reply-toptr">번호</th>
+					<th class="detail-reply-toptr">날짜</th>
+					<th class="detail-reply-toptr">내용</th>
+					<th class="detail-reply-toptr">작성자</th>
+					<th class="detail-reply-toptr">좋아요</th>
+					<th class="detail-reply-toptr">싫어요</th>
+					<th class="detail-reply-toptr"></th>
+					<th class="detail-reply-toptr"></th>
 				</tr>
 			</thead>
-			<tbody>
-
+			<tbody class="detail-reply-tbody">
 				<c:forEach var="reply" items="${replies }">
 					<tr class="hover">
-						<td>${reply.id }</td>
-						<td>${reply.regDate.substring(0,10) }</td>
-						<td>
+						<td class="detail-reply-tbody">${reply.id }</td>
+						<td class="detail-reply-tbody">${reply.regDate.substring(0,10) }</td>
+						<td class="detail-reply-tbody">
 							<span id="reply-${reply.id }">${reply.body }</span>
 							<form method="POST" id="modify-form-${reply.id }" style="display: none;" action="/usr/reply/doModify">
 								<input type="text" value="${reply.body }" name="reply-text-${reply.id }" />
 							</form>
 						</td>
-						<td>${reply.extra__writer }</td>
-						<td>${reply.goodReactionPoint }</td>
-						<td>${reply.badReactionPoint }</td>
-						<td>
+						<td class="detail-reply-tbody">${reply.extra__writer }</td>
+						<td class="detail-reply-tbody">${reply.goodReactionPoint }</td>
+						<td class="detail-reply-tbody">${reply.badReactionPoint }</td>
+						<td class="detail-reply-tbody">
 							<c:if test="${reply.userCanModify }">
-								<%-- 							href="../reply/modify?id=${reply.id }" --%>
 								<button onclick="toggleModifybtn('${reply.id}');" id="modify-btn-${reply.id }" style="white-space: nowrap;"
-									class="btn btn-outline">수정</button>
+									class="btn btn-xs">수정</button>
 								<button onclick="doModifyReply('${reply.id}');" style="white-space: nowrap; display: none;"
 									id="save-btn-${reply.id }" class="btn btn-outline">저장</button>
 							</c:if>
 						</td>
 						<td>
 							<c:if test="${reply.userCanDelete }">
-								<a style="white-space: nowrap;" class="btn btn-outline"
-									onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;" href="../reply/doDelete?id=${reply.id }">삭제</a>
+								<a style="white-space: nowrap;" class="btn btn-xs"
+									onclick="if(confirm('정말 삭제 하시겠습니까?') == false) return false;" href="../reply/doDelete?id=${reply.id }">삭제</a>
 							</c:if>
 						</td>
 					</tr>
 				</c:forEach>
+				<form action="../reply/doWrite" method="POST" onsubmit="ReplyWrite__submit(this); return false;">
+			<input type="hidden" name="relTypeCode" value="article" />
+			<input type="hidden" name="relId" value="${article.id }" />
+			<table class="">
+				<tbody class="">
+				<div class="section-line-2"></div>
+<!-- 					<tr> -->
+							<textarea class="deteail-reply" autocomplete="off" placeholder="내용을 입력해주세요"
+								name="body"> </textarea>
+<!-- 					</tr> -->
+					<tr>
+						<th></th>
+						<td>
+							<input class="detail-reply-create-btn btn btn-info btn-xs" type="submit" value="댓글 작성" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
 			</tbody>
 		</table>
 	</div>
-
-</section>
-
-
-
+	</section>
+</html>
+	
 <%@ include file="../common/foot.jspf"%>

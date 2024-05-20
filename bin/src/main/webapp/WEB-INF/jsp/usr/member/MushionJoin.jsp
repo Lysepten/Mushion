@@ -48,7 +48,7 @@
   <div class="ms-join-body2">
   		<div class="ms-join-imgbox">
       <img
-      src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcuD0Jt%2FbtsFkUUqiCH%2F2AAHbFgq6UScpEPJUe7Yw0%2Fimg.png"
+      src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsGkyw%2FbtsHb6EJ1Z5%2FNJTRs1PSk7TkSIcdTVXYt0%2Fimg.jpg"
       class="ms-join-img"
     /></div>
     <div class="ms-join-body3">
@@ -60,84 +60,55 @@
             <span class="content-welcome-box-text2"
               >커뮤니티에 오신 것을 환영합니다.<br />가입하고 함께 해요! </span>
         </div>
+        
+        <form action="../member/doJoin" method="POST"> 
                   <div
             class="ms-join-content-box"
           >
             <p class="ms-join-content-text">아이디</p>
-            <div
-              class="ms-join-content-inputbox"
-            >
-              <p class="ms-join-content-inputtext">
-                아이디를 입력해주세요
-              </p>
-            </div>
+            <input class="ms-join-content-inputbox" placeholder="아이디를 입력해주세요" autocomplete="off" name="loginId" />
           </div>
+
                 <div
       class="ms-join-content-box"
     >
       <p class="ms-join-content-text">비밀번호</p>
-      <div
-        class="ms-join-content-inputbox"
-      >
-        <p class="ms-join-content-inputtext">
-          비밀번호를 입력해주세요
-        </p>
-      </div>
+      
+      <input class="ms-join-content-inputbox" placeholder="비밀번호를 입력해주세요" autocomplete="off" name="loginPw" />
+      
     </div>
               <div
             class="ms-join-content-box"
           >
             <p class="ms-join-content-text">이름</p>
-            <div
-              class="ms-join-content-inputbox"
-            >
-              <p class="ms-join-content-inputtext">
-                이름을 입력해주세요
-              </p>
-            </div>
+            
+            <input class="ms-join-content-inputbox" placeholder="이름을 입력해주세요" autocomplete="off" name="name" />
+
           </div>
         <div
         class="ms-join-content-box"
       >
         <p class="ms-join-content-text">닉네임</p>
-        <div
-          class="ms-join-content-inputbox"
-        >
-          <p class="ms-join-content-inputtext">
-            닉네임을 입력해주세요
-          </p>
-        </div>
+		<input class="ms-join-content-inputbox" placeholder="닉네임을 입력해주세요" autocomplete="off" name="nickname" />
       </div>
           <div
             class="ms-join-content-box"
           >
             <p class="ms-join-content-text">이메일</p>
-            <div
-              class="ms-join-content-inputbox"
-            >
-              <p class="ms-join-content-inputtext">
-                이메일을 입력해주세요
-              </p>
-            </div>
+            <input class="ms-join-content-inputbox" placeholder="이메일을 입력해주세요" autocomplete="off" name="email" />
           </div>
-          <div
-            class="ms-join-content-box"
-          >
+          <div class="ms-join-content-box">
             <p class="ms-join-content-text">전화번호</p>
-            <div
-              class="ms-join-content-inputbox"
-            >
-              <p class="ms-join-content-inputtext">
-                전화번호를 입력해주세요
-              </p>
+				<input class="ms-join-content-inputbox" placeholder="전화번호를 입력해주세요" autocomplete="off" name="cellphoneNum" />
             </div>
-            <div
-            class="ms-join-create-button"
-          >
+
+            <button class="ms-join-create-button" type="submit" style="background-color:#28A7FF" >
               <p class="ms-join-create-text">
                 계정 만들기
               </p>
-          </div>
+          </button>
+			
+          </form>
           <div><a class="ms-join-back-btn" href="/usr/home/Mushion">이전 페이지로 이동</a>
           <a class="ms-join-home-btn" href="/usr/home/main">홈으로</a></div>
           </div>

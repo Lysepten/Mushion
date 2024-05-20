@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 <script>
+	
 // 필요한 변수들을 설정합니다.
 // var getdeviceId = null;
 var clientId = '1440fd0b1217439f81573cf6470a1a51'; // 스포티파이 애플리케이션의 클라이언트 ID
@@ -246,6 +247,14 @@ $.ajax({
     console.error('액세스 토큰 요청 실패:', error);
   }
 });
+
+// 좋아요 버튼 토글
+window.onload = function() {
+    document.getElementById("ArtistGenresExtraction").addEventListener("click", function() {
+      this.classList.toggle("red");
+      this.classList.toggle("grey");
+    });
+  }
 </script>
 
 <script>
@@ -262,9 +271,11 @@ function GenreCheck() {
 
 </script>
 
+
+
 <!DOCTYPE html>
 <html class="html-body" lang="en" >
-<div class="container">
+<!-- <div class="container"> -->
   <div class="iphone neu">
     <div class="title">
       <div><i class="fas fa-chevron-left"></i></div>
@@ -280,7 +291,7 @@ function GenreCheck() {
       </h3>
     </div>
     <div class="buttons">
-          <button id="ArtistGenresExtraction" class="btn lg red neu"><i class="fas fa-heart"></i></button>
+          <button id="ArtistGenresExtraction" class="btn lg grey neu "><i class="fas fa-heart"></i></button>
           <button id="previous-button" class="btn lg neu"><i class="fas fa-backward"></i></button>
           <button id="togglePlay" class="btn lg neu"><i class="fas fa-play"></i></button>
           <button id="next-button" class="btn lg neu"><i class="fas fa-forward"></i></button>
@@ -300,5 +311,5 @@ function GenreCheck() {
 
     </div>
   </div>
-</div>
+<!-- </div> -->
 </html>

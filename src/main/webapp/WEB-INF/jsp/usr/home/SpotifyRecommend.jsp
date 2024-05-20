@@ -18,6 +18,9 @@
 <html class="html-body">
 <body>
 
+<div>${snapshotUrlList}</div>
+<div>${artistGenre }</div>
+
 <c:if test="${maxGenre == 'Classic'}">
 <div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${artistGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
 

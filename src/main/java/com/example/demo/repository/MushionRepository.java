@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import com.example.demo.vo.snapshotUrl;
+
 @Mapper
 public interface MushionRepository {
 	
@@ -13,6 +15,6 @@ public interface MushionRepository {
 			FROM `snapshotUrl`
 			WHERE fashionStyleId = #{fashionStyleId}
 			""")
-	public List<String> findByFashionStyleId(int fashionStyleId);
+	public List<snapshotUrl> findByFashionStyleId(int fashionStyleId);
 
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.MushionRepository;
+import com.example.demo.vo.snapshotUrl;
 
 @Service
 public class MushionService {
@@ -29,18 +30,64 @@ public class MushionService {
         for (String arg : args) {
             updateGenreCounts(arg, genreCounts);
         }
-
+        
         return findMaxGenre(genreCounts);
     }
 
+//    private static void updateGenreCounts(String arg, Map<String, Integer> genreCounts) {
+//    	
+//        String lowerArg = arg.toLowerCase();
+//        
+//        for (String genre : GENRE_STYLES.keySet()) {
+//            if (lowerArg.contains(genre.toLowerCase())) {
+//                genreCounts.put(genre, genreCounts.getOrDefault(genre, 0) + 1);
+//            }
+//        }
+//    }
     private static void updateGenreCounts(String arg, Map<String, Integer> genreCounts) {
-    	
         String lowerArg = arg.toLowerCase();
-        
-        for (String genre : GENRE_STYLES.keySet()) {
-            if (lowerArg.contains(genre.toLowerCase())) {
-                genreCounts.put(genre, genreCounts.getOrDefault(genre, 0) + 1);
-            }
+
+        if (lowerArg.contains("jazz")|| lowerArg.contains("Jazz")) {
+            genreCounts.put("Jazz", genreCounts.getOrDefault("Jazz", 0) + 1);
+        }
+        if (lowerArg.contains("Hip hop") || lowerArg.contains("hip hop") || lowerArg.contains("rap")) {
+            genreCounts.put("Hiphop", genreCounts.getOrDefault("Hiphop", 0) + 1);
+        }
+        if (lowerArg.contains("rock") || lowerArg.contains("Rock")) {
+            genreCounts.put("Rock", genreCounts.getOrDefault("Rock", 0) + 1);
+        }
+        if (lowerArg.contains("pop") || lowerArg.contains("Pop")) {
+            genreCounts.put("Pop", genreCounts.getOrDefault("Pop", 0) + 1);
+        }
+        if (lowerArg.contains("blues") || lowerArg.contains("Blues")) {
+            genreCounts.put("Blues", genreCounts.getOrDefault("Blues", 0) + 1);
+        }
+        if (lowerArg.contains("classical") || lowerArg.contains("Classical")) {
+            genreCounts.put("Classical", genreCounts.getOrDefault("Classical", 0) + 1);
+        }
+        if (lowerArg.contains("country") || lowerArg.contains("Country")) {
+            genreCounts.put("Country", genreCounts.getOrDefault("Country", 0) + 1);
+        }
+        if (lowerArg.contains("dance") || lowerArg.contains("Dance")) {
+            genreCounts.put("Dance", genreCounts.getOrDefault("Dance", 0) + 1);
+        }
+        if (lowerArg.contains("electronic") || lowerArg.contains("Electronic")) {
+            genreCounts.put("Electronic", genreCounts.getOrDefault("Electronic", 0) + 1);
+        }
+        if (lowerArg.contains("folk") || lowerArg.contains("Folk")) {
+            genreCounts.put("Folk", genreCounts.getOrDefault("Folk", 0) + 1);
+        }
+        if (lowerArg.contains("metal") || lowerArg.contains("Metal")) {
+            genreCounts.put("Metal", genreCounts.getOrDefault("Metal", 0) + 1);
+        }
+        if (lowerArg.contains("punk") || lowerArg.contains("Punk")) {
+            genreCounts.put("Punk", genreCounts.getOrDefault("Punk", 0) + 1);
+        }
+        if (lowerArg.contains("reggae") || lowerArg.contains("Reggae")) {
+            genreCounts.put("Reggae", genreCounts.getOrDefault("Reggae", 0) + 1);
+        }
+        if (lowerArg.contains("rhythmandblues") || lowerArg.contains("r&b") || lowerArg.contains("rnb")) {
+            genreCounts.put("RhythmAndBlues", genreCounts.getOrDefault("RhythmAndBlues", 0) + 1);
         }
     }
 
@@ -51,7 +98,7 @@ public class MushionService {
                 .orElse("");
     }
 
-    private static Map<String, String> initializeGenreStyles() {
+    public static Map<String, String> initializeGenreStyles() {
         Map<String, String> genreStyles = new HashMap<>();
         genreStyles.put("Jazz", "Classic");
         genreStyles.put("Hiphop", "Street");
@@ -67,10 +114,11 @@ public class MushionService {
         genreStyles.put("Punk", "Punk");
         genreStyles.put("Reggae", "Resort");
         genreStyles.put("RhythmAndBlues", "Vintage");
+//        genreStyles.put("r&b", "Vintage");
         return genreStyles;
     }
 
-    public static List<String> getSnapshotUrlsByGenre(String genre) {
+    public List<snapshotUrl> getSnapshotUrlsByGenre(String genre) {
         int fashionStyleId = getFashionStyleId(genre);
         return mushionRepository.findByFashionStyleId(fashionStyleId);
     }
@@ -90,6 +138,7 @@ public class MushionService {
             case "Punk" -> 9;
             case "Reggae" -> 10;
             case "RhythmAndBlues" -> 14;
+//            case "r&b" -> 14;
             default -> 0;
         };
     }

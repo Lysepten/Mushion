@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import com.example.demo.service.ArticleService;
 import com.example.demo.service.MushionService;
 import com.example.demo.util.Ut;
 import com.example.demo.vo.Rq;
+import com.example.demo.vo.snapshotUrl;
 import com.example.demo.vo.topdb;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,6 +25,9 @@ public class MushionController {
 	
 	@Autowired
 	private ArticleService articleService;
+	
+	@Autowired
+	private MushionService mushionService;
 
 	@RequestMapping("/usr/home/Mushion")
 	public String Mushion() {
@@ -90,11 +95,12 @@ public class MushionController {
 		
 		return "/usr/spotify/recommendTest";
 	}
-	
+
 	 @RequestMapping("/usr/home/VarArgsTest")
 	    public String varArgsTest2(HttpServletRequest req, Model model, String... args) {
+
 	        if (args == null || args.length == 0) {
-	            return "값을 입력해주세요";
+	            return Ut.jsReplace("F-1", "값을 입력해주세요.", "/");
 	        }
 
 	        String maxGenre = MushionService.MaxGenre(args);
@@ -103,14 +109,28 @@ public class MushionController {
 	            return Ut.jsReplace("F-1", "지원하지 않는 장르입니다.", "/usr/home/SpotifyAPI");
 	        }
 
-	        List<String> snapshotUrlList = MushionService.getSnapshotUrlsByGenre(maxGenre);
+	        List<snapshotUrl> snapshotUrlList = mushionService.getSnapshotUrlsByGenre(maxGenre);
+
+	        Map<String, String> artistGenres = mushionService.initializeGenreStyles();
+
+	        String fashionStyle = artistGenres.get(maxGenre);
+
+	        System.err.println(fashionStyle);
+	        System.err.println(maxGenre);
+
 	        model.addAttribute("snapshotUrlList", snapshotUrlList);
 	        model.addAttribute("maxGenre", maxGenre);
-	        model.addAttribute("artistGenre", maxGenre);
-
+	        model.addAttribute("fashionStyle", fashionStyle);
+ 
 	        return "/usr/home/SpotifyRecommend";
 	    }
-	
+
+
+
+
+	 
+
+
 //	@RequestMapping("/usr/home/VarArgsTest")
 //	public String VarArgsTest(HttpServletRequest req, Model model, String... args) {
 //		

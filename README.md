@@ -33,6 +33,19 @@
 
 # 🤔 구상
 
+## 프로젝트 이름 - Mushion
+- **Fashion**과 **Music**을 합쳐 **fusion** 한다는 의미로 **Mushion**으로 결정
+
+- **로고**
+
+![](https://velog.velcdn.com/images/lysepten/post/f31bb5f9-b641-45c5-9bc4-63d60813bf05/image.png)
+
+- **로고 키워드**
+  - 윈드차임(`Wind chime`)
+    - 화려한 목걸이와 닮았고, 악기의 의미도 있기 때문에 결정
+- **로고 의미**
+  - 음악과 패션 두가지 요소가 잘 드러나면 좋을것 같다고 생각했고, 음악의 요소인 윈드 차임과 패션의 요소인 옷걸이를 조합하여 옷걸이에 윈드 차임이 걸려있는 형태의 로고 결정
+
 ### [기능 정의서]
 ![](https://velog.velcdn.com/images/lysepten/post/164adc18-a5ea-4af2-8327-71a418cd1779/image.PNG)
 - [기능 정의서](https://zircon-colby-46b.notion.site/62bc3bc60d334bf3a5db9dd3941b0b7c?v=72732c8a60ad4eca9a9963e94143d5e1)

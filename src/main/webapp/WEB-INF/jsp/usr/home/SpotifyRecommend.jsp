@@ -18,23 +18,6 @@
 <html class="html-body">
 <body>
 
-<div>${url.getUrl()}</div>
-<div>${artistGenre }</div>
-
-<%-- <c:if test="${fashionStyle == 'Rock'}"> --%>
-<%-- <div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${maxGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${fashionStyle } "</div> 입니다! 이런 스타일은 어때요?</div> --%>
-
-<!-- <div class="container-body"> -->
-<!-- 	<div class="container"> -->
-<%-- 		<c:forEach var="url" items="${snapshotUrlList }"> --%>
-<!-- 	 <div class="img-wrapper"> -->
-<%--     <img src="${url.getUrl() }" alt="image" /> --%>
-<!--      </div> -->
-<%-- </c:forEach> --%>
-<!-- 	</div> -->
-<!-- </div> -->
-<%-- 	</c:if> --%>
-
 <c:if test="${fashionStyle == 'Classic'}">
 <div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${maxGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${fashionStyle } "</div> 입니다! 이런 스타일은 어때요?</div>
 
@@ -149,7 +132,7 @@
 
 <c:if test="${fashionStyle == 'Biker'}">
 
-<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${maxGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${maxGenre } "</div> 입니다! 이런 스타일은 어때요?</div>
+<div class="chose-genre"> 방금 고르신 아티스트는 <div class="maxGenre-text">" ${maxGenre } "</div> 장르네요! 추천하는 스타일은~! <div class="maxGenre-text">" ${fashionStyle } "</div> 입니다! 이런 스타일은 어때요?</div>
 
 <div class="container-body">
 	<div class="container">

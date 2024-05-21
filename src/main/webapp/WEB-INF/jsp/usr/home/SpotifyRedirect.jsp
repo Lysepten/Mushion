@@ -302,9 +302,9 @@ function GenreCheck() {
     <div class="lyrics">
       <i class="fas fa-angle-up"></i>
 
-      <form class="args-form" action="/usr/home/VarArgsTest" onsubmit="return GenreCheck();">
+      <form class="args-form" action="/usr/home/genres" onsubmit="return GenreCheck();">
  <label id="spotifyArtistGenre">
-    <input type="hidden" id="Genre" name="args" value="">
+    <input type="hidden" id="Genre" name="genres" value="">
   </label>
 <input onclick="" value="스타일 추천받기" class="genreRedirect" type="submit" />
 </form>

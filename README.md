@@ -25,7 +25,7 @@ ___
 
 # 🛠 기술 스택
 
-- **언어**
+- **개발 언어**
   - Java
 - **Front-end**
   - HTML, CSS, JavaScript, jQuery, Tailwind, daisyUI

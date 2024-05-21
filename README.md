@@ -194,7 +194,7 @@ ___
 - 마우스를 로고에 위치하면 색이 활성화 됩니다.
 - **Spotify** 로그인을 할 수 있는 로그인 버튼입니다.
 
-![](https://velog.velcdn.com/images/lysepten/post/9cbef455-bc8d-494b-a12d-9e0d5487a6e3/image.PNG)
+![](https://velog.velcdn.com/images/lysepten/post/ca2a4f69-8e93-4f22-bcb7-e5910e94c7e4/image.PNG)
 
 - **Spotify** 계정으로 로그인 후 내 플레이 리스트의 **음악 재생**이 가능합니다.
 - 재생, 일시정지, 다음곡, 이전곡으로 이동이 가능합니다.

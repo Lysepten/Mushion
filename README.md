@@ -270,3 +270,11 @@ ___
 #### STS4에서 크롤링 작업
 
 6. `com.example.demo.crawling` 패키지에서 `clothesSnapshotCrawling.java`를 `Run As Java Application`으로 실행합니다.
+
+# 🎵 Spotify 계정 연동
+
+![](https://velog.velcdn.com/images/lysepten/post/886d3acc-b881-45db-9aa6-b4651445777f/image.PNG)
+
+Spotify API를 이용하여 음악을 **재생**하려면 Spotify **프리미엄 결제**를 해야 합니다.
+
+프리미엄이 계정이 아니라면 음악 플레이어는 **재생 불가**(24.05.21날짜 기준 한달 **무료**)

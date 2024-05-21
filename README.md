@@ -48,6 +48,12 @@
 **시대**적 배경과 **탄생** 계기, **문화**적 기반의 **배경**을 **근거**로 음악 장르와 패션 스타일을 나눴고,
 각각 14개의 카테고리가 만들어졌습니다.
 
+## 🗺 ERD 구조
+
+![](https://velog.velcdn.com/images/lysepten/post/baf1ec0d-0253-400a-b64c-c497164c2e23/image.PNG)
+
+- [링크](https://www.erdcloud.com/d/kWWKkSAgQEf8tPePo)
+
 # 🗓 개발 기간
 ___
 - 2024.03.02 ~ 2024.05.12
@@ -244,9 +250,3 @@ ___
 #### STS4에서 크롤링 작업
 
 6. `com.example.demo.crawling` 패키지에서 `clothesSnapshotCrawling.java`를 `Run As Java Application`으로 실행합니다.
-
-## 🗺 ERD 구조
-
-![](https://velog.velcdn.com/images/lysepten/post/baf1ec0d-0253-400a-b64c-c497164c2e23/image.PNG)
-
-- [링크](https://www.erdcloud.com/d/kWWKkSAgQEf8tPePo)

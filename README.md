@@ -161,24 +161,30 @@ ___
 ### ChromeDriver 설치 및 크롤링 작업
 
 1. ChromeDriver - WebDriver for Chrome 접속  
+
 [크롬 드라이버 다운로드](https://chromedriver.chromium.org/downloads)  
 
 
 2. 노란색 형광펜으로 표시된 부분을 클릭해 들어갑니다.  
+
 ![](https://velog.velcdn.com/images/insamju300/post/fc2277ee-a1f6-46be-aa3b-af2f0a759e6e/image.png)  
 
-3. table한 버전들이 나오는데 chromedriver 중 각자 OS에 맞는 버전의 URL을 복사해 주소창에 입력하면 웹 드라이버가 다운로드됩니다.![](https://velog.velcdn.com/images/insamju300/post/6e06fe03-83a5-4685-bf1e-c972e09e2dc9/image.png)  
 
-4. 다운로드된 zip 파일의 압축을 해제합니다.  
+3. `table`한 버전들이 나오는데 `chromedriver` 중 각자 `OS`에 맞는 버전의 `URL`을 복사해 주소창에 입력하면 웹 드라이버가 다운로드됩니다.![](https://velog.velcdn.com/images/insamju300/post/6e06fe03-83a5-4685-bf1e-c972e09e2dc9/image.png)  
+
+
+4. 다운로드된 `zip` 파일의 압축을 해제합니다.  
+
 ![](https://velog.velcdn.com/images/insamju300/post/8bda1637-26e4-47ba-820e-a4b1434fce6d/image.png)  
 
-5. chromedriver.exe(응용프로그램)을 현재 사용하고 있는 디렉토리에 추가해 주세요.  
-- Mushion 프로젝트를 구동 하기 위해선 c://work에 추가해주시면 됩니다.  
+5. `chromedriver.exe`(응용프로그램)을 현재 사용하고 있는 디렉토리에 추가해 주세요.  
+- Mushion 프로젝트를 구동 하기 위해선 `c://work`에 추가해주시면 됩니다.  
+
 ![](https://velog.velcdn.com/images/insamju300/post/10483837-46e8-4e47-b3da-1673c42a8615/image.png)  
 
 #### STS4에서 크롤링 작업
 
-6. com.example.demo.crawling 패키지에서 clothesSnapshotCrawling.java를 Run As Java Application으로 실행합니다.
+6. `com.example.demo.crawling` 패키지에서 `clothesSnapshotCrawling.java`를 `Run As Java Application`으로 실행합니다.
 
 ## 🗺 ERD 구조
 

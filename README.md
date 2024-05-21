@@ -1,7 +1,43 @@
 ## ✨ Mushion - 음악과 패션의 역사와 문화를 기반한 상응 추천 플랫폼
+___
 ![](https://velog.velcdn.com/images/lysepten/post/016fecd2-ea51-40af-b4e7-82b8d79e7427/image.PNG)
 
+
+# 🗓 개발 기간
+- 2024.03.02 ~ 2024.05.12
+
+
+# 🙋‍♂️ 개발 인원
+- 1명
+
+|신규섭|
+|:---:|
+|<img src="https://velog.velcdn.com/images/yunlinit/post/e11db386-253c-4de1-94cd-908cd7c5ab74/image.jpg" height="300"/>|
+|tlstlsrbrb11@gmail.com|
+
+# 🛠 기술 스택
+
+- **개발 언어**
+  - Java
+- **Front-end**
+  - HTML, CSS, JavaScript, jQuery, Tailwind, daisyUI
+- **Back-end**
+  - 프레임워크 : SpringBoot, Selenium
+  - 라이브러리 : Lombok, Tomcat
+  - 템플릿 엔진 : JSP
+  - ORM : Mybatis
+- **DB**
+  - MySQL
+  - 쿼리 브라우저 : SQLyog
+- **버전 관리**
+  - Git, GitHub
+- **디자인**
+  - Figma
+- **개발 환경**
+  - JDK, MAVEN, Spring Tool Suit 4, Window 10
+
 # 📝 개요
+___
 
 ### 사람들의 라이프스타일과 패션 스타일의 연관성
 - 사람들은 각자만의 **라이프 스타일**을 가지고 있습니다.
@@ -32,6 +68,7 @@
 - 커뮤니티 게시판 이용이 가능합니다.
 
 # 🤔 구상
+___
 
 ## 프로젝트 이름 - Mushion
 - **Fashion**과 **Music**을 합쳐 **fusion** 한다는 의미로 **Mushion**으로 결정
@@ -67,40 +104,8 @@
 
 - [링크](https://www.erdcloud.com/d/kWWKkSAgQEf8tPePo)
 
-# 🗓 개발 기간
-___
-- 2024.03.02 ~ 2024.05.12
-
-# 🙋‍♂️ 개발 인원
-- 1명
-
-|신규섭|
-|:---:|
-|<img src="https://velog.velcdn.com/images/yunlinit/post/e11db386-253c-4de1-94cd-908cd7c5ab74/image.jpg" height="300"/>|
-|tlstlsrbrb11@gmail.com|
-
-# 🛠 기술 스택
-
-- **개발 언어**
-  - Java
-- **Front-end**
-  - HTML, CSS, JavaScript, jQuery, Tailwind, daisyUI
-- **Back-end**
-  - 프레임워크 : SpringBoot, Selenium
-  - 라이브러리 : Lombok, Tomcat
-  - 템플릿 엔진 : JSP
-  - ORM : Mybatis
-- **DB**
-  - MySQL
-  - 쿼리 브라우저 : SQLyog
-- **버전 관리**
-  - Git, GitHub
-- **디자인**
-  - Figma
-- **개발 환경**
-  - JDK, MAVEN, Spring Tool Suit 4, Window 10
-
 # 💡 구현 기능
+___
 
 **[주요 기능]**
 - Spotify 로그인
@@ -123,6 +128,7 @@ ___
 - 사진 업로드
 
 # 🔎 페이지별 기능
+___
 
 ## [메인 홈]
 
@@ -235,6 +241,7 @@ ___
 - 본인이 작성한 게시글의 제목, 내용 수정이 가능합니다.
 
 # 🔎 환경 설정
+___
 
 ### ChromeDriver 설치 및 크롤링 작업
 

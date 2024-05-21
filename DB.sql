@@ -337,65 +337,6 @@ SET loginPw = SHA2(loginPw,256);
 
 ###############################################
 
-SELECT MAX(id) FROM article;
-
-SELECT * FROM article;
-
-SELECT * FROM `member`;
-
-SELECT * FROM `board`;
-
-SELECT * FROM reactionPoint;
-
-SELECT * FROM `reply`;
-
-SELECT * FROM `genFile`;
-
-SELECT *
-FROM reply
-WHERE relTypeCode = 'article'
-AND relId = 1
-
-SELECT A.*, M.nickname AS extra__writer, IFNULL(R.cnt,0) AS cnt
-FROM article AS A
-INNER JOIN `member` AS M
-ON A.memberId = M.id
-LEFT JOIN (SELECT relId, COUNT(*) AS cnt FROM reply GROUP BY relId) AS R
-ON A.id = R.relId
-GROUP BY A.id
-ORDER BY A.id DESC
-
-
-SELECT A.*, M.nickname AS extra__writer, COUNT(R.id) AS cnt
-FROM article AS A
-INNER JOIN `member` AS M ON A.memberId = M.id
-LEFT JOIN `reply` AS R ON A.id = R.relId
-GROUP BY A.id
-ORDER BY A.id DESC
-
-
-
-
-
-
-SELECT goodReactionPoint
-FROM article 
-WHERE id = 1
-
-INSERT INTO article
-(
-    regDate, updateDate, memberId, boardId, title, `body`
-)
-SELECT NOW(),NOW(), FLOOR(RAND() * 2) + 2, FLOOR(RAND() * 3) + 1, CONCAT('제목_',RAND()), CONCAT('내용_',RAND())
-FROM article;
-
-SELECT IFNULL(SUM(RP.point),0)
-FROM reactionPoint AS RP
-WHERE RP.relTypeCode = 'article'
-AND RP.relId = 3
-AND RP.memberId = 1;
-
-
 UPDATE article 
 SET title = '제목5'
 WHERE id = 5;
@@ -407,107 +348,6 @@ WHERE id = 6;
 UPDATE article 
 SET title = '제목45'
 WHERE id = 7;
-
-SELECT FLOOR(RAND() * 2) + 2
-
-SELECT FLOOR(RAND() * 3) + 1
-
-
-SHOW FULL COLUMNS FROM `member`;
-DESC `member`;
-
-
-
-SELECT LAST_INSERT_ID();
-
-SELECT *
-FROM article AS A
-WHERE 1
-
-	AND boardId = 1
-
-			AND A.title LIKE CONCAT('%','0000','%')
-			OR A.body LIKE CONCAT('%','0000','%')
-
-ORDER BY id DESC
-
-SELECT COUNT(*)
-FROM article AS A
-WHERE 1
-AND boardId = 1
-AND A.title LIKE CONCAT('%','0000','%')
-OR A.body LIKE CONCAT('%','0000','%')
-ORDER BY id DESC
-
-
-SELECT hitCount
-FROM article
-WHERE id = 374;
-
-SELECT A.*
-FROM article AS A
-WHERE A.id = 1
-
-SELECT A.*, M.nickname AS extra__writer
-FROM article AS A
-INNER JOIN `member` AS M
-ON A.memberId = M.id
-WHERE A.id = 1
-
-# LEFT JOIN
-SELECT A.*, M.nickname AS extra__writer, RP.point
-FROM article AS A
-INNER JOIN `member` AS M
-ON A.memberId = M.id
-LEFT JOIN reactionPoint AS RP
-ON A.id = RP.relId AND RP.relTypeCode = 'article'
-GROUP BY A.id
-ORDER BY A.id DESC;
-
-# 서브쿼리
-SELECT A.*,
-IFNULL(SUM(RP.point),0) AS extra__sumReactionPoint,
-IFNULL(SUM(IF(RP.point > 0, RP.point, 0)),0) AS extra__goodReactionPoint,
-IFNULL(SUM(IF(RP.point < 0, RP.point, 0)),0) AS extra__badReactionPoint
-FROM (
-    SELECT A.*, M.nickname AS extra__writer 
-    FROM article AS A
-    INNER JOIN `member` AS M
-    ON A.memberId = M.id
-    ) AS A
-LEFT JOIN reactionPoint AS RP
-ON A.id = RP.relId AND RP.relTypeCode = 'article'
-GROUP BY A.id
-ORDER BY A.id DESC;
-
-# 조인
-SELECT A.*, M.nickname AS extra__writer,
-IFNULL(SUM(RP.point),0) AS extra__sumReactionPoint,
-IFNULL(SUM(IF(RP.point > 0, RP.point, 0)),0) AS extra__goodReactionPoint,
-IFNULL(SUM(IF(RP.point < 0, RP.point, 0)),0) AS extra__badReactionPoint
-FROM article AS A
-INNER JOIN `member` AS M
-ON A.memberId = M.id
-LEFT JOIN reactionPoint AS RP
-ON A.id = RP.relId AND RP.relTypeCode = 'article'
-GROUP BY A.id
-ORDER BY A.id DESC;
-
-
-SELECT *, COUNT(*)
-FROM reactionPoint AS RP
-GROUP BY RP.relTypeCode,RP.relId
-
-SELECT IF(RP.point > 0, '큼','작음')
-FROM reactionPoint AS RP
-GROUP BY RP.relTypeCode,RP.relId
-
-# 각 게시물의 좋아요, 싫어요 갯수
-SELECT RP.relTypeCode, RP.relId,
-SUM(IF(RP.point > 0,RP.point,0)) AS goodReactionPoint,
-SUM(IF(RP.point < 0,RP.point * -1,0)) AS badReactionPoint
-FROM reactionPoint AS RP
-GROUP BY RP.relTypeCode,RP.relId
 
 # ================================================================= 
 
@@ -554,25 +394,11 @@ INSERT INTO musicType (typeName) VALUES
 ('Rhythm and Blues'),
 ('Rock');
 
-SELECT * FROM FashionStyle;
-
-SELECT * FROM musicType;
-
-SELECT F.styleName, M.typeName, (SELECT typeName FROM musicType WHERE id = 9) AS typeName
-FROM FashionStyle AS F
-JOIN musicType AS M
-WHERE F.id = 1 AND M.id = 14
-
-SELECT F.styleName, M.typeName, E.typeName
-FROM FashionStyle AS F
-JOIN musicType AS M
-JOIN musicType AS E
-WHERE F.id = 1 AND M.id = 14 AND E.id = 9;
 
 # =======================================================================================
 
 CREATE TABLE fashionMusic (
-	id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	id INT AUTO_INCREMENT PRIMARY KEY NOT NULL
 	
 );
 
@@ -583,7 +409,55 @@ CREATE TABLE topdb (
 	track VARCHAR(50)
 );
 
-SELECT * FROM topdb;
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('1','Se?rita','Shawn Mendes','canadian pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('2','China','Anuel AA','reggaeton flow\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('3','boyfriend (with Social House)','Ariana Grande','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('4','Beautiful People (feat. Khalid)','Ed Sheeran','pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('5','Goodbyes (Feat. Young Thug)','Post Malone','dfw rap\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('6','I Don\'t Care (with Justin Bieber)','Ed Sheeran','pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('7','Ransom','Lil Tecca','trap music\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('8','How Do You Sleep?','Sam Smith','pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('9','Old Town Road - Remix','Lil Nas X','country rap\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('10','bad guy','Billie Eilish','electropop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('11','Callaita','Bad Bunny','reggaeton\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('12','Loco Contigo (feat. J. Balvin & Tyga)','DJ Snake','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('13','Someone You Loved','Lewis Capaldi','pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('14','Otro Trago - Remix','Sech','panamanian pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('15','Money In The Grave (Drake ft. Rick Ross)','Drake','canadian hip hop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('16','No Guidance (feat. Drake)','Chris Brown','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('17','LA CANCI?','J Balvin','latin\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('18','Sunflower - Spider-Man: Into the Spider-Verse','Post Malone','dfw rap\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('19','Lalala','Y2K','canadian hip hop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('20','Truth Hurts','Lizzo','escape room\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('21','Piece Of Your Heart','MEDUZA','pop house\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('22','Panini','Lil Nas X','country rap\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('23','No Me Conoce - Remix','Jhay Cortez','reggaeton flow\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('24','Soltera - Remix','Lunay','latin\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('25','bad guy (with Justin Bieber)','Billie Eilish','electropop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('26','If I Can\'t Have You','Shawn Mendes','canadian pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('27','Dance Monkey','Tones and I','australian pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('28','It\'s You','Ali Gatie','canadian hip hop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('29','Con Calma','Daddy Yankee','latin\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('30','QUE PRETENDES','J Balvin','latin\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('31','Takeaway','The Chainsmokers','edm\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('32','7 rings','Ariana Grande','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('33','The London (feat. J. Cole & Travis Scott)','Young Thug','atl hip hop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('34','Never Really Over','Katy Perry','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('35','Summer Days (feat. Macklemore & Patrick Stump of F','Martin Garrix','big room\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('36','Otro Trago','Sech','panamanian pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('37','Antisocial (with Travis Scott)','Ed Sheeran','pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('38','Sucker','Jonas Brothers','boy band\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('39','\"fuck',' i\'m lonely (with Anne-Marie) - from ?3 Reasons Wh','Lauv\"\"\"');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('40','Higher Love','Kygo','edm\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('41','You Need To Calm Down','Taylor Swift','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('42','Shallow','Lady Gaga','dance pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('43','Talk','Khalid','pop\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('44','Con Altura','ROSAL?','r&b en espanol\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('45','One Thing Right','Marshmello','brostep\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('46','\"Te Robar?','Nicky Jam\"\"\"','latin');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('47','Happier','Marshmello','brostep\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('48','Call You Mine','The Chainsmokers','edm\r');
+INSERT INTO `topdb` (`id`, `genre`, `artist`, `track`) VALUES('49','Cross Me (feat. Chance the Rapper & PnB Rock)','Ed Sheeran','pop\r');
 
 
 CREATE TABLE snapshotUrl (
@@ -593,15 +467,14 @@ url TEXT,
 fashionStyleId INT NOT NULL
 );
 
-SELECT *
-FROM snapshotUrl
-WHERE fashionStyleId = 1;
 
 # =======================================================================================
 
 DROP TABLE topdb;
 
 DROP TABLE snapshotUrl;
+
+SELECT * FROM topdb;
 
 SELECT * FROM snapshotUrl;
 

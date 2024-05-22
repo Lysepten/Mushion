@@ -7,8 +7,11 @@ import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.Member;
 
+// MyBatis Mapper 인터페이스를 나타내는 어노테이션
 @Mapper
 public interface MemberRepository {
+	
+	// 로그인 아이디로 회원을 조회하는 메서드
 	@Select("""
 			SELECT *
 			FROM `member`
@@ -16,6 +19,7 @@ public interface MemberRepository {
 			""")
 	public Member getMemberByLoginId(String loginId);
 
+	// 이름과 이메일로 회원을 조회하는 메서드
 	@Select("""
 			SELECT *
 			FROM `member`
@@ -24,6 +28,7 @@ public interface MemberRepository {
 			""")
 	public Member getMemberByNameAndEmail(String name, String email);
 
+	// 회원가입을 처리하는 메서드
 	@Insert("""
 			INSERT INTO
 			`member` SET
@@ -38,12 +43,15 @@ public interface MemberRepository {
 			""")
 	public void join(String loginId, String loginPw, String name, String nickname, String cellphoneNum, String email);
 
+	// 마지막으로 삽입된 레코드의 ID를 가져오는 메서드
 	@Select("SELECT LAST_INSERT_ID()")
 	public int getLastInsertId();
 
+	// 특정 ID의 회원을 가져오는 메서드
 	@Select("SELECT * FROM `member` WHERE id = #{id}")
 	public Member getMember(int id);
 
+	// 회원 정보를 수정하는 메서드 (비밀번호 포함)
 	@Update("""
 			<script>
 			UPDATE `member`
@@ -71,6 +79,7 @@ public interface MemberRepository {
 	public void modify(int loginedMemberId, String loginPw, String name, String nickname, String cellphoneNum,
 			String email);
 
+	// 회원 정보를 수정하는 메서드 (비밀번호 미포함)
 	@Update("""
 			<script>
 			UPDATE `member`

@@ -1,4 +1,4 @@
-2024-05-21 00:05:02 [ERROR] o.s.boot.SpringApplication - Application run failed
+2024-05-23 00:35:59 [ERROR] o.s.boot.SpringApplication - Application run failed
 org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mushionController': Unsatisfied dependency expressed through field 'mushionService': Error creating bean with name 'mushionService' defined in file [C:\work\Mushion\target\classes\com\example\demo\service\MushionService.class]: Failed to instantiate [com.example.demo.service.MushionService]: Constructor threw exception
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:776)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:756)
@@ -48,9 +48,9 @@ Caused by: org.springframework.beans.BeanInstantiationException: Failed to insta
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:314)
 	... 38 common frames omitted
 Caused by: java.lang.Error: Unresolved compilation problem: 
-	Cannot make a static reference to the non-static method initializeGenreStyles() from the type MushionService
+	Cannot make a static reference to the non-static method initializegenreStyles() from the type MushionService
 
-	at com.example.demo.service.MushionService.<init>(MushionService.java:24)
+	at com.example.demo.service.MushionService.<init>(MushionService.java:26)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -58,25 +58,20 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:212)
 	... 40 common frames omitted
-2024-05-21 01:26:09 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed: java.lang.Error: Unresolved compilation problem: 
-	Cannot make a static reference to the non-static method updateGenreCounts(String, Map<String,Integer>) from the type MushionService
-] with root cause
-java.lang.Error: Unresolved compilation problem: 
-	Cannot make a static reference to the non-static method updateGenreCounts(String, Map<String,Integer>) from the type MushionService
-
-	at com.example.demo.service.MushionService.MaxGenre(MushionService.java:31)
-	at com.example.demo.controller.MushionController.varArgsTest2(MushionController.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+2024-05-23 00:38:44 [ERROR] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Error during mapping
+java.lang.NullPointerException: Cannot read field "path" because "contextVersion" is null
+	at org.apache.catalina.mapper.Mapper.internalMapWrapper(Mapper.java:827)
+	at org.apache.catalina.mapper.Mapper.map(Mapper.java:685)
+	at org.apache.catalina.core.ApplicationContext.getRequestDispatcher(ApplicationContext.java:436)
+	at org.apache.catalina.core.ApplicationContextFacade.getRequestDispatcher(ApplicationContextFacade.java:215)
+	at org.apache.catalina.connector.Request.getRequestDispatcher(Request.java:1326)
+	at org.apache.catalina.connector.RequestFacade.getRequestDispatcher(RequestFacade.java:462)
+	at org.springframework.web.servlet.view.InternalResourceView.getRequestDispatcher(InternalResourceView.java:229)
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:151)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:314)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
@@ -116,25 +111,13 @@ java.lang.Error: Unresolved compilation problem:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-2024-05-21 01:26:44 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed: java.lang.Error: Unresolved compilation problem: 
-	Cannot make a static reference to the non-static method updateGenreCounts(String, Map<String,Integer>) from the type MushionService
-] with root cause
-java.lang.Error: Unresolved compilation problem: 
-	Cannot make a static reference to the non-static method updateGenreCounts(String, Map<String,Integer>) from the type MushionService
-
-	at com.example.demo.service.MushionService.MaxGenre(MushionService.java:31)
-	at com.example.demo.controller.MushionController.varArgsTest2(MushionController.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:887)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+2024-05-23 00:38:44 [ERROR] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Could not get RequestDispatcher for [/WEB-INF/jsp/usr/article/detail.jsp]: Check that the corresponding file exists within your web application archive!] with root cause
+jakarta.servlet.ServletException: Could not get RequestDispatcher for [/WEB-INF/jsp/usr/article/detail.jsp]: Check that the corresponding file exists within your web application archive!
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:153)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:314)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)

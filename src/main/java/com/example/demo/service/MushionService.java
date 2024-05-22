@@ -13,30 +13,38 @@ import com.example.demo.vo.snapshotUrl;
 @Service
 public class MushionService {
 
-	@Autowired
-	private static MushionRepository mushionRepository;
+    // Autowired 어노테이션을 사용하여 의존성 주입
+    @Autowired
+    private static MushionRepository mushionRepository;
 
-	public MushionService(MushionRepository mushionRepository) {
-		this.mushionRepository = mushionRepository;
-	}
+    // 생성자를 통해 의존성 주입
+    public MushionService(MushionRepository mushionRepository) {
+        this.mushionRepository = mushionRepository;
+    }
 
+    // 장르와 스타일을 매핑하는 맵
+    private static final Map<String, String> GENRE_STYLES = initializegenreStyles();
 
-	private static final Map<String, String> GENRE_STYLES = initializegenreStyles();
-
-    public static String MaxGenre(String... genres) {
-    	
+    // 가장 빈도가 높은 장르를 반환하는 메서드
+    public String MaxGenre(String... genres) {
+        // 장르의 빈도를 저장할 맵
         Map<String, Integer> genreCounts = new HashMap<>();
 
+        // 각 장르의 빈도를 업데이트
         for (String Genre : genres) {
             updateGenreCounts(Genre, genreCounts);
         }
-        
+
+        // 가장 빈도가 높은 장르를 반환
         return findMaxGenre(genreCounts);
     }
 
+    // 장르의 빈도를 업데이트하는 메서드
     private static void updateGenreCounts(String Genre, Map<String, Integer> genreCounts) {
+        // 장르명을 소문자로 변환
         String lowerGenre = Genre.toLowerCase();
 
+        // 장르명에 따라 빈도를 업데이트
         if (lowerGenre.contains("jazz")|| lowerGenre.contains("Jazz")) {
             genreCounts.put("Jazz", genreCounts.getOrDefault("Jazz", 0) + 1);
         }
@@ -81,6 +89,7 @@ public class MushionService {
         }
     }
 
+    // 가장 빈도가 높은 장르를 찾는 메서드
     private static String findMaxGenre(Map<String, Integer> genreCounts) {
         return genreCounts.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
@@ -88,6 +97,7 @@ public class MushionService {
                 .orElse("");
     }
 
+    // 장르와 스타일을 초기화하는 메서드
     public static Map<String, String> initializegenreStyles() {
         Map<String, String> genreStyles = new HashMap<>();
         genreStyles.put("Jazz", "Classic");
@@ -107,28 +117,31 @@ public class MushionService {
         return genreStyles;
     }
 
+    // 장르에 따른 URL 목록을 반환하는 메서드
     public List<snapshotUrl> getSnapshotUrlsByGenre(String genre) {
+        // 장르에 해당하는 패션 스타일 ID를 얻음
         int fashionStyleId = getFashionStyleId(genre);
+        // 해당 패션 스타일 ID로 스냅샷 URL 목록을 조회
         return mushionRepository.findByFashionStyleId(fashionStyleId);
     }
 
+    // 장르에 해당하는 패션 스타일 ID를 반환하는 메서드
     private static int getFashionStyleId(String genre) {
         return switch (genre) {
-        case "Metal" -> 1;
-        case "Folk" -> 2;
-        case "Blues" -> 3;
-        case "Jazz" -> 4;
-        case "Classical" -> 4;
-        case "Rock" -> 6;
-        case "Country" -> 7;
-        case "Pop" -> 8;
-        case "Punk" -> 9;
-        case "Reggae" -> 10;
-        case "Dance", "Electronic" -> 12;
-        case "Hiphop" -> 13;
-        case "RhythmAndBlues" -> 14;
-        default -> 0;
+            case "Metal" -> 1;
+            case "Folk" -> 2;
+            case "Blues" -> 3;
+            case "Jazz" -> 4;
+            case "Classical" -> 4;
+            case "Rock" -> 6;
+            case "Country" -> 7;
+            case "Pop" -> 8;
+            case "Punk" -> 9;
+            case "Reggae" -> 10;
+            case "Dance", "Electronic" -> 12;
+            case "Hiphop" -> 13;
+            case "RhythmAndBlues" -> 14;
+            default -> 0;
         };
     }
-
 }

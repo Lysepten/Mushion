@@ -44,7 +44,7 @@
         ,error : function(jqXHR, error) {
         }
     });
-    
+
     function kakaoLogout() {
         Kakao.API.request({
           url: '/v1/user/unlink',
@@ -71,7 +71,6 @@
           });
       }
   </script>
-  
 
 <div>${code }</div>
 

@@ -103,6 +103,9 @@ ___
 
 - [링크](https://www.erdcloud.com/d/kWWKkSAgQEf8tPePo)
 
+## 개발 기술서
+- [Mushion 개발 기술서](https://docs.google.com/document/d/1Gp0yCSpmH8hACPSis-5tM5pVEdw3MR5K9wTQ5rwax8M/edit?usp=sharing)
+
 # 💡 구현 기능
 ___
 
@@ -215,6 +218,10 @@ ___
 - 게시글이 **10개** 이상일 경우 페이지가 나뉩니다.
 - **로그인** 후 직접 게시글 **작성**이 가능합니다
 
+### [게시글 작성]
+![](https://velog.velcdn.com/images/lysepten/post/a702748c-7c2a-4829-8642-10aa150abc35/image.PNG)
+- 제목, 내용, **이미지 첨부**가 가능한 게시글 작성입니다.
+
 ### [게시글 상세보기]
 
 ![](https://velog.velcdn.com/images/lysepten/post/3b0faabf-89c2-4da2-b81f-315809ac2e47/image.gif)
@@ -225,6 +232,12 @@ ___
 - 본인이 작성한 게시글은 **수정, 삭제**가 가능합니다.
 - 게시글 삭제는 **알림창**을 호출하고 **확인**을 누르면 삭제됩니다.
 
+### [게시글 수정]
+
+![](https://velog.velcdn.com/images/lysepten/post/9670d028-d3fc-42b9-ba6a-edda13ec7bcf/image.PNG)
+
+- 본인이 작성한 게시글의 제목, 내용 수정이 가능합니다.
+
 ### [댓글]
 
 ![](https://velog.velcdn.com/images/lysepten/post/5c4b112a-cf49-499b-b0b2-a4343fe8cd39/image.PNG)
@@ -233,11 +246,6 @@ ___
 - 본인이 남긴 댓글을 **수정, 삭제**가 가능합니다.
 - 수정 기능은 페이지를 **이동하지 않고** 입력 창을 직접 수정합니다.
 
-### [게시글 수정]
-
-![](https://velog.velcdn.com/images/lysepten/post/9670d028-d3fc-42b9-ba6a-edda13ec7bcf/image.PNG)
-
-- 본인이 작성한 게시글의 제목, 내용 수정이 가능합니다.
 
 # 🔎 환경 설정
 ___

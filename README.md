@@ -229,6 +229,12 @@ ___
 - 본인이 작성한 게시글은 **수정, 삭제**가 가능합니다.
 - 게시글 삭제는 **알림창**을 호출하고 **확인**을 누르면 삭제됩니다.
 
+### [게시글 수정]
+
+![](https://velog.velcdn.com/images/lysepten/post/9670d028-d3fc-42b9-ba6a-edda13ec7bcf/image.PNG)
+
+- 본인이 작성한 게시글의 제목, 내용 수정이 가능합니다.
+
 ### [댓글]
 
 ![](https://velog.velcdn.com/images/lysepten/post/5c4b112a-cf49-499b-b0b2-a4343fe8cd39/image.PNG)
@@ -237,11 +243,6 @@ ___
 - 본인이 남긴 댓글을 **수정, 삭제**가 가능합니다.
 - 수정 기능은 페이지를 **이동하지 않고** 입력 창을 직접 수정합니다.
 
-### [게시글 수정]
-
-![](https://velog.velcdn.com/images/lysepten/post/9670d028-d3fc-42b9-ba6a-edda13ec7bcf/image.PNG)
-
-- 본인이 작성한 게시글의 제목, 내용 수정이 가능합니다.
 
 # 🔎 환경 설정
 ___

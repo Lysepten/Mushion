@@ -295,17 +295,7 @@ margin-right: auto;
 	
 }
 																/* 메인 페이지 */
-/* html { */
-/* background-color: black; */
-/* height: 100%; */
-/* } */
-/* body { */
-/* background-color: black; */
-/* height: 100%; */
-/* } */
 
-/* body */
-/* body contents */
 .msbody {
 position: relative;
 width: 1903px;
@@ -511,7 +501,6 @@ background: url(qwefvqwerfvqv3232.png);
 /* main page img3 */
 .main-img3 {
 position: absolute;
-/* width: 402.5px; */
 height: 470px;
 left: 560px;
 top: 715px;
@@ -683,7 +672,6 @@ white-space: nowrap;
 
 /* 내 계정으로 로그인 */
 .ms-login-mylogin {
-/* box-sizing: border-box; */
 width: 416px;
 
 position: absolute;
@@ -695,20 +683,13 @@ bottom: 40.29%;
 background-color: #28A7FF;
 border: 1px solid #28A7FF;
 border-radius: 48px;
-/* color: #FFFFFF; */
 }
+
 /* 내 계정으로 로그인 텍스트 */
 .ms-login-mylogin-text {
-	display: block;
-/* position: absolute; */
+display: block;
 width: 126px;
-/* left: calc(50% - 130px/2 + 371px); */
-/* top: 56.7%; */
-/* bottom: 41.64%; */
 
-/* left: 50%; */
-
-/* margin-top: 13px; */
 margin-left: auto;
 margin-right: auto;
 
@@ -786,8 +767,6 @@ z-index: 1000;
 
 /* 아이디 텍스트 테두리 */
 .ms-login-id {
-/* box-sizing: border-box; */
-
 position: absolute;
 width: 411px;
 height: 54px;
@@ -824,11 +803,6 @@ height: 40px;
 }
 /* Naver text */
 .ms-login-Naver-btn-text {
-/* position: absolute; */
-/* left: 64.8%; */
-/* right: 29.5%; */
-/* top: 49.77%; */
-/* bottom: 48.51%; */
 margin-left:20px;
 
 font-family: "Pretendard-Regular", sans-serif;
@@ -907,16 +881,12 @@ white-space: nowrap;
 
 .ms-join-imgbox {
 display: flex;
-/* justify-content: center; */
 width: 50%;
 height: 100%;
 float: left;
 }													/* 회원가입 페이지 */
 .ms-join-img {
-/* 	display: block; */
-/* 	width: 500px; */
-/* 	float: left; */
-/* 	height: 100%; */	object-fit: cover;
+object-fit: cover;
 }
 
 /* join-body */
@@ -924,19 +894,15 @@ float: left;
 position: relative;
 height: 100%;
 background: #0D1E27;
-/* width: 1903px; */
-/* width: 80%; */
 }
 
 /* join-body2 */
 .ms-join-body2 {
-/* position: absolute; */
 width: 70%;
 height: 100%;
 margin-left: auto;
 margin-right: auto;
 background-color: #071015;
-/* left: 217px; */
 }
 
 
@@ -948,13 +914,9 @@ width: 50%;
 height: 100%;
 float: right;
 padding-top: 4%;
-/* position: absolute; */
-/* left: 100%; */
-/* right: 50%; */
 }
 .content-main-box {
 	width: 65%;
-/* 	padding-left: 5%; */
 	padding-right: 5%
 	
 }
@@ -962,21 +924,6 @@ padding-top: 4%;
 	width: 100%;
 }
 
-/* .ms-join-width-box { */
-/* display: flex; */
-/* flex-direction: column; */
-/* justify-content: space-between; */
-/* align-items: flex-start; */
-/* padding: 0px; */
-/* gap: 10px; */
-
-/* width: 449px; */
-/* height: 92px; */
-/* left: 898px; */
-/* top: 465.95px; */
-
-/* border-radius: 35px; */
-/* } */
 
 /* 우리와 함께해요 👋 */
 .content-welcome-box-text {
@@ -987,8 +934,6 @@ font-size: 2rem;
 line-height: 62px;
 color: #FFFFFF;
 }
-
-
 
 
 /* 커뮤니티에 오신 것을 환영합니다. 가입하고 함께 해요! */
@@ -1113,7 +1058,6 @@ white-space: nowrap;
 button {
   width: 50px;
   height: 50px;
-/*   background-color: #ccc; */
   border: none;
   margin-right: 10px;
 }
@@ -1132,24 +1076,7 @@ button {
 	width: 400px;
 }
 
-/* 임시 테스트 */
-.args-form {
-/* 	display: flex; */
-/* 	justify-content: space-around; */
-/* 	align-items: center; */
-/* 	width: 80px; */
-/*     background-color: gray; */
-/*     margin: 0 auto; */
-/*     border-radius: 10px; */
-}
 
-.genreRecommend {
-	
-/* 	display: flex; */
-/* 	justify-content: space-around; */
-/* 	align-items: center; */
-/* 	white-space: nowrap; */
-}
 
 .image {
 	display: inline;

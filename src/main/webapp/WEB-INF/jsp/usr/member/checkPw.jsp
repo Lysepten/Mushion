@@ -4,7 +4,6 @@
 <c:set var="pageTitle" value="checkPw"></c:set>
 <link rel="stylesheet" href="/resource/mushion.css" />
 
-<%-- <%@ include file="../common/head.jspf"%> --%>
 
 <%@ include file="../common/mushionHead.jspf"%>
 
@@ -132,14 +131,12 @@
             display: inline-block;
             vertical-align: middle;
             margin-left: 20px;
-/*             background: url("https://jdniki.github.io/signup/images/next-page.svg"); */
             background-size: contain;
             background-color: #fff;
             z-index: 1000;
         }
 
         #next-page:hover {
-/*             background: url("https://jdniki.github.io/signup/images/next-pagehover.svg"); */
             background-size: contain;
         }
 
@@ -187,9 +184,6 @@ width:50px;
 <body>
     <div class="container" style="width : 700px">
         <div class="navigation">
-<!--             <ol> -->
-<!--                 <li><a href="#" data-ref="password">Password</a></li> -->
-<!--             </ol> -->
         </div>
         <form id="sign-form" class="sign-form" action="../member/doCheckPw" method="POST">
             <ol class="questions">
@@ -204,17 +198,6 @@ width:50px;
         </form>
     </div>
 
-    <script>
-//         $(document).ready(function() {
-//             $('.sign-form').submit(function(e) {
-//                 e.preventDefault(); // Prevent form submission
-//                 var password = $('#password').val(); // Get the password value
-//                 // You can perform any additional validation here if needed
-//                 // If everything is okay, you can submit the form
-//                 $('.sign-form')[0].submit();
-//             });
-//         });
-    </script>
 </body>
 
 

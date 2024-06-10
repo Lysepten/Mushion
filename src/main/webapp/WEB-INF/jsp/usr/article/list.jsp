@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="#{board.code } ARTICLE LIST"></c:set>
 
-<%-- <%@ include file="../common/head.jspf"%> --%>
 <%@ include file="../common/mushionHead.jspf"%>
 
 <link rel="stylesheet" href="/resource/common.css" />
@@ -29,7 +28,6 @@ width: 1920px;
  } 
 
 tr, td {
-/* border: none; */
 padding: 10px;
 text-align: center;
 }

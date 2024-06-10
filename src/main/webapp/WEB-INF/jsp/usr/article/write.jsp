@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="/resource/common.css" />
 <link rel="stylesheet" href="/resource/mushion.css" />
 
-<%-- <%@ include file="../common/head.jspf"%> --%>
 <%@ include file="../common/toastUiEditorLib.jspf"%>
 <!-- Article write 관련 -->
 <script type="text/javascript">

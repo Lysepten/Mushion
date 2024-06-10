@@ -2,8 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="MEMBER MODIFY"></c:set>
 
-<%-- <%@ include file="../common/head.jspf"%> --%>
-
 <link rel="stylesheet" href="/resource/mushion.css" />
 
 <%@ include file="../common/mushionHead.jspf"%>
@@ -192,7 +190,6 @@ width: 1920px;
     width: 48px;
   }
   .div-6 {
-/*     font-family: Inter, sans-serif; */
     flex-grow: 1;
     flex-basis: auto;
     margin: auto 0;
@@ -216,15 +213,12 @@ width: 1920px;
   .div-8 {
     -webkit-text-stroke-width: 1;
     -webkit-text-stroke-color: #000;
-/*     font-family: Inter, sans-serif; */
     border-color: rgba(0, 0, 0, 1);
     border-style: solid;
     border-width: 1px;
   }
   .div-9 {
     -webkit-text-stroke-width: 1;
-    -webkit-text-stroke-color: #000;
-/*     font-family: Inter, sans-serif; */
     border-color: rgba(0, 0, 0, 1);
     border-style: solid;
     border-width: 1px;
@@ -232,7 +226,6 @@ width: 1920px;
   .div-10 {
     -webkit-text-stroke-width: 1;
     -webkit-text-stroke-color: #000;
-/*     font-family: Inter, sans-serif; */
     border-color: rgba(0, 0, 0, 1);
     border-style: solid;
     border-width: 1px;
@@ -240,7 +233,6 @@ width: 1920px;
   .div-11 {
     -webkit-text-stroke-width: 1;
     -webkit-text-stroke-color: #000;
-/*     font-family: Inter, sans-serif; */
     border-color: rgba(0, 0, 0, 1);
     border-style: solid;
     border-width: 1px;
@@ -290,8 +282,6 @@ width: 1920px;
     stroke: #028baf;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-color: rgba(2, 139, 175, 1);
-/*     border-style: solid; */
-/*     border-width: 5px; */
     margin-top: 47px;
     max-width: 100%;
   }
@@ -351,7 +341,6 @@ width: 1920px;
   }
   .div-20 {
     color: #a9acbb;
-/*     margin-top: 14px; */
     margin-bottom: 14px;
     font-family: 'Pretendard-Regular';
     font-weight: 400;
@@ -386,7 +375,6 @@ width: 1920px;
   .div-24 {
     color: #a9acbb;
     align-self: center;
-/*     margin-top: 12px; */
 	margin-bottom: 12px;
     font-family: 'Pretendard-Regular';
     font-weight: 400;
@@ -486,7 +474,6 @@ width: 1920px;
     }
   }
   .div-34 {
-/*     font-family: Inter, sans-serif; */
     border-radius: 7px;
     border-color: rgba(2, 139, 175, 1);
     border-style: solid;
@@ -506,7 +493,6 @@ width: 1920px;
     }
   }
   .div-35 {
-/*     font-family: Inter, sans-serif; */
     border-radius: 7px;
     background-color: rgba(40, 167, 255, 1);
     border-color: rgba(0, 0, 0, 1);
@@ -518,7 +504,6 @@ width: 1920px;
 	height: 40px;
 	width: 90px;
 	text-align: center;
-/* 	padding-top: 8px; */
 	cursor: pointer;
   }
   @media (max-width: 991px) {
@@ -599,8 +584,6 @@ width: 1920px;
   .div-43 {
     color: #fff;
     margin-top: 29px;
-    
-/*     font: 400 14px Inter, sans-serif; */
   }
   @media (max-width: 991px) {
     .div-43 {

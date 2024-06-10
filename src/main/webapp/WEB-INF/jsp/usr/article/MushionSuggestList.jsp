@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="#{board.code } Suggest"></c:set>
 
-<%-- <%@ include file="../common/head.jspf"%> --%>
 <%@ include file="../common/mushionHead.jspf"%>
 
 <link rel="stylesheet" href="/resource/common.css" />
@@ -13,7 +12,6 @@
 margin-top: 30px;
 margin-bottom: 10px;
 margin-left: 10px;
-/* margin: 10px; */
 }
 
 .main-page{

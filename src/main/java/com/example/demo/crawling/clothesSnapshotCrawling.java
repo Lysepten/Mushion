@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,20 +50,24 @@ public class clothesSnapshotCrawling {
 		// 무신사 스냅샷 그런지 스타일 이미지
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EA%B7%B8%EB%9F%B0%EC%A7%80&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
-		
-		List<WebElement> images = driver.findElements(By.cssSelector("img"));
+
+		List<WebElement> images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 		for (WebElement image : images) {
-		    if(image.getAttribute("data-original") != null) {
-		    	
-		    	String imageUrl = image.getAttribute("data-original");
+		    if(image.getAttribute("src") != null) {
+		    	String imageUrl = image.getAttribute("src");
 		    	int fashionStyleId = 6;
 		    	
 		    	pstmt.setString(1, imageUrl);
@@ -74,19 +80,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%ED%81%B4%EB%9E%98%EC%8B%9D%EB%A3%A9&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 4;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -99,19 +110,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EC%8A%A4%ED%8A%B8%EB%A6%BF&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 13;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -124,19 +140,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EC%BA%90%EC%A3%BC%EC%96%BC&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 3;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -149,19 +170,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%ED%9E%88%ED%94%BC&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 7;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -174,19 +200,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EC%8A%A4%ED%8F%AC%ED%8B%B0&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 12;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -199,19 +230,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EB%B3%B4%ED%97%A4%EB%AF%B8%EC%95%88&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 2;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -224,19 +260,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EB%B0%94%EC%9D%B4%EC%BB%A4%EB%A3%A9&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 1;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -249,19 +290,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%ED%8E%91%ED%81%AC&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 9;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -274,19 +320,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EB%A6%AC%EC%A1%B0%ED%8A%B8%EB%A3%A9&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 10;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -300,19 +351,24 @@ public class clothesSnapshotCrawling {
 		snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EB%B9%88%ED%8B%B0%EC%A7%80%EB%A3%A9&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 		driver.get(snapUrl);
 		
-		images = driver.findElements(By.cssSelector("img"));
+		images = driver.findElements(By.className("sc-1xysa35-3"));
 		
 		try {
-			Thread.sleep(1000);
+			var stTime = new Date().getTime(); //현재시간
+            while (new Date().getTime() < stTime + 5000) { //30초 동안 무한스크롤 지속
+                Thread.sleep(1000); //리소스 초과 방지
+                //executeScript: 해당 페이지에 JavaScript 명령을 보냅니다.
+                ((JavascriptExecutor)driver).executeScript("window.scrollTo(0, document.body.scrollHeight)", images);
+            }
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
 		// 이미지 주소가 null일 경우 건너뛴다.
 				for (WebElement image : images) {
-				    if(image.getAttribute("data-original") != null) {
+				    if(image.getAttribute("src") != null) {
 				    	
-				    	String imageUrl = image.getAttribute("data-original");
+				    	String imageUrl = image.getAttribute("src");
 				    	int fashionStyleId = 14;
 				    	
 				    	pstmt.setString(1, imageUrl);
@@ -327,7 +383,7 @@ public class clothesSnapshotCrawling {
 				snapUrl = "https://www.musinsa.com/search/musinsa/coordi?q=%EB%AF%B8%EB%8B%88%EB%A9%80&list_kind=small&sortCode=term_date&sub_sort=&page=1&display_cnt=0&saleGoods=&includeSoldOut=&setupGoods=&popular=&category1DepthCode=&category2DepthCodes=&category3DepthCodes=&selectedFilters=&category1DepthName=&category2DepthName=&brandIds=&price=&colorCodes=&contentType=&styleTypes=&includeKeywords=&excludeKeywords=&originalYn=N&tags=&campaignId=&serviceType=&eventType=&type=&season=&measure=&openFilterLayout=N&selectedOrderMeasure=&shoeSizeOption=&d_cat_cd=&attribute=&plusDeliveryYn=";
 				driver.get(snapUrl);
 				
-				images = driver.findElements(By.cssSelector("img"));
+				images = driver.findElements(By.className("sc-1xysa35-3"));
 				
 				try {
 					Thread.sleep(1000);
@@ -337,9 +393,9 @@ public class clothesSnapshotCrawling {
 				
 				// 이미지 주소가 null일 경우 건너뛴다.
 						for (WebElement image : images) {
-						    if(image.getAttribute("data-original") != null) {
+						    if(image.getAttribute("src") != null) {
 						    	
-						    	String imageUrl = image.getAttribute("data-original");
+						    	String imageUrl = image.getAttribute("src");
 						    	int fashionStyleId = 8;
 						    	
 						    	pstmt.setString(1, imageUrl);

@@ -215,6 +215,10 @@ ___
 - 게시글이 **10개** 이상일 경우 페이지가 나뉩니다.
 - **로그인** 후 직접 게시글 **작성**이 가능합니다
 
+### [게시글 작성]
+![](https://velog.velcdn.com/images/lysepten/post/9670d028-d3fc-42b9-ba6a-edda13ec7bcf/image.PNG)
+- 제목, 내용, **이미지 첨부**가 가능한 게시글 작성입니다.
+
 ### [게시글 상세보기]
 
 ![](https://velog.velcdn.com/images/lysepten/post/3b0faabf-89c2-4da2-b81f-315809ac2e47/image.gif)

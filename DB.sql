@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `Spring_AM_01`;
-CREATE DATABASE `Spring_AM_01`;
-USE `Spring_AM_01`;
+DROP DATABASE IF EXISTS `Mushion`;
+CREATE DATABASE `Mushion`;
+USE `Mushion`;
 
 # article 테이블 생성
 CREATE TABLE article(
